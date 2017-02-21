@@ -1,0 +1,23 @@
+{% extends 'layout.twig' %}
+{% block body_class %}post has-sidebar{% endblock body_class %}
+
+{% block body %}
+<br class="hidden-xs"><br class="hidden-xs">
+<div class="container">
+  <div class="row">
+    <div class="wrapper__main-content">
+      <section class="article-list thumb-grid__3">
+          {% for post in posts %}
+          {% include '_post-item.twig' %}
+          {% endfor %}
+          <br><br>
+          <div class="clearfix"></div>
+          {% include '_pagination.twig' %}
+      </section>
+    </div>
+    <div class="wrapper__side-content">
+      {% include '_sidebar-blog.twig' %}
+    </div>
+  </div>
+</div>
+{% endblock body %}

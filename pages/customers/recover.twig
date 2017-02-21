@@ -1,0 +1,30 @@
+{% extends 'layout.twig' %}
+{% set page_title = 'Recupera tu contraseña' %}
+{% block body_class %}account account-recover has-featured{% endblock body_class %}
+
+{% block body %}
+<section class="featured-block {{ settings.gradient_pages }}">
+  <div class="container">
+    <h1 class="title">Recupera tu contraseña</h1>
+  </div>
+</section>
+<br class="hidden-xs"><br class="hidden-xs">
+<section class="page-content">
+  <div class="container">
+    <div class="row page">
+      <div class="col-sm-offset-3 col-sm-6">
+        <form action="/cuenta/recuperar" method="POST" role="form" class="login-form">
+          <div class="form-group">
+             <label for="email">Dirección de email</label>
+             <input type="email" class="form-control" id="email" name="email" placeholder="Dirección de email" required>
+          </div>
+          <div class="form-group">
+              <input class="btn btn-primary btn-block" type="submit" name="submit" id="submit" value="&nbsp; Recuperar contraseña &nbsp;">
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock body %}

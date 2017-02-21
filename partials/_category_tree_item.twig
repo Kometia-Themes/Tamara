@@ -1,0 +1,21 @@
+{% if category is defined %}
+  {% if category.permalink == current.permalink %}
+  <dd class="active"><a href="{{ category.permalink }}" title="{{ category.title }}">{{ category.title }}</a></dd>
+  {% else %}
+  <dd><a href="/categorias/{{ category.permalink }}" title="{{ category.title }}">{{ category.title }}</a></dd>
+  {% endif %}
+  {% for sub_category in category.children %}
+    {% include '_category_tree_item.twig' with {
+      'category' : sub_category,
+      'current'  : current
+    } only %}
+  {% endfor %}
+{% endif %}
+
+{% if collection is defined %}
+  {% if collection.permalink == current.permalink %}
+  <dd class="active"><a href="/colecciones/{{ collection.permalink }}" title="{{ collection.title }}">{{ collection.title }}</a></dd>
+  {% else %}
+  <dd><a href="/colecciones/{{ collection.permalink }}" title="{{ collection.title }}">{{ collection.title }}</a></dd>
+  {% endif %}
+{% endif %}

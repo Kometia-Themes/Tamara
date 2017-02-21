@@ -1,0 +1,22 @@
+{% extends 'layout.twig' %}
+
+{% block main_title %}
+    {{ page.title }}
+{% endblock main_title %}
+
+{% block meta_description %}
+    {{ page.meta_description }}
+{% endblock %}
+
+{% block body %}
+<section class="page-content">
+  <div class="container">
+    <h1 class="title page-title text-center">{{ page_title }}</h1>
+    <hr class="hr-small">
+    <a href="#">Hola Mundo and Hello World</a>
+    <div class="page-content">
+      <p>{{ page.content | raw }}</p>
+    </div>
+  </div>
+</section>
+{% endblock body %}

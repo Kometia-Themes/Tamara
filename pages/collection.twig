@@ -1,0 +1,37 @@
+{% extends 'layout.twig' %}
+{% block body_class %}collection products has-sidebar{% endblock body_class %}
+
+{% block body %}
+<section class="featured-block {{ settings.gradient_pages }}">
+  <div class="container">
+    <h1 class="title">{{ collection.title }}</h1>
+    {% if settings.collections_display_intro_text and collection.description is not empty %}
+    <hr class="hr-small">
+    <p>{{ collection.description }}</p>
+    {% endif %}
+  </div>
+</section>
+
+<div class="container">
+  <div class="mobile__product-view-options" role="toolbar" aria-label="Herramientas de listado de productos">
+    {% include '_view-options.twig' %}
+  </div>
+  <div class="clearfix"></div>
+  <br><br class="hidden-xs">
+  <div class="row">
+    <div class="wrapper__main-content">
+      <section class="product-list prod-grid__4">
+        {% for product in products %}
+        {% include '_product-item.twig' %}
+        {% endfor %}
+        <br><br>
+        <div class="clearfix"></div>
+        {% include '_pagination.twig' %}
+      </section>
+    </div>
+    <div class="wrapper__side-content">
+      {% include '_sidebar.twig' with { 'show_viewer' : true } %}
+    </div>
+  </div>
+</div>
+{% endblock body %}

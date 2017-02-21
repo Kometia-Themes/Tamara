@@ -1,0 +1,110 @@
+{% extends 'layout.twig' %}
+{% block body_class %}cart has-featured{% endblock body_class %}
+
+{% block body %}
+<section class="featured-block {{ settings.gradient_pages }}">
+  <div class="container">
+    <h1 class="title">Carrito de compras</h1>
+  </div>
+</section>
+<br class="hidden-xs"><br class="hidden-xs">
+<div class="container cart">
+  <div class="cart-container">
+  {% if cart.items|length > 0 %}
+    <div class="row cart__grid__heading hidden-xs">
+        <div class="col-sm-7">
+          <h5>Artículo</h5>
+        </div>
+        <div class="one-fifth-sm">
+          <h5>Cantidad</h5>
+        </div>
+        <div class="one-fourth-sm">
+          <h5>Precio</h5>
+        </div>
+    </div>
+    {% for item in cart.items %}
+      {% set sku_image_url = item.product.image_url is not empty ? item.product.image_url ~ '&w=100&h=100&fit=crop' : 'placeholders/product-11.jpg' | global_img_url %}
+      <div class="row cart-item">
+        <div class="cart-item-description">
+          <div class="media">
+            <div class="pull-left cart-item__image-container">
+              <a href="{{item.product.permalink}}" alt="{{item.product.name}}">
+                <img class="media-object" width="120" src="{{ sku_image_url }}">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"><a href="/productos/{{ item.product.permalink }}">{{ item.product.name }}</a></h4>
+              {% for modifier in item.product.modifiers %}
+                <p class="item__variant">{{ modifier }} <span class="item__variant__desc">{{ item.sku.modifiers[loop.index0] }}</span></p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="cart-item-qty">
+            <div class="row">
+                <div class="full-width">
+                    <h5 class="visible-xs-block item__variant">Cantidad</h5>
+                    <form action="/carrito/actualizar" method="post" class="form-inline">
+                        <div class="form-group">
+                            <input type="hidden" name="_method" value="patch">
+                            <input type="hidden" name="id" value="{{ item.id }}">
+                            <select class="cart__resume-table__product-quantity selectpicker form-control" name="quantity">
+                                {% for qty in 1..5 %}
+                                    <option value="{{ qty }}"{{ qty == item.quantity ? ' selected="selected"' : null }}>{{ qty }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button class="item__refresh" type="submit"><span class="zmdi zmdi-refresh"></span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="cart-item-price">
+            <h5 class="visible-xs-block item__variant">Precio</h5>
+            <p class="item__price">{{ item.price | money('symbol', 'code') }}</p>
+        </div>
+        <div class="cart-item-delete">
+            <form action="/carrito/eliminar" method="post" class="text-center">
+                <input type="hidden" name="_method" value="delete">
+                <input type="hidden" name="id" value="{{ item.id }}">
+                <input type="hidden" name="quantity" value="0">
+                <button type="submit" class="item__delete"><i class="zmdi zmdi-close hidden-xs"></i><i class="zmdi zmdi-delete visible-xs-block"></i></button>
+            </form>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    {% endfor %}
+    <div class="clearfix"></div>
+    <p>&nbsp;</p>
+    <div class="row">
+      <div class="one-third-sm col-sm-offset-8 one-fourth-md col-md-offset-8">
+        <div class="cart__payment__info">
+
+
+          <div class="row">
+              <div class="col-xs-5">
+                <p class="cart__payment__heading"><strong>Total</strong></p>
+              </div>
+              <div class="col-xs-7">
+                  <p class="cart__payment__cont text-right">{{ cart.total_price | money('symbol', 'code') }}</p>
+              </div>
+          </div>
+
+        </div>
+        <a href="/checkout" class="item__proceed"> <i class="zmdi zmdi-shopping-cart"></i>&nbsp;&nbsp;Compra Ahora</a>
+      </div>
+    </div>
+  {% else %}
+    <div class="row">
+      <div class="full-width emptycart text-center">
+          <p class="lead empty-cart">No tienes nada en tu carrito de compras, <a href="/productos">¡agrega algo ahora</a>!</p>
+      </div>
+    </div>
+  {% endif %}
+  </div>
+</div>
+{% endblock body %}
+
+{% block body_js %}
+  {{ parent() }}
+{% endblock body_js %}

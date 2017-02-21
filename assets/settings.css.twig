@@ -1,0 +1,186 @@
+/* * * * * * * * */
+/* Global Styles */
+/* * * * * * * * */
+body {
+  background-color: {{ settings.body_background_color }};
+  font-size: {{ settings.body_font_size }}px;
+  font-family: {{ settings.body_font | remove('Google+') | replace({'+': ' '}) }}, sans-serif;
+  font-weight: {{ settings.body_font_weight }};
+  color: {{ settings.body_font_color }};
+  -webkit-backface-visibility: hidden;
+}
+a { color: {{ settings.main_link_color }}; }
+a:focus, a:hover { color: {{ settings.main_link_color_hover }}; }
+
+a, button { transition: all .3s ease 0s; }
+a:active, a:focus { outline: none;}
+:focus { outline: none !important;}
+::-moz-focus-inner { border: 0 !important;}
+
+.btn, .btn-default, .btn-primary {
+  color: {{ settings.btn_text_color }};
+  background-color: {{ settings.btn_bg_color }};
+  border-color: {{ settings.btn_bg_color }};
+}
+.btn:hover, .btn:focus, .btn-default:hover, .btn-default:focus, .btn-primary:hover, .btn-primary:focus  {
+  color: {{ settings.btn_text_color_hover }};
+  background-color: {{ settings.btn_bg_color_hover }};
+  border-color: {{ settings.btn_bg_color_hover }};
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6  {
+  color: {{ settings.headings_color }};
+  font-family: {{ settings.heading_font | remove('Google+') | replace({'+': ' '}) }}, sans-serif;
+  font-size: {{ settings.heading_font_size }}px;
+  font-weight: {{ settings.heading_font_weight }};
+}
+
+h1, .h1 { font-size: {{ settings.heading_font_size }}px; }
+h2, .h2 { font-size: {{ settings.heading_font_size / 1.2 }}px; }
+h3, .h3 { font-size: {{ settings.heading_font_size / 1.5 }}px; }
+h4, .h4 { font-size: {{ settings.heading_font_size / 2 }}px; }
+h5, .h5 { font-size: {{ settings.heading_font_size / 2.571428 }}px; }
+h6, .h6 { font-size: {{ settings.heading_font_size / 3 }}px; }
+
+/* * * * * * * * * * * * * * */
+/* Gradients Odd and  Event  */
+/* * * * * * * * * * * * * * */
+.gradient-even {
+  background-color: {{ settings.gradient_even_a }};
+  background-image: linear-gradient(20deg, {{ settings.gradient_even_a }}, {{ settings.gradient_even_b }} 45%, {{ settings.gradient_even_c }});
+  color: {{ settings.gradient_1_text }};
+}
+
+.gradient-odd {
+  background-color: {{ settings.gradient_odd_a }};
+  background-image: linear-gradient(20deg, {{ settings.gradient_odd_a }}, {{ settings.gradient_odd_b }} 45%, {{ settings.gradient_odd_c }});
+  color: {{ settings.gradient_2_text }};
+}
+footer.content-info {
+  background-color: {{ settings.gradient_odd_a }};
+  background-image: linear-gradient(20deg, {{ settings.gradient_odd_a }}, {{ settings.gradient_odd_b }} 45%, {{ settings.gradient_odd_c }});
+  color: {{ settings.gradient_2_text }};
+}
+.cta {
+  background-color: {{ settings.newsletter_bg}};
+}
+.sidebar-widget dd.active {
+  background-color: {{ settings.gradient_odd_a }};
+  background-image: linear-gradient(20deg, {{ settings.gradient_odd_a }}, {{ settings.gradient_odd_b }} 45%, {{ settings.gradient_odd_c }});
+  color: {{ settings.gradient_2_text }};
+}
+footer.content-info .footer-copyright {
+  color: {{ settings.gradient_2_text }};
+}
+footer.content-info .footer-copyright a {
+  color: {{ settings.gradient_2_text }};
+}
+footer.content-info .footer-widget .title {
+  color: {{ settings.gradient_2_text }};
+}
+footer.content-info a {
+  color: {{ settings.gradient_2_text }};
+}
+
+/* * * * * */
+/* Topnav  */
+/* * * * * */
+#top-navbar {
+  background-color: {{ settings.topnav_bg_color }};
+  border-color: {{ settings.topnav_bg_color }};
+}
+#top-navbar .navbar-nav > li > a {
+  color: {{ settings.topnav_text_color }};
+}
+#top-navbar .navbar-nav > li > a:hover,
+#top-navbar .navbar-nav > li >a:focus {
+  color: {{ settings.topnav_text_color_hover }};
+}
+#main-navbar {
+  background-color: {{ settings.main_navbar_bg }};
+  border-color: {{ settings.main_navbar_bg }};
+}
+#main-navbar .navbar-nav>li>a {
+  color: {{ settings.main_navbar_text_color }};
+}
+#main-navbar .navbar-nav>li>a:hover,
+#main-navbar .navbar-nav>li>a:focus {
+  color: {{ settings.main_navbar_text_color_hover }};
+}
+#main-navbar .navbar-toggle {
+  border-color: transparent;
+}
+
+#main-navbar .navbar-toggle:hover,
+#main-navbar .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+
+#main-navbar .dropdown-menu > li > a {
+  color: {{ settings.body_font_color }};
+}
+#main-navbar .dropdown-menu > li > a:hover,
+#main-navbar .dropdown-menu > li > a:focus {
+  color: {{ settings.main_navbar_text_color_hover }};
+}
+@media(min-width: 768px) {
+  #main-navbar .dropdown-menu > li > a {
+    color: {{ settings.body_font_color }};
+  }
+  #main-navbar .dropdown-menu > li > a:hover,
+  #main-navbar .dropdown-menu > li > a:focus {
+    color: {{ settings.main_navbar_text_color_hover }};
+  }
+}
+
+
+/* * * * * * * */
+/* Slides BTN  */
+/* * * * * * * */
+.btn-slide-1 {
+  background-color: {{ settings.btn_slide_1_bg }}; border-color: {{ settings.btn_slide_1_bg }}; color: {{ settings.btn_slide_1_text }};
+}
+.btn-slide-1:hover, .btn-slide-1:focus {
+  background-color: {{ settings.btn_slide_1_bg_over }}; border-color: {{ settings.btn_slide_1_bg_over }}; color: {{ settings.btn_slide_1_text_over }};
+}
+.btn-slide-2 {
+  background-color: {{ settings.btn_slide_2_bg }}; border-color: {{ settings.btn_slide_2_bg }}; color: {{ settings.btn_slide_2_text }};
+}
+.btn-slide-2:hover, .btn-slide-2:focus {
+  background-color: {{ settings.btn_slide_2_bg_over }}; border-color: {{ settings.btn_slide_2_bg_over }}; color: {{ settings.btn_slide_2_text_over }};
+}
+.btn-slide-3 {
+  background-color: {{ settings.btn_slide_3_bg }}; border-color: {{ settings.btn_slide_3_bg }}; color: {{ settings.btn_slide_3_text }};
+}
+.btn-slide-3:hover, .btn-slide-3:focus {
+  background-color: {{ settings.btn_slide_3_bg_over }}; border-color: {{ settings.btn_slide_3_bg_over }}; color: {{ settings.btn_slide_3_text_over }};
+}
+.btn-slide-4 {
+  background-color: {{ settings.btn_slide_4_bg }}; border-color: {{ settings.btn_slide_4_bg }}; color: {{ settings.btn_slide_4_text }};
+}
+.btn-slide-4:hover, .btn-slide-4:focus {
+  background-color: {{ settings.btn_slide_4_bg_over }}; border-color: {{ settings.btn_slide_4_bg_over }}; color: {{ settings.btn_slide_4_text_over }};
+}
+
+/* * * * * * * * * * */
+/* Product Thumbnail */
+/* * * * * * * * * * */
+.thumbnail {
+  background-color: {{ settings.product_card_background_color }};
+}
+.regular-price {
+  color: {{ settings.product_compared_price_color }};
+}
+
+.sidebar-widget dd a {
+  color: {{ settings.main_link_color }};
+}
+.sidebar-widget dd a:hover {
+  color: {{ settings.main_link_color_hover }};
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+  background-color: {{ settings.brand_main_color }};
+  border-color: {{ settings.brand_main_color }};
+}
