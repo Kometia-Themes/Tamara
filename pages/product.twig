@@ -43,7 +43,7 @@
                 <span class="regular-price js-product-price-amount">
                   {{ product.price | money('symbol', 'code') }}
                 </span>
-                <span class="compared-price js-product-price-compared-amount">  {{ product.sku.compared_price is defined ? product.sku.compared_price | money('symbol') }}
+                <span class="compared-price js-product-price-compared-amount">  {{ product.sku.compared_price > product.sku.price ? product.sku.compared_price | money('symbol') }}
                 </span>
               </div>
               <h5 class="product-summary">{{ product.summary }}</h5>
@@ -175,7 +175,7 @@
       enabledAddButton.show();
       $('input[name=sku_id]').val(sku.id);
       $('.js-product-price-amount').html(formatPrice(sku.price));
-      if (sku.compared_price != 0) {
+      if (sku.compared_price > sku.price ) {
         comparedPriceElement.html(formatPrice(sku.compared_price)).show();
       } else {
         comparedPriceElement.hide();
