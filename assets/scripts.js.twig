@@ -5491,7 +5491,14 @@ var Tamara = {
       $.validate({
         modules : 'html5'
       });
+
       $("body meta").remove();
+      var $adminBar = $('#admin-bar-iframe');
+
+      if ($adminBar.length) {
+        $('body').css({ position: 'initial' });
+        $('#top-navbar').css({ position: 'relative' });
+      }
 
       var dropdownMenu = function() {
         $('.navigation__link').click(function(e){
@@ -5702,3 +5709,4 @@ $(document).ready(UTIL.loadEvents);
 $(window).on('resize', UTIL.loadEvents);
 
 })(jQuery); // Fully reference jQuery after this point.
+
