@@ -1667,17 +1667,22 @@
               "info": "Tamaño de 600x600px recomendado"
             },
             {
+              "type": "checkbox",
+              "id": "featured_space_1_display_image",
+              "label": "Mostrar imagen"
+            },
+            {
               "type": "select",
               "id": "featured_space_1_bg",
               "label": "Degradado de fondo",
               "default": "gradient-even",
               "options": [
                 {
-                  "value": "gradient-even",
+                  "value": "gradient-odd",
                   "label": "Degradado 1"
                 },
                 {
-                  "value": "gradient-odd",
+                  "value": "gradient-even",
                   "label": "Degradado 2"
                 }
               ]

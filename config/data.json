@@ -161,6 +161,7 @@
       "featured_space_1": true,
       "featured_space_1_bg": "gradient-even",
       "featured_space_1_image": "",
+      "featured_space_1_display_image": false,
       "featured_space_1_title": "Título",
       "featured_space_1_desc": "Pellentesque posuere orci lobortis scelerisque blandit. Donec id tellus lacinia an, tincidunt risus ac, consequat velit. Quisquemos sodales suscipit tortor ditaemcos condimentum lacus meleifend menean viverra auctor blanditos comodous.",
       "featured_space_1_btn": true,

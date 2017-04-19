@@ -2,7 +2,7 @@
   <section class="featured-space-1 {{ settings.featured_space_1_bg}}">
     <div id="featured-space-1-home">
       <div class="container">
-      {% if settings.featured_space_1_image is not empty and settings.featured_space_1_image %}
+      {% if settings.featured_space_1_image is not empty and settings.featured_space_1_image and settings.featured_space_1_display_image %}
         <img src="{{ settings.featured_space_1_image }}" alt="{{store.name}}">
         <div class="row">
           <div class="col-sm-5 pull-right">
