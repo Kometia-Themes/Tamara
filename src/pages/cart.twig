@@ -1,0 +1,170 @@
+{% extends 'layout.twig' %}
+{% block body_class %}cart has-featured{% endblock body_class %}
+
+{% block body %}
+<section class="featured-block {{ settings.gradient_pages }}">
+  <div class="container">
+    <h1 class="title">Carrito de compras</h1>
+  </div>
+</section>
+<br class="hidden-xs"><br class="hidden-xs">
+<div class="container cart">
+  <div class="cart-container">
+  {% if cart.items | length > 0 %}
+    <div class="row cart__grid__heading hidden-xs">
+        <div class="col-sm-7">
+          <h5>Artículo</h5>
+        </div>
+        <div class="one-fifth-sm">
+          <h5>Cantidad</h5>
+        </div>
+        <div class="one-fourth-sm">
+          <h5>Precio</h5>
+        </div>
+    </div>
+    {% for item in cart.items %}
+      {% set sku_image_url = item.sku.image_url is not empty ? item.sku.image_url ~ '&w=250&h=250&fit=bounds' : (item.product.image_url is not empty ? item.product.image_url : 'placeholders/product-11.jpg' | global_img_url) %}
+      <div class="row cart-item">
+        <div class="cart-item-description">
+          <div class="media">
+            <div class="pull-left cart-item__image-container">
+              <a href="/productos/{{ item.product.permalink }}{% if item.sku.permalink != 'default' %}/{{ item.sku.permalink }}{% endif %}" alt="{{item.product.name}}">
+                <img class="media-object" width="120" src="{{ sku_image_url }}">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"><a href="/productos/{{ item.product.permalink }}{% if item.sku.permalink != 'default' %}/{{ item.sku.permalink }}{% endif %}">{{ item.product.name }}</a></h4>
+              {% for modifier in item.product.modifiers %}
+                <p class="item__variant">{{ modifier | title }}: <span class="item__variant__desc"><strong>{{ item.sku.modifiers[loop.index0] | title }}</strong></span></p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="cart-item-qty">
+            <div class="row">
+                <div class="full-width">
+                    <h5 class="visible-xs-block item__variant">Cantidad</h5>
+                    <form action="/carrito/actualizar" method="post" class="form-inline">
+                        <div class="form-group">
+                            <input type="hidden" name="_method" value="patch">
+                            <input type="hidden" name="id" value="{{ item.id }}">
+                            <select class="cart__resume-table__product-quantity selectpicker form-control updateQty" name="quantity">
+                                {% for qty in 1..5 %}
+                                    <option value="{{ qty }}"{{ qty == item.quantity ? ' selected="selected"' : null }}>{{ qty }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="cart-item-price">
+            <h5 class="visible-xs-block item__variant">Precio</h5>
+            <p class="item__price">{{ item.price | money('symbol', 'code') }}</p>
+        </div>
+        <div class="cart-item-delete">
+            <form action="/carrito/eliminar" method="post" class="text-center">
+                <input type="hidden" name="_method" value="delete">
+                <input type="hidden" name="id" value="{{ item.id }}">
+                <input type="hidden" name="quantity" value="0">
+                <button type="submit" class="item__delete"><i class="zmdi zmdi-close hidden-xs"></i><i class="zmdi zmdi-delete visible-xs-block"></i></button>
+            </form>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    {% endfor %}
+    <div class="clearfix"></div>
+    <p>&nbsp;</p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-push-6 cart__payment">
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="cart__payment__heading"><strong>Total</strong></p>
+            <p class="cart__payment__total">{{ cart.total_price | money('symbol', 'code') }}</p>
+          </div>
+          <div class="col-xs-12">
+            <a href="/checkout" class="btn btn-primary btn-lg"> <i class="zmdi zmdi-shopping-cart"></i>&nbsp;&nbsp;Compra Ahora</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-sm-pull-6 cartxtras">
+        <div class="row">
+          <form action="/carrito" method="post">
+            <div class="col-xs-12 cartgift">
+              {% if settings.enabled_gift_option %}
+                <div class="cartgift__form">
+                  <div class="checkbox">
+                    <label><input class="cartgift--checkbox" type="checkbox" name="is_gift" value="1" {{ cart.is_gift ? "checked='checked'" : '' }}>{{ settings.gift_title_message }}</label>
+                  </div>
+                  <div class="cartgift__form--content">
+                    <div class="form-group">
+                      <label class="sr-only" for="gift_message">{{ settings.gift_title_message }}</label>
+                      <textarea type="text" class="form-control" name="gift_message" value="{{ cart.gift_message }}" maxlength="150">{{ cart.gift_message }}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary cartgift__btn">{{ settings.gift_btn_message }}</button>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+            <div class="col-xs-12 cartnote">
+              {% if settings.enabled_customer_note_option %}
+              <p>{{ settings.customer_title_note }}</p>
+                <div class="cartnote__form">
+                  <div class="form-group">
+                    <label class="sr-only" for="note">{{ settings.customer_title_note }}</label>
+                    <textarea class="form-control cartnote__note" type="textarea" name="note" value="{{ cart.customer_note }}" maxlength="500">{{ cart.customer_note }}</textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary cartnote__btn">{{ settings.customer_btn_note_text }}</button>
+                </div>
+              {% endif %}
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  {% else %}
+    <div class="row">
+      <div class="full-width emptycart text-center">
+          <p class="lead empty-cart">No tienes nada en tu carrito de compras, <a href="/productos">¡agrega algo ahora</a>!</p>
+      </div>
+    </div>
+  {% endif %}
+  </div>
+</div>
+{% endblock body %}
+
+{% block js_body %}
+  {{ parent() }}
+  <script type="text/javascript">
+  $(function () {
+    $('.updateQty').change(function() {
+      this.form.submit();
+    });
+    $('form').submit(function(){
+      $(this).find(':submit').prop('disabled', true);
+    });
+
+    var enableGiftOption = function() {
+      var el = $('.cartgift--checkbox');
+      if(el.is(':checked')) {
+        $('.cartgift__form--content').show();
+      }
+    }
+    enableGiftOption();
+
+    $('.cartgift--checkbox').change(function () {
+      var _this = this;
+      if ($(_this).is(':checked')) {
+        $('.cartgift__form--content').show();
+      } else {
+        $('.cartgift__form--content').hide();
+      }
+      this.form.submit();
+    });
+
+  });
+  </script>
+{% endblock js_body %}

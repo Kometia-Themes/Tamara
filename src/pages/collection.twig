@@ -1,0 +1,37 @@
+{% extends 'layout.twig' %}
+{% block body_class %}collection products has-sidebar{% endblock body_class %}
+
+{% block body %}
+{% if settings.display_sidebar_collections or settings.display_sidebar_categories or (settings.display_sidebar_menu and settings.display_sidebar_menu_name is not empty )%}
+  {% set show_sidebar = true %}
+{% endif %}
+<section class="featured-block {{ settings.gradient_pages }}">
+  <div class="container">
+    <h1 class="title">{{ collection.title }}</h1>
+    {% if settings.collections_display_intro_text and collection.description is not empty %}
+      <hr class="hr-small">
+    <p>{{ collection.description }}</p>
+    {% endif %}
+  </div>
+</section>
+<div class="container">
+  <div class="mobile__product-view-options" role="toolbar" aria-label="Herramientas de listado de productos">
+    {% include '_filterbar.twig' %}
+  </div>
+  <div class="row">
+    <div class="{% if show_sidebar or show_sidebar is defined %}wrapper__main-content col-xs-12 col-sm-8 col-md-9{% else %}col-xs-12{% endif %}">
+      <section class="product-list prod-grid__4 symmetrical-container">
+        {% for product in products %}
+        {% include '_product-item.twig' %}
+        {% endfor %}
+      </section>
+      {% include '_pagination.twig' %}
+    </div>
+    {% if show_sidebar %}
+    <div class="wrapper__side-content col-xs-12 col-sm-4 col-md-3">
+      {% include '_sidebar.twig' %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock body %}
