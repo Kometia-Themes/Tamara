@@ -1,0 +1,45 @@
+.search-page {
+  .results {
+    margin-bottom: 3em;
+    .results__title {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+    .results__table {
+      .results__table--thumbnail {
+        width:10%;
+        min-width:80px;
+      }
+      .results__table--description {
+        white-space: normal;
+        max-width:300px;
+      }
+      @media(max-width:767px) {
+        .results__table--thumbnail {width:15%;}
+        .results__table--description {
+          max-width:450px;
+        }
+      }
+      @media(min-width:768px) {
+        .results__table--thumbnail {width:10%;}
+        .results__table--description {
+          max-width:500px;
+        }
+      }
+      @media(min-width:992px) {
+        .results__table--thumbnail {width:12%;}
+        .results__table--description {
+          max-width:650px;
+        }
+      }
+      @media(min-width:1200px) {
+        .results__table--thumbnail {width:10%;}
+        .results__table--description {
+          max-width:700px;
+        }
+      }
+    }
+  }
+}
+
+

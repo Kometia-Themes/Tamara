@@ -1,0 +1,14 @@
+{% if links.children | length > 0 %}
+<li class="dropdown">
+  <a class="navigation__link" href="{{ links.url }}" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">{{ links.name }} <span class="drop-icon"><i class="zmdi zmdi-caret-right"></i></span></a>
+  <ul class="dropdown-menu">
+    {% for children in links.children %}
+      {% include '_nav-item.twig' with {'links': children} %}
+    {% endfor %}
+  </ul>
+</li>
+{% else %}
+<li>
+  <a class="navigation__parent-link" href="{{ links.url }}">{{ links.name }}</a>
+</li>
+{% endif %}
