@@ -1,0 +1,131 @@
+<footer class="content-info {{ settings.gradient_footer }}" role="contentinfo" style="color:
+{% if settings.gradient_footer == 'gradient-odd' %}{{ settings.gradient_1_text }}{% else %}{{ settings.gradient_2_text }}{% endif %}">
+  <div class="container">
+  {% if settings.footer_use_logo and settings['footer_logo.png'] is not empty %}
+    <a class="footer-brand" href="{{ store.permalink }}">
+      <img src="{{ settings['footer_logo.png'] }}&h=95" alt="{{ store.name }}">
+    </a>
+  {% endif %}
+    <div class="footer__row">
+      <div class="widget footer-widget fw__main-menu">
+      {% if settings.footer_show_main_menu %}
+        <dl>
+          <dt class="title">{{ settings.footer_main_title }}</dt>
+          {% if menus[settings.footer_main_menu] in menus %}
+            {% for links in menus[settings.footer_main_menu] %}
+            <dd>
+              <a href="{{ links.url }}" title="{{ links.name }}">
+              {{ links.name }}
+              </a>
+            </dd>
+            {% endfor %}
+          {% else %}
+            {% for links in menus.main %}
+            <dd>
+              <a href="{{ links.url }}" title="{{ links.name }}">
+              {{ links.name }}
+              </a>
+            </dd>
+            {% endfor %}
+        {% endif %}
+        </dl>
+      {% endif %}
+      </div>
+      <div class="widget footer-widget fw__quick-links">
+      {% if settings.footer_show_secondary_menu %}
+        <dl>
+          <dt class="title">{{ settings.footer_secondary_menu_title is not empty ? settings.footer_secondary_menu_title : '&nbsp;' | raw }}</dt>
+          {% if menus[settings.footer_secondary_menu] in menus %}
+            {% for links in menus[settings.footer_secondary_menu] %}
+            <dd>
+              <a href="{{ links.url }}" title="{{ links.name }}">
+              {{ links.name }}
+              </a>
+            </dd>
+            {% endfor %}
+        {% endif %}
+        </dl>
+      {% endif %}
+      </div>
+      <div class="half-sm">
+        <div class="row footer__row-inset">
+          {% if settings.footer_display_social %}
+          <div class="widget footer-widget">
+            <h4 class="title">Síguenos</h4>
+            <ul class="fw__store-social">
+              {% if settings.twitter_link is not empty %}
+              <li><a href="{{ settings.twitter_link }}" target="_blank" title="Sigue a {{ store.name }} en Twitter"><i class="zmdi zmdi-twitter"></i></a></li>
+              {% endif %}
+              {% if settings.facebook_link is not empty %}
+              <li><a href="{{ settings.facebook_link }}" target="_blank" title="Sigue a {{ store.name }} en Facebook"><i class="zmdi zmdi-facebook"></i></a></li>
+              {% endif %}
+              {% if settings.google_link is not empty %}
+              <li><a href="{{ settings.google_link }}" target="_blank" title="Sigue a {{ store.name }} en Google+"><i class="zmdi zmdi-google-plus"></i></a></li>
+              {% endif %}
+              {% if settings.youtube_link is not empty %}
+              <li><a href="{{ settings.youtube_link }}" target="_blank" title="Sigue a {{ store.name }} en YouTube"><i class="zmdi zmdi-youtube-play"></i></a></li>
+              {% endif %}
+              {% if settings.vimeo_link is not empty %}
+              <li><a href="{{ settings.vimeo_link }}" target="_blank" title="Sigue a {{ store.name }} en Vimeo"><i class="zmdi zmdi-vimeo"></i></a></li>
+              {% endif %}
+              {% if settings.pinterest_link is not empty %}
+              <li><a href="{{ settings.pinterest_link }}" target="_blank" title="Sigue a {{ store.name }} en Pinterest"><i class="zmdi zmdi-pinterest"></i></a></li>
+              {% endif %}
+              {% if settings.instagram_link is not empty %}
+              <li><a href="{{ settings.instagram_link }}" target="_blank" title="Sigue a {{ store.name }} en Instagram"><i class="zmdi zmdi-instagram"></i></a></li>
+              {% endif %}
+              {% if settings.tumblr_link is not empty %}
+              <li><a href="{{ settings.tumblr_link }}" target="_blank" title="Sigue a {{ store.name }} en Tumblr"><i class="zmdi zmdi-tumblr"></i></a></li>
+              {% endif %}
+              {% if settings.whatsapp_link is not empty %}
+              <li><a href="https://api.whatsapp.com/send?phone={{ settings.whatsapp_link }}" title="Lámanos {{ store.name }} en Whatsapp"><i class="zmdi zmdi-whatsapp"></i></a></li>
+              {% endif %}
+            </ul>
+            {% if settings.accept_visa or settings.accept_mastercard or settings.accept_amex
+              or settings.accept_paypal or settings.accept_oxxo or settings.accept_cash or settings.accept_spei %}
+            <h4 class="title">Métodos de pago</h4>
+            <ul class="fw__payment-methods list-inline">
+              {% if settings.accept_visa %}
+                <li><img src="{{ 'visa.png'| payment_img_url ~ '&w=31' }}" width="31" alt="Visa"></li>
+              {% endif %}
+              {% if settings.accept_mastercard %}
+              <li><img src="{{ 'mastercard.png'| payment_img_url ~ '&w=31' }}" width="31" alt="Mastercard"></li>
+              {% endif %}
+              {% if settings.accept_amex %}
+              <li><img src="{{ 'amex.png'| payment_img_url ~ '&w=31' }}" width="31" alt="American Express"></li>
+              {% endif %}
+              {% if settings.accept_paypal %}
+              <li><img src="{{ 'paypal.png'| payment_img_url ~ '&w=31' }}" width="31" alt="Paypal"></li>
+              {% endif %}
+              {% if settings.accept_oxxo %}
+              <li><img src="{{ 'oxxo.png'| payment_img_url ~ '&w=31' }}" width="31" alt="Oxxo"></li>
+              {% endif %}
+              {% if settings.accept_cash %}
+              <li><img src="{{ 'cash.png'| payment_img_url ~ '&w=31' }}" width="31" alt="Efectivo"></li>
+              {% endif %}
+              {% if settings.accept_spei %}
+              <li><img src="{{ 'spei.png'| payment_img_url ~ '&w=31' }}" width="31" alt="SPEI"></li>
+              {% endif %}
+            </ul>
+          {% endif %}
+          </div>
+          {% endif %}
+          <div class="widget footer-widget fw__store-contact">
+            {% if settings.footer_display_contact_data %}
+            <dl>
+              <dt class="title">Contacto</dt>
+              <dd>
+                {{ settings.footer_contact_data | nl2br }}
+              </dd>
+            </dl>
+            {% endif %}
+          </div>
+        </div> 
+      </div>
+    </div> 
+    <hr class="hr-small">
+    <div class="footer-copyright">
+      <p>©<?php echo date('Y'); ?> {{ store.name }}. Todos los derechos reservados. <strong>Tamara</strong> Theme por <a href="//shoperti.com" target="_blank" title="Crea tu tienda en línea con Shoperti">Shoperti</a>.</p>
+    </div>
+  </div>
+</footer>

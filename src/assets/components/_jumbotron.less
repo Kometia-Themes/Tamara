@@ -1,0 +1,45 @@
+.cta {
+  .jumbotron;
+}
+.jumbotron h1 {
+  margin-top: 0;
+}
+.jumbotron p {
+  font-weight: normal;
+}
+.featured-space-1 {
+  .jumbotron;
+  position: relative;
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+  .container {
+    position: relative;
+  }
+  h1, .h1 {font-size: 40px;}
+  p {font-size: 20px;}
+  #featured-space-1-home {
+    .container {
+     @media(min-width:1200px) {
+        max-width: 840px;
+      }
+    }
+  }
+}
+.featured-space-1 img {
+  max-width: 560px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  opacity: .28;
+  @media (min-width: @grid-float-breakpoint) {
+    opacity: 1
+  }
+}
+.featured-space-1 p {
+  font-weight: bold;
+  @media (min-width: @grid-float-breakpoint) {
+    font-weight: normal;
+  }
+}
