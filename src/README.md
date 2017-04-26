@@ -1,0 +1,1 @@
+# Shoperti Tamara Theme
