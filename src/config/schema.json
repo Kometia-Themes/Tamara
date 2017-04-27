@@ -1,0 +1,2079 @@
+{
+  "info": {
+    "logo": "logo.jpg",
+    "header": "Tamara Theme",
+    "content": [
+      "Tema de Shoperti flexible y poderoso. Por favor contáctanos por cualquier problema con este tema a [contacto](mailto:themes-support@shoperti.com)."
+    ]
+  },
+  "categories": [
+    {
+      "name": "Colores",
+      "icon": "colors",
+      "sections": [
+        {
+          "header": "Colores Generales",
+          "settings": [
+            {
+              "type": "color",
+              "id": "brand_main_color",
+              "label": "Color destacado",
+              "default": "#2eb220",
+              "info": "Usualmente es el color principal de la marca."
+            },
+            {
+              "type": "color",
+              "id": "body_background_color",
+              "label": "Fondo de la página",
+              "default": "#ffffff"
+            }
+          ]
+        },
+        {
+          "header": "Barra superior",
+          "settings": [
+            {
+              "type": "color",
+              "id": "topnav_bg_color",
+              "label": "Fondo",
+              "default": "#F4F4F4"
+            },
+            {
+              "type": "color",
+              "id": "topnav_text_color",
+              "label": "Texto enlaces",
+              "default": "#999999"
+            },
+            {
+              "type": "color",
+              "id": "topnav_text_color_hover",
+              "label": "Texto enlaces con mouse encima",
+              "default": "#2eb220"
+            }
+          ]
+        },
+        {
+          "header": "Menú navegación",
+          "settings": [
+            {
+              "type": "color",
+              "id": "main_navbar_bg",
+              "label": "Fondo",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "main_navbar_text_color",
+              "label": "Texto enlaces",
+              "default": "#999999"
+            },
+            {
+              "type": "color",
+              "id": "main_navbar_text_color_hover",
+              "label": "Texto enlaces con mouse encima",
+              "default": "#2eb220"
+            }
+          ]
+        },
+        {
+          "header": "Degradado 1",
+          "settings": [
+            {
+              "type": "color",
+              "id": "gradient_1_text",
+              "label": "Color de textos",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "gradient_odd_a",
+              "label": "Primer color",
+              "default": "rgb(41,8,48)",
+              "info": "Si quieres un color sólido usa el mismo color del degradado final."
+            },
+            {
+              "type": "color",
+              "id": "gradient_odd_b",
+              "label": "Segundo color",
+              "default": "rgb(82,65,143)",
+              "info": "Si quieres un color sólido usa el mismo color del degradado final."
+            },
+            {
+              "type": "color",
+              "id": "gradient_odd_c",
+              "label": "Tercer color",
+              "default": "rgb(114,183,227)",
+              "info": "Si quieres un color sólido usa el mismo color del degradado final."
+            }
+          ]
+        },
+        {
+          "header": "Degradado 2",
+          "settings": [
+            {
+              "type": "color",
+              "id": "gradient_2_text",
+              "label": "Color de textos",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "gradient_even_a",
+              "label": "Primer color",
+              "default": "#134499",
+              "info": "Si quieres un color sólido usa el mismo color del degradado final."
+            },
+            {
+              "type": "color",
+              "id": "gradient_even_b",
+              "label": "Segundo color",
+              "default": "#2EB220",
+              "info": "Si quieres un color sólido usa el mismo color del degradado final."
+            },
+            {
+              "type": "color",
+              "id": "gradient_even_c",
+              "label": "Tercer color",
+              "default": "#CBF232",
+              "info": "Si quieres un color sólido usa el mismo color del degradado final."
+            }
+          ]
+        },
+        {
+          "header": "Degradado en cabeceras",
+          "settings": [
+            {
+              "type": "select",
+              "id": "gradient_pages",
+              "label": "Degradado en cabeceras",
+              "default": "gradient-odd",
+              "options": [
+                {
+                  "value": "gradient-odd",
+                  "label": "Degradado 1"
+                },{
+                  "value": "gradient-even",
+                  "label": "Degradado 2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": "Degradado en footer",
+          "settings": [
+            {
+              "type": "select",
+              "id": "gradient_footer",
+              "label": "Degradado en cabeceras",
+              "default": "gradient-odd",
+              "options": [
+                {
+                  "value": "gradient-odd",
+                  "label": "Degradado 1"
+                },{
+                  "value": "gradient-even",
+                  "label": "Degradado 2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": "Textos",
+          "settings": [
+            {
+              "type": "color",
+              "id": "headings_color",
+              "label": "Títulos",
+              "default": "#000000"
+            },
+            {
+              "type": "color",
+              "id": "body_font_color",
+              "label": "Contenidos",
+              "default": "#444444"
+            },
+            {
+              "type": "color",
+              "id": "main_link_color",
+              "label": "Vínculos",
+              "default": "#2eb220"
+            },
+            {
+              "type": "color",
+              "id": "main_link_color_hover",
+              "label": "Sobre vínculos",
+              "default": "#78C12F"
+            }
+          ]
+        },
+        {
+          "header": "Botones",
+          "settings": [
+            {
+              "type": "color",
+              "id": "btn_text_color",
+              "label": "Texto",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "btn_bg_color",
+              "label": "Fondo",
+              "default": "#2eb220"
+            },
+            {
+              "type": "color",
+              "id": "btn_text_color_hover",
+              "label": "Texto con mouse encima",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "btn_bg_color_hover",
+              "label": "Fondo con mouse encima",
+              "default": "#78C12F"
+            }
+          ]
+        },
+        {
+          "header": "Slider 1",
+          "settings": [
+            {
+              "type": "color",
+              "id": "btn_slide_1_text",
+              "label": "Texto botón",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_1_bg",
+              "label": "Fondo botón",
+              "default": "#2eb220"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_1_text_over",
+              "label": "Texto botón con mouse encima",
+              "default": "#78c12f"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_1_bg_over",
+              "label": "Fondo botón con mouse encima",
+              "default": "#ffffff"
+            }
+          ]
+        },
+        {
+          "header": "Slider 2",
+          "settings": [
+            {
+              "type": "color",
+              "id": "btn_slide_2_text",
+              "label": "Texto botón",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_2_bg",
+              "label": "Fondo botón",
+              "default": "#2eb220"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_2_text_over",
+              "label": "Texto botón con mouse encima",
+              "default": "#78c12f"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_2_bg_over",
+              "label": "Fondo botón con mouse encima",
+              "default": "#ffffff"
+            }
+          ]
+        },
+        {
+          "header": "Slider 3",
+          "settings": [
+            {
+              "type": "color",
+              "id": "btn_slide_3_text",
+              "label": "Texto botón",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_3_bg",
+              "label": "Fondo botón",
+              "default": "#2eb220"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_3_text_over",
+              "label": "Texto botón con mouse encima",
+              "default": "#78c12f"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_3_bg_over",
+              "label": "Fondo botón con mouse encima",
+              "default": "#ffffff"
+            }
+          ]
+        },
+        {
+          "header": "Slider 4",
+          "settings": [
+            {
+              "type": "color",
+              "id": "btn_slide_4_text",
+              "label": "Texto botón",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_4_bg",
+              "label": "Fondo botón",
+              "default": "#2eb220"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_4_text_over",
+              "label": "Texto botón con mouse encima",
+              "default": "#78c12f"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_4_bg_over",
+              "label": "Fondo botón con mouse encima",
+              "default": "#ffffff"
+            }
+          ]
+        },
+        {
+          "header": "Productos, categorías y colecciones",
+          "settings": [
+            {
+              "type": "color",
+              "id": "product_card_background_color",
+              "label": "Fondo de miniaturas",
+              "default": "rgba(255,255,255,.0)"
+            },
+            {
+              "type": "color",
+              "id": "product_compared_price_color",
+              "label": "Color precio comparativo",
+              "default": "#2eb220"
+            }
+          ]
+        },
+        {
+          "header": "Newsletter",
+          "settings": [
+            {
+              "type": "color",
+              "id": "newsletter_bg",
+              "label": "Fondo",
+              "default": "#dcdcdc"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tipografías",
+      "icon": "typography",
+      "sections": [
+        {
+          "header": "Tipografía Base",
+          "settings": [
+            {
+              "type": "select",
+              "id": "body_font",
+              "label": "Tipografía",
+              "default": "Google+Source+Sans+Pro",
+              "options": [
+                {
+                  "value": "Google+Arvo",
+                  "label": "Arvo",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Asap",
+                  "label": "Asap",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Cabin",
+                  "label": "Cabin",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Copse",
+                  "label": "Copse",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Droid+Sans",
+                  "label": "Droid Sans",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Droid+Serif",
+                  "label": "Droid Serif",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Gentium+Book+Basic",
+                  "label": "Gentium Book Basic",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Josefin+Slab",
+                  "label": "Josefin Slab",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Josefin+Sans",
+                  "label": "Josefin Sans",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Kreon",
+                  "label": "Kreon",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Lato",
+                  "label": "Lato",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Lustria",
+                  "label": "Lustria",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Merriweather",
+                  "label": "Merriweather",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Old+Standard+TT",
+                  "label": "Old Standard TT",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Open+Sans",
+                  "label": "Open Sans",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Playfair+Display",
+                  "label": "Playfair Display",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Raleway",
+                  "label": "Raleway",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Roboto+Slab",
+                  "label": "Roboto Slab",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Source+Sans+Pro",
+                  "label": "Source Sans Pro",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "ProximaNovaLight",
+                  "label": "Proxima Nova",
+                  "group": "Web Fonts"
+                },
+                {
+                  "value": "Helvetica, Arial, sans-serif",
+                  "label": "Helvetica/Arial",
+                  "group": "Sans-serif"
+                },
+                {
+                  "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+                  "label": "Impact",
+                  "group": "Sans-serif"
+                },
+                {
+                  "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+                  "label": "Lucida Grande",
+                  "group": "Sans-serif"
+                },
+                {
+                  "value": "Trebuchet MS, sans-serif",
+                  "label": "Trebuchet MS",
+                  "group": "Sans-serif"
+                },
+                {
+                  "value": "Verdana, Helvetica, Arial, sans-serif",
+                  "label": "Verdana",
+                  "group": "Sans-serif"
+                },
+                {
+                  "value": "Garamond, Baskerville, Caslon, serif",
+                  "label": "Garamond",
+                  "group": "Serif"
+                },
+                {
+                  "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+                  "label": "Georgia",
+                  "group": "Serif"
+                },
+                {
+                  "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+                  "label": "Palatino",
+                  "group": "Serif"
+                },
+                {
+                  "value": "'Times New Roman', Times, serif",
+                  "label": "Times New Roman",
+                  "group": "Serif"
+                },
+                {
+                  "value": "'Courier New', Courier, monospace",
+                  "label": "Courier New",
+                  "group": "Monospace"
+                },
+                {
+                  "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+                  "label": "Monaco/Lucida Console",
+                  "group": "Monospace"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "body_font_size",
+              "label": "Tamaño",
+              "default": "16",
+              "options": [
+                {
+                  "value": "14",
+                  "label": "14px"
+                },
+                {
+                  "value": "15",
+                  "label": "15px"
+                },
+                {
+                  "value": "16",
+                  "label": "16px"
+                },
+                {
+                  "value": "17",
+                  "label": "17px"
+                },
+                {
+                  "value": "18",
+                  "label": "18px"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "body_font_weight",
+              "label": "Peso",
+              "default": "400",
+              "options": [
+                {
+                  "value": "100",
+                  "label": "Thin 100"
+                },
+                {
+                  "value": "200",
+                  "label": "Thin 200"
+                },
+                {
+                  "value": "300",
+                  "label": "Light 300"
+                },
+                {
+                  "value": "400",
+                  "label": "Regular 400"
+                },
+                {
+                  "value": "500",
+                  "label": "Medium 500"
+                },
+                {
+                  "value": "600",
+                  "label": "Medium 600"
+                },
+                {
+                  "value": "700",
+                  "label": "Bold 700"
+                },
+                {
+                  "value": "800",
+                  "label": "Bold 800"
+                },
+                {
+                  "value": "900",
+                  "label": "ExtraBold 900"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": "Encabezados y Títulos",
+          "settings": [
+            {
+              "type": "select",
+              "id": "heading_font",
+              "label": "Tipografía",
+              "default": "Google+Source+Sans+Pro",
+              "options": [
+                {
+                  "value": "Google+Arvo",
+                  "label": "Arvo",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Asap",
+                  "label": "Asap",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Baloo+Bhaina",
+                  "label": "Baloo Bhaina",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Cabin",
+                  "label": "Cabin",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Copse",
+                  "label": "Copse",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Droid+Sans",
+                  "label": "Droid Sans",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Droid+Serif",
+                  "label": "Droid Serif",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Gentium+Book+Basic",
+                  "label": "Gentium Book Basic",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Josefin+Slab",
+                  "label": "Josefin Slab",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Josefin+Sans",
+                  "label": "Josefin Sans",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Kanit",
+                  "label": "Kanit",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Kreon",
+                  "label": "Kreon",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Lato",
+                  "label": "Lato",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Lustria",
+                  "label": "Lustria",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Merriweather",
+                  "label": "Merriweather",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Old+Standard+TT",
+                  "label": "Old Standard TT",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Open+Sans",
+                  "label": "Open Sans",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Playfair+Display",
+                  "label": "Playfair Display",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Raleway",
+                  "label": "Raleway",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Roboto",
+                  "label": "Roboto",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Roboto+Slab",
+                  "label": "Roboto Slab",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "Google+Source+Sans+Pro",
+                  "label": "Source Sans Pro",
+                  "group": "Google Web Fonts"
+                },
+                {
+                  "value": "ProximaNovaLight",
+                  "label": "Proxima Nova",
+                  "group": "Web Fonts"
+                },
+                {
+                  "value": "Helvetica, Arial, sans-serif",
+                  "label": "Helvetica/Arial",
+                  "group": "Sans-serif"
+                },
+                {
+                  "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+                  "label": "Impact",
+                  "group": "Sans-serif"
+                },
+                {
+                  "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+                  "label": "Lucida Grande",
+                  "group": "Sans-serif"
+                },
+                {
+                  "value": "Trebuchet MS, sans-serif",
+                  "label": "Trebuchet MS",
+                  "group": "Sans-serif"
+                },
+                {
+                  "value": "Verdana, Helvetica, Arial, sans-serif",
+                  "label": "Verdana",
+                  "group": "Sans-serif"
+                },
+                {
+                  "value": "Garamond, Baskerville, Caslon, serif",
+                  "label": "Garamond",
+                  "group": "Serif"
+                },
+                {
+                  "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+                  "label": "Georgia",
+                  "group": "Serif"
+                },
+                {
+                  "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+                  "label": "Palatino",
+                  "group": "Serif"
+                },
+                {
+                  "value": "'Times New Roman', Times, serif",
+                  "label": "Times New Roman",
+                  "group": "Serif"
+                },
+                {
+                  "value": "'Courier New', Courier, monospace",
+                  "label": "Courier New",
+                  "group": "Monospace"
+                },
+                {
+                  "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+                  "label": "Monaco/Lucida Console",
+                  "group": "Monospace"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "heading_font_size",
+              "label": "Tamaño de Títulos",
+              "default": "36",
+              "options": [
+                {
+                  "value": "32",
+                  "label": "32px"
+                },
+                {
+                  "value": "34",
+                  "label": "34px"
+                },
+                {
+                  "value": "36",
+                  "label": "36px"
+                },
+                {
+                  "value": "38",
+                  "label": "38px"
+                },
+                {
+                  "value": "40",
+                  "label": "40px"
+                },
+                {
+                  "value": "44",
+                  "label": "44px"
+                },
+                {
+                  "value": "50",
+                  "label": "50px"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "heading_font_weight",
+              "label": "Peso",
+              "default": "700",
+              "options": [
+                {
+                  "value": "100",
+                  "label": "Thin 100"
+                },
+                {
+                  "value": "200",
+                  "label": "Thin 200"
+                },
+                {
+                  "value": "300",
+                  "label": "Light 300"
+                },
+                {
+                  "value": "400",
+                  "label": "Regular 400"
+                },
+                {
+                  "value": "500",
+                  "label": "Medium 500"
+                },
+                {
+                  "value": "600",
+                  "label": "Medium 600"
+                },
+                {
+                  "value": "700",
+                  "label": "Bold 700"
+                },
+                {
+                  "value": "800",
+                  "label": "Bold 800"
+                },
+                {
+                  "value": "900",
+                  "label": "ExtraBold 900"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Header",
+      "sections": [
+        {
+          "header": "Logo y Favicon",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "use_favicon",
+              "label": "Usar favicon personalizado"
+            },
+            {
+              "type": "image",
+              "id": "favicon.png",
+              "max-width": 32,
+              "max-height": 32,
+              "label": "Seleccionar Favicon",
+              "info": "32 x 32px requerido"
+            },
+            {
+              "type": "checkbox",
+              "id": "use_apple_icon",
+              "label": "Usar Apple Touch Icon"
+            },
+            {
+              "type": "image",
+              "id": "apple_touch_icon.png",
+              "max-width": 144,
+              "max-height": 144,
+              "label": "Seleccionar Favicon",
+              "info": "144 x 144px requerido"
+            },
+            {
+              "type": "checkbox",
+              "id": "use_logo",
+              "label": "Usar logo personalizado"
+            },
+            {
+              "type": "image",
+              "id": "logo.png",
+              "label": "Seleccionar imagen para Logo",
+              "info": "Ancho máximo recomendado 200px"
+            }
+          ]
+        },
+        {
+          "header": "Elementos",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "header_display_search",
+              "label": "Mostrar buscador"
+            },
+            {
+              "type": "checkbox",
+              "id": "header_display_my_account",
+              "label": "Mostrar Mi cuenta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Footer",
+      "sections": [
+        {
+          "header": "Menú principal",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "footer_show_main_menu",
+              "label": "Mostrar menú en el footer"
+            },
+            {
+              "type": "text",
+              "id": "footer_main_menu",
+              "label": "Identificador del menú"
+            },
+            {
+              "type": "text",
+              "id": "footer_main_title",
+              "label": "Título del menú"
+            }
+          ]
+        },
+        {
+          "header": "Menú secundario",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "footer_show_secondary_menu",
+              "label": "Mostrar menú en el footer"
+            },
+            {
+              "type": "text",
+              "id": "footer_secondary_menu",
+              "label": "Identificador del menú"
+            },
+            {
+              "type": "text",
+              "id": "footer_secondary_menu_title",
+              "label": "Título del menú"
+            }
+          ]
+        },
+        {
+          "header": "Newsletter",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "footer_display_newsletter",
+              "label": "Mostrar sección de Newsletter"
+            },
+            {
+              "type": "text",
+              "id": "mailing_list_title",
+              "label": "Newsletter título",
+              "info": "Suscríbete a nuestro newsletter"
+            },
+            {
+              "type": "text",
+              "id": "mailing_list_text",
+              "label": "Newsletter descripción",
+              "info": "Sólo te enviaremos lo más destacado"
+            }
+          ]
+        },
+        {
+          "header": "Logo",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "footer_use_logo",
+              "label": "Mostrar Logo en el footer"
+            },
+            {
+              "type": "image",
+              "id": "footer_logo.png",
+              "label": "Seleccionar imagen de Logo"
+            }
+          ]
+        },
+        {
+          "header": "Íconos de métodos de pago",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "accept_visa",
+              "label": "Visa"
+            },
+            {
+              "type": "checkbox",
+              "id": "accept_mastercard",
+              "label": "MasterCard"
+            },
+            {
+              "type": "checkbox",
+              "id": "accept_amex",
+              "label": "American Express"
+            },
+            {
+              "type": "checkbox",
+              "id": "accept_paypal",
+              "label": "Paypal"
+            },
+            {
+              "type": "checkbox",
+              "id": "accept_oxxo",
+              "label": "Oxxo"
+            },
+            {
+              "type": "checkbox",
+              "id": "accept_cash",
+              "label": "Efectivo"
+            },
+            {
+              "type": "checkbox",
+              "id": "accept_spei",
+              "label": "SPEI"
+            }
+          ]
+        },
+        {
+          "header": "Contacto",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "footer_display_contact_data",
+              "label": "Mostrar información de contacto"
+            },
+            {
+              "type": "textarea",
+              "id": "footer_contact_data",
+              "label": "Información de contacto",
+              "default": "Calle Principal #10\n+52 1 123 456 7890",
+              "info": "Calle Principal #10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Página de Inicio",
+      "icon": "home-page",
+      "sections": [
+        {
+          "header": "Orden de Secciones",
+          "settings": [
+            {
+              "type": "paragraph",
+              "content": "Elige las secciones de tu página de inicio y su posición."
+            },
+            {
+              "type": "select",
+              "id": "frontpage_section_1",
+              "label": "Sección 1",
+              "default": "featured_slider",
+              "options": [
+                {
+                  "value": "none",
+                  "label": "Ninguno"
+                },
+                {
+                  "value": "featured-slider",
+                  "label": "Slider"
+                },
+                {
+                  "value": "featured-banners",
+                  "label": "Banners"
+                },
+                {
+                  "value": "featured-latest-products",
+                  "label": "Productos recientes"
+                },
+                {
+                  "value": "featured-main-banner",
+                  "label": "Banner Principal"
+                },
+                {
+                  "value": "featured-products-trendings",
+                  "label": "Productos Trending"
+                },
+                {
+                  "value": "featured-blog",
+                  "label": "Blog"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "frontpage_section_2",
+              "label": "Sección 2",
+              "default": "featured-banners",
+              "options": [
+                {
+                  "value": "none",
+                  "label": "Ninguno"
+                },
+                {
+                  "value": "featured-slider",
+                  "label": "Slider"
+                },
+                {
+                  "value": "featured-banners",
+                  "label": "Banners"
+                },
+                {
+                  "value": "featured-latest-products",
+                  "label": "Productos recientes"
+                },
+                {
+                  "value": "featured-main-banner",
+                  "label": "Banner Principal"
+                },
+                {
+                  "value": "featured-products-trendings",
+                  "label": "Productos Trending"
+                },
+                {
+                  "value": "featured-blog",
+                  "label": "Blog"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "frontpage_section_3",
+              "label": "Sección 3",
+              "default": "featured-latest-products",
+              "options": [
+                {
+                  "value": "none",
+                  "label": "Ninguno"
+                },
+                {
+                  "value": "featured-slider",
+                  "label": "Slider"
+                },
+                {
+                  "value": "featured-banners",
+                  "label": "Banners"
+                },
+                {
+                  "value": "featured-latest-products",
+                  "label": "Productos recientes"
+                },
+                {
+                  "value": "featured-main-banner",
+                  "label": "Banner Principal"
+                },
+                {
+                  "value": "featured-products-trendings",
+                  "label": "Productos Trending"
+                },
+                {
+                  "value": "featured-blog",
+                  "label": "Blog"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "frontpage_section_4",
+              "label": "Sección 4",
+              "default": "featured-main_banner",
+              "options": [
+                {
+                  "value": "none",
+                  "label": "Ninguno"
+                },
+                {
+                  "value": "featured-slider",
+                  "label": "Slider"
+                },
+                {
+                  "value": "featured-banners",
+                  "label": "Banners"
+                },
+                {
+                  "value": "featured-latest-products",
+                  "label": "Productos recientes"
+                },
+                {
+                  "value": "featured-main-banner",
+                  "label": "Banner Principal"
+                },
+                {
+                  "value": "featured-products-trendings",
+                  "label": "Productos Trending"
+                },
+                {
+                  "value": "featured-blog",
+                  "label": "Blog"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "frontpage_section_5",
+              "label": "Sección 5",
+              "default": "featured-products_trendings",
+              "options": [
+                {
+                  "value": "none",
+                  "label": "Ninguno"
+                },
+                {
+                  "value": "featured-slider",
+                  "label": "Slider"
+                },
+                {
+                  "value": "featured-banners",
+                  "label": "Banners"
+                },
+                {
+                  "value": "featured-latest-products",
+                  "label": "Productos recientes"
+                },
+                {
+                  "value": "featured-main-banner",
+                  "label": "Banner Principal"
+                },
+                {
+                  "value": "featured-products-trendings",
+                  "label": "Productos Trending"
+                },
+                {
+                  "value": "featured-blog",
+                  "label": "Blog"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "frontpage_section_6",
+              "label": "Sección 6",
+              "default": "featured-blog",
+              "options": [
+                {
+                  "value": "none",
+                  "label": "Ninguno"
+                },
+                {
+                  "value": "featured-slider",
+                  "label": "Slider"
+                },
+                {
+                  "value": "featured-banners",
+                  "label": "Banners"
+                },
+                {
+                  "value": "featured-latest-products",
+                  "label": "Productos recientes"
+                },
+                {
+                  "value": "featured-main-banner",
+                  "label": "Banner Principal"
+                },
+                {
+                  "value": "featured-products-trendings",
+                  "label": "Productos Trending"
+                },
+                {
+                  "value": "featured-blog",
+                  "label": "Blog"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Página de Inicio - Productos",
+      "icon": "home-page",
+      "sections": [
+        {
+          "header": "Colección destacada",
+          "settings": [
+            {
+              "type": "text",
+              "id": "feature_latest_products_title",
+              "label": "Título",
+              "default": "Productos Recientes"
+            },
+            {
+              "type": "collection",
+              "id": "featured_collection_latest",
+              "label": "Colección de Productos Recientes",
+              "default": "productos-recientes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Página de Inicio - Colección",
+      "icon": "home-page",
+      "sections": [
+        {
+          "header": "Colección especial",
+          "settings": [
+            {
+              "type": "text",
+              "id": "feature_products_trending_title",
+              "label": "Título",
+              "default": "Productos Destacados"
+            },
+            {
+              "type": "collection",
+              "id": "featured_collection_trending",
+              "label": "Colección de Productos Trending",
+              "default": "inicio"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Página de Inicio - Slider",
+      "icon": "home-page",
+      "sections": [
+        {
+          "header": "Slider 1",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "slide_1",
+              "label": "Mostrar"
+            },
+            {
+              "type": "image",
+              "id": "slide_1_image",
+              "label": "Imagen de fondo",
+              "max-width": 1180,
+              "info": "1180px de ancho recomendado"
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_1_image_show",
+              "label": "Mostrar imagen de fondo"
+            },
+            {
+              "type": "text",
+              "id": "slide_1_title",
+              "label": "Título"
+            },
+            {
+              "type": "textarea",
+              "id": "slide_1_desc",
+              "label": "Contenido"
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_1_btn_show",
+              "label": "Mostrar botón"
+            },
+            {
+              "type": "text",
+              "id": "slide_1_btn_text",
+              "label": "Texto del botón"
+            },
+            {
+              "type": "text",
+              "id": "slide_1_link",
+              "label": "Enlace del botón"
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_1_dark",
+              "label": "Texto color negro"
+            },
+            {
+              "type": "color",
+              "id": "slide_1_overlay",
+              "label": "Color de capa",
+              "default": ""
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_1_overlay_show",
+              "label": "Mostrar capa de color"
+            }
+          ]
+        },
+        {
+          "header": "Slider 2",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "slide_2",
+              "label": "Mostrar"
+            },
+            {
+              "type": "image",
+              "id": "slide_2_image",
+              "label": "Imagen de fondo",
+              "max-width": 1180,
+              "info": "1180px de ancho recomendado"
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_2_image_show",
+              "label": "Mostrar imagen de fondo"
+            },
+            {
+              "type": "text",
+              "id": "slide_2_title",
+              "label": "Título"
+            },
+            {
+              "type": "textarea",
+              "id": "slide_2_desc",
+              "label": "Contenido"
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_2_btn_show",
+              "label": "Mostrar botón"
+            },
+            {
+              "type": "text",
+              "id": "slide_2_btn_text",
+              "label": "Texto del botón"
+            },
+            {
+              "type": "text",
+              "id": "slide_2_link",
+              "label": "Enlace del botón"
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_2_dark",
+              "label": "Texto color negro"
+            },
+            {
+              "type": "color",
+              "id": "slide_2_overlay",
+              "label": "Color de capa",
+              "default": ""
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_2_overlay_show",
+              "label": "Mostrar capa de color"
+            }
+          ]
+        },
+        {
+          "header": "Slider 3",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "slide_3",
+              "label": "Mostrar"
+            },
+            {
+              "type": "image",
+              "id": "slide_3_image",
+              "label": "Imagen de fondo",
+              "max-width": 1180,
+              "info": "1180px de ancho recomendado"
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_3_image_show",
+              "label": "Mostrar imagen de fondo"
+            },
+            {
+              "type": "text",
+              "id": "slide_3_title",
+              "label": "Título"
+            },
+            {
+              "type": "textarea",
+              "id": "slide_3_desc",
+              "label": "Contenido"
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_3_btn_show",
+              "label": "Mostrar botón"
+            },
+            {
+              "type": "text",
+              "id": "slide_3_btn_text",
+              "label": "Texto del botón"
+            },
+            {
+              "type": "text",
+              "id": "slide_3_link",
+              "label": "Enlace del botón"
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_3_dark",
+              "label": "Texto color negro"
+            },
+            {
+              "type": "color",
+              "id": "slide_3_overlay",
+              "label": "Color de capa",
+              "default": ""
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_3_overlay_show",
+              "label": "Mostrar capa de color"
+            }
+          ]
+        },
+        {
+          "header": "Slider 4",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "slide_4",
+              "label": "Mostrar"
+            },
+            {
+              "type": "image",
+              "id": "slide_4_image",
+              "label": "Imagen de fondo",
+              "max-width": 1180,
+              "info": "1180px de ancho recomendado"
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_4_image_show",
+              "label": "Mostrar imagen de fondo"
+            },
+            {
+              "type": "text",
+              "id": "slide_4_title",
+              "label": "Título"
+            },
+            {
+              "type": "textarea",
+              "id": "slide_4_desc",
+              "label": "Contenido"
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_4_btn_show",
+              "label": "Mostrar botón"
+            },
+            {
+              "type": "text",
+              "id": "slide_4_btn_text",
+              "label": "Texto del botón"
+            },
+            {
+              "type": "text",
+              "id": "slide_4_link",
+              "label": "Enlace del botón"
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_4_dark",
+              "label": "Texto color negro"
+            },
+            {
+              "type": "color",
+              "id": "slide_4_overlay",
+              "label": "Color de capa",
+              "default": ""
+            },
+            {
+              "type": "checkbox",
+              "id": "slide_4_overlay_show",
+              "label": "Mostrar capa de color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Página de Inicio - Banners",
+      "icon": "home-page",
+      "sections": [
+        {
+          "header": "Banner 1",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "banner_1",
+              "label": "Mostrar"
+            },
+            {
+              "type": "image",
+              "id": "banner_1_image",
+              "label": "Imagen de fondo",
+              "max-width": 1180
+            },
+            {
+              "type": "text",
+              "id": "banner_1_title",
+              "label": "Título"
+            },
+            {
+              "type": "text",
+              "id": "banner_1_url",
+              "label": "Enlace"
+            }
+          ]
+        },
+        {
+          "header": "Banner 2",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "banner_2",
+              "label": "Mostrar"
+            },
+            {
+              "type": "image",
+              "id": "banner_2_image",
+              "label": "Imagen de fondo",
+              "max-width": 1180
+            },
+            {
+              "type": "text",
+              "id": "banner_2_title",
+              "label": "Título"
+            },
+            {
+              "type": "text",
+              "id": "banner_2_url",
+              "label": "Enlace"
+            }
+          ]
+        },
+        {
+          "header": "Banner 3",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "banner_3",
+              "label": "Mostrar"
+            },
+            {
+              "type": "image",
+              "id": "banner_3_image",
+              "label": "Imagen de fondo",
+              "max-width": 1180
+            },
+            {
+              "type": "text",
+              "id": "banner_3_title",
+              "label": "Título"
+            },
+            {
+              "type": "text",
+              "id": "banner_3_url",
+              "label": "Enlace"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Página de Inicio - Destacado",
+      "icon": "home-page",
+      "sections": [
+        {
+          "header": "Espacio Destacado 1",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "featured_space_1",
+              "label": "Mostrar sección"
+            },
+            {
+              "type": "image",
+              "id": "featured_space_1_image",
+              "label": "Image",
+              "max-width": 1000,
+              "info": "Tamaño de 600x600px recomendado"
+            },
+            {
+              "type": "checkbox",
+              "id": "featured_space_1_display_image",
+              "label": "Mostrar imagen"
+            },
+            {
+              "type": "select",
+              "id": "featured_space_1_bg",
+              "label": "Degradado de fondo",
+              "default": "gradient-even",
+              "options": [
+                {
+                  "value": "gradient-odd",
+                  "label": "Degradado 1"
+                },
+                {
+                  "value": "gradient-even",
+                  "label": "Degradado 2"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "featured_space_1_title",
+              "label": "Encabezado"
+            },
+            {
+              "type": "textarea",
+              "id": "featured_space_1_desc",
+              "label": "Contenido"
+            },
+            {
+              "type": "checkbox",
+              "id": "featured_space_1_btn",
+              "label": "Mostrar botón"
+            },
+            {
+              "type": "text",
+              "id": "featured_space_1_btn_text",
+              "label": "Texto del botón"
+            },
+            {
+              "type": "text",
+              "id": "featured_space_1_btn_url",
+              "label": "Enlace del botón"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Página de Inicio - Blog",
+      "icon": "home-page",
+      "sections": [
+        {
+          "header": "Blog destacado",
+          "settings": [
+            {
+              "type": "blog",
+              "id": "featured_blog",
+              "label": "Elige un Blog",
+              "default": "noticias"
+            },
+            {
+              "type": "text",
+              "id": "featured_blog_title",
+              "label": "Título",
+              "default": "Desde el Blog"
+            },
+            {
+              "type": "text",
+              "id": "featured_posts_limit",
+              "label": "Límite de Posts a Mostrar",
+              "default": "4",
+              "info": "Para mostrar todos los posts usa el número cero"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Colecciones",
+      "icon": "collection-page",
+      "sections": [
+        {
+          "header": "Texto introductorio de Colecciones",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "collections_display_intro_text",
+              "label": "Mostrar texto introductorio en Colecciones"
+            },
+            {
+              "type": "textarea",
+              "id": "collections_intro_text",
+              "label": "Este texto aparece abajo del encabezado en Colecciones."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Producto y Productos",
+      "icon": "product-page",
+      "sections": [
+        {
+          "header": "Descripción",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "products_display_intro_text",
+              "label": "Mostrar introducción en página de productos",
+              "default": true
+            },
+            {
+              "type": "text",
+              "id": "products_intro_text",
+              "label": "Texto de presentación",
+              "default": "Mira la asombrosa variedad de artículos disponibles."
+            }
+          ]
+        },
+        {
+          "header": "Ficha",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "enable_product_image_zoom",
+              "label": "Habilitar zoom en imagen principal",
+              "default": true
+            }
+          ]
+        },
+        {
+          "header": "Marca y SKU",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "show_vendor_name",
+              "label": "Mostrar marca del producto",
+              "default": true
+            },
+            {
+              "type": "checkbox",
+              "id": "show_sku_code",
+              "label": "Mostrar Sku del producto",
+              "default": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Páginas sidebar",
+      "icon": "product-page",
+      "sections": [
+        {
+          "header": "Mostrar categorías",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "display_sidebar_categories",
+              "label": "Mostrar listado",
+              "default": true
+            }
+          ]
+        },
+        {
+          "header": "Mostrar colecciones",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "display_sidebar_collections",
+              "label": "Mostrar listado",
+              "default": true
+            }
+          ]
+        },
+        {
+          "header": "Menú personalizado",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "display_sidebar_menu",
+              "label": "Mostrar un menú personalizado",
+              "default": true
+            },
+            {
+              "type": "text",
+              "id": "display_sidebar_menu_name",
+              "label": "Identificador del menú",
+              "default": "Mira la asombrosa variedad de artículos disponibles."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Contacto",
+      "icon": "contact-page",
+      "sections": [
+        {
+          "header": "Mapa",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "map_is_enabled",
+              "label": "Mostrar mapa"
+            },
+            {
+              "type": "text",
+              "id": "map_address",
+              "label": "Ubicación a mostrar",
+              "default": "Mexico City",
+              "info": "Ingresa la dirección que mas corresponda a tu ubicación"
+            },
+            {
+              "type": "text",
+              "id": "map_zoom",
+              "label": "Acercamiento inicial",
+              "default": "14",
+              "info": "1...20"
+            },
+            {
+              "type": "checkbox",
+              "id": "map_marker",
+              "label": "Mostrar marca en el mapa"
+            },
+            {
+              "type": "text",
+              "id": "map_api_key",
+              "default": "AIzaSyBjWefNJdkFjr8IC6izNHSj-9hJzCwIAr0",
+              "label": "API KEY",
+              "info": "API Key DEMO, Visita: https://developers.google.com/maps/documentation/geocoding/get-api-key y obtén una clave para continuar usando el mapa correctamente"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Redes Sociales",
+      "icon": "social-media",
+      "sections": [
+        {
+          "header": "Cuentas",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "footer_display_social",
+              "label": "Mostrar íconos de redes sociales"
+            },
+            {
+              "type": "text",
+              "id": "facebook_link",
+              "label": "Facebook",
+              "info": "https://www.facebook.com/shoperti"
+            },
+            {
+              "type": "text",
+              "id": "twitter_link",
+              "label": "Twitter",
+              "info": "https://twitter.com/shoperti"
+            },
+            {
+              "type": "text",
+              "id": "instagram_link",
+              "label": "Instagram",
+              "info": "https://instagram.com/shoperti/"
+            },
+            {
+              "type": "text",
+              "id": "google_link",
+              "label": "Google+",
+              "info": "https://plus.google.com/+shoperti"
+            },
+            {
+              "type": "text",
+              "id": "youtube_link",
+              "label": "Youtube",
+              "info": "https://www.youtube.com/user/shoperti"
+            },
+            {
+              "type": "text",
+              "id": "vimeo_link",
+              "label": "Vimeo",
+              "info": "https://vimeo.com/shoperti"
+            },
+            {
+              "type": "text",
+              "id": "pinterest_link",
+              "label": "Pinterest",
+              "info": "https://www.pinterest.com/shoperti/"
+            },
+            {
+              "type": "text",
+              "id": "tumblr_link",
+              "label": "Tumblr",
+              "info": "http://shoperti.tumblr.com/"
+            },
+            {
+              "type": "text",
+              "id": "whatsapp_link",
+              "label": "Whatsapp",
+              "info": "+5215500000000"
+            }
+          ]
+        },
+        {
+          "header": "Compartir",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "enable_share_products",
+              "label": "Habilitar compartir productos"
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_share_blog",
+              "label": "Habilitar compartir blog y posts"
+            },
+            {
+              "type": "checkbox",
+              "id": "share_facebook",
+              "label": "Compartir en Facebook"
+            },
+            {
+              "type": "checkbox",
+              "id": "share_twitter",
+              "label": "Tuitear en Twitter"
+            },
+            {
+              "type": "checkbox",
+              "id": "share_pinterest",
+              "label": "Hacer pin en Pinterest"
+            },
+            {
+              "type": "checkbox",
+              "id": "share_google",
+              "label": "+1 en Google Plus"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

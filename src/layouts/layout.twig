@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Jaime Smeke">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{ page_title }}{% if current_page != 1 %} - Página {{ current_page }}{% endif %}{% if store.name not in page_title %} &raquo; {{ store.name }}{% endif %}</title>
+  {% if page_description %}
+  <meta name="description" content="{{ page_description }}">
+  {% endif %}
+  <meta name="robots" content="noodp"/>
+  <link rel="canonical" href="{{ canonical_url }}">
+  {% include '_og-meta-tags.twig' %}
+  {% block meta %}{% endblock meta %}
+  {% if settings.use_favicon and settings['favicon.png'] is not empty   %}
+  <link rel="shortcut icon" href="{{ settings['favicon.png'] }}&w=32&h=32" type="image/png" />
+  {% endif %}
+  {% if settings.use_apple_icon and settings['apple_touch_icon.png'] is not empty %}
+  <link rel="apple-touch-icon" href="{{ settings['apple_touch_icon.png'] }}&w=144&h=144" type="image/png">
+  {% endif %}
+  {# Base Bootstrap CSS #}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" media="screen">
+  {# Owl Carousel CSS #}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" media="screen">
+  {# Owl Carousel Default Theme CSS #}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css" media="screen">
+  {# Bootstrap Select CSS #}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css" media="screen">
+  {# Core CSS #}
+  <link rel="stylesheet" href="{{ 'styles.css' | asset_url }}" media="screen">
+  {# Settings #}
+  <link rel="stylesheet" href="{{ 'settings.css' | asset_url }}" media="screen">
+
+  {# Fonts #}
+  {% include '_google-fonts.twig' %}
+  {# Icons #}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+  {# HTML5 Shim y Respond.js IE8 support de elementos HTML5 y media queries #}
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  {% block css_head %}{% endblock css_head %}
+  {% block js_head %}{% endblock js_head %}
+  {{ head_content }}
+</head>
+<body class="{% block body_class %}{% endblock body_class %}" role="document">
+{% include '_header.twig' %}
+<div id="wrapper">
+  {% block body %}{% endblock body %}
+  {% include '_footer.twig' %}
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.54/jquery.form-validator.min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" type="text/javascript"></script>
+<script src="{{ 'app.js' | asset_url }}" charset="utf-8"></script>
+{% block js_body %}{% endblock js_body %}
+</body>
+</html>

@@ -1,0 +1,35 @@
+<nav id="top-navbar">
+  <div class="container">
+    <ul class="nav navbar-nav top-navbar__left">
+    {% if store.customer_accounts_enabled_or_optional and settings.header_display_my_account %}
+      {% if customer %}
+      <li class="navbar-account"><a href="/cuenta"><i class="zmdi zmdi-face" aria-hidden="true"></i> Mi Cuenta</a></li>
+      <li class="navbar-account"><a href="/cuenta/logout"><i class="zmdi zmdi-account-o" aria-hidden="true"></i> Cerrar sesión</a></li>
+      {% else %}
+      <li class="navbar-account"><a href="/cuenta/login"><i class="zmdi zmdi-account" aria-hidden="true"></i> Ingresar</a></li>
+      <li class="navbar-account"><a href="/cuenta/registro"><i class="zmdi zmdi-account-add" aria-hidden="true"></i> Registrarse</a></li>
+      {% endif %}
+    {% endif %}
+    </ul>
+    <ul class="nav navbar-nav top-navbar__right">
+      <li class="top-navbar__cart"><a href="/carrito">
+        <i class="zmdi zmdi-shopping-cart" aria-hidden="true"></i>
+        {% if cart.total_items > 0 %}
+        <span class="cart-item-count">{{ cart.total_items }}</span>
+        {% endif %}
+        </a></li>
+    </ul>
+    {% if settings.header_display_search %}
+    <form action="/buscar" method="get" class="top-navbar__search navbar-right">
+      <input type="hidden" name="type" value="product"/>
+      <div class="form-group">
+        <div class="input-group">
+          <label class="sr-only" for="headerSearch">Buscar productos</label>
+          <div class="input-group-addon"><i class="zmdi zmdi-search"></i></div>
+          <input type="text" name="q" class="form-control" id="headerSearchBox" placeholder="Buscar..." autocomplete="on">
+        </div>
+      </div>
+    </form>
+    {% endif %}
+  </div>
+</nav>

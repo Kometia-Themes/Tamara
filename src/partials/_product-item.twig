@@ -1,0 +1,17 @@
+<article class="thumbnail-container symmetrical">
+  <a class="thumbnail" href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">
+    <figure class="thumbnail-img">
+      {% set sku_image_url = product.image_url is not empty ? product.image_url ~ '&w=350&h=350&fit=crop' : 'placeholders/product-11.jpg' | global_img_url %}
+      <img src="{{ sku_image_url }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
+    </figure>
+    <div class="caption">
+      <div class="product-title"><h3>{{ product.name }}</h3></div>
+      <div class="product-price">
+        <span class="regular-price">{{ product.price | money('symbol') }}</span>
+        <span class="compared-price">
+          {{ product.compared_price is defined and product.sku.compared_price > product.price ? product.compared_price | money('symbol') }}
+        </span>
+      </div>
+    </div>
+  </a>
+</article>

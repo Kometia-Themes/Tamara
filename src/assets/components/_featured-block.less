@@ -1,0 +1,151 @@
+body.has-featured #main-navbar {
+  margin-bottom: 0; // Para que no haya whitespace arriba del block/slider
+}
+
+//** Estilos del featured-block y los slides del featured-slider
+.featured-block,
+.featured-slider .owl-item .slide-container {
+  .jumbotron;
+  margin-bottom: 0;
+  .text-center;
+  color: #fff;
+
+  &.text-dark {
+    color: #000;
+  }
+}
+
+#wrapper > .featured-block {
+  margin-bottom: 30px;
+  @media(max-width:767px) {
+    margin-bottom: 2em;
+  }
+}
+
+//** Estilo del título del featured-block
+.featured-block h1 {
+  margin-top: 0; // Para que esté bien centrado verticalmente
+}
+
+
+.owl-item,
+.owl-item .slider-content {
+  .transition(all .2s @transition-bezier-1);
+
+  &.active {
+    .transition(all .2s @transition-bezier-1);
+  }
+}
+
+
+//** Altura del slider según sus slides
+.featured-slider .owl-item .slide-container {
+  display: table;
+  .size(100%, 280px);
+  position: relative;
+
+  @media(max-width: 767px) {
+    .size(100%, 320px);
+  }
+  @media(max-width: 667px) {
+    .size(100%, 290px);
+  }
+  @media(min-width: 768px) {
+    .size(100%, 380px);
+  }
+  @media(min-width: 992px) {
+    .size(100%, 540px);
+  }
+  @media(min-width: 1200px) {
+    .size(100%, 640px);
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: .35;
+    .size(100%, 100%);
+  }
+
+  .slider-content {
+    .container-fluid;
+    position: relative;
+    z-index: 2;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  .btn-slide-full {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+  }
+}
+
+//** Estilo de flechas de nav en slider
+.owl-theme .owl-nav {
+  position: absolute;
+  top: 50%;
+  margin-top: -19px;
+  width: 100%;
+}
+
+
+.owl-theme .owl-nav [class*=owl-] {
+  position: absolute;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: rgba(255,255,255,.1);
+  .transition(all .2s @transition-bezier-1);
+
+  &.owl-prev { left: 0; }
+  &.owl-next { right: 0; }
+
+  &.disabled { visibility: hidden; }
+
+  &:hover,
+  &:focus {
+    background: rgba(255,255,255,.54);
+  }
+
+}
+
+
+//** Estilo de dots en featured-slider, los otros heredan estilos default
+.featured-slider.owl-theme .owl-dots {
+  position: absolute;
+  bottom: 40px;
+  z-index: 10;
+  width: 100%;
+
+  .owl-dot {
+    // Puntos
+    span {
+      border: 1px solid @gray-lighter;
+      background: none;
+      cursor: pointer;
+      .transition(all .2s @transition-bezier-1);
+
+      &:hover,
+      &:focus {
+        background: rgba(255, 255, 255, 0.54);
+        border-color: rgba(255, 255, 255, 0.54);
+      }
+    }
+
+    // Punto activo
+    &.active span {
+      background: #fff;
+      border-color: #fff;
+    }
+    @media(max-width: 680px) {
+      display: none;
+    }
+
+  }
+}

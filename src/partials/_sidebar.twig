@@ -1,0 +1,54 @@
+<aside class="sidebar sidebar-sticky sidebar-main">
+  {% if show_viewer %}
+  <div class="widget sidebar-widget widget__product-view-options">
+    <p><strong>Ver como</strong></p>
+    {% include '_view-options.twig' %}
+  </div>
+  {% endif %}
+  {% if settings.display_sidebar_categories and categories | length > 0 %}
+  <div class="widget sidebar-widget">
+    <ul class="category-menu">
+      <li class="category-menu__title"><h3>Categorías</h3></li>
+      {% for categoryElement in categories %}
+        {% include '_category_tree_item.twig' with {
+          'category' : categoryElement,
+          'current'  : category,
+          'currentIndex' : loop.index,
+          'isLast'       : loop.last
+        } only %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if settings.display_sidebar_collections and collections | length > 0 %}
+  <div class="widget sidebar-widget">
+    <ul class="collection-menu">
+      <li class="collection-menu__title"><h3>Colecciones</h3></li>
+      {% for collectionElement in collections %}
+        {% include '_collection_tree_item.twig' with {
+          'collection' : collectionElement,
+          'current'  : collection
+        } only %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if settings.display_sidebar_menu and menus[settings.display_sidebar_menu_name] %}
+  <div class="widget sidebar-widget">
+    <ul class="sidebarmenu-menu">
+      {% set sidebarmenu = menus[settings.display_sidebar_menu_name] %}
+      <li class="sidebarmenu-menu__title"><h3>{{ settings.display_sidebar_menu_name | title }}</h3></li>
+      {% for menu in sidebarmenu %}
+        {% include '_sidebarmenu_tree_item.twig' with {
+          'menu' : menu,
+          'currentIndex' : loop.index,
+          'isLast'       : loop.last
+        } only %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+</aside>
