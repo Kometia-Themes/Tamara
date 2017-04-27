@@ -6,12 +6,12 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3">
                 <form method="get">
+                    <input type="hidden" name="type" value="product"/>
                     <div class="form-group">
                         <br>
                         <label for="q">Término de búsqueda</label>
                         <input type="text" class="form-control" name="q">
                     </div>
-
                     <div class="form-group">
                         <input type="submit" class="btn pull-right" value="&nbsp; Buscar &nbsp;">
                     </div>
@@ -42,12 +42,12 @@
                             {% set image_url = product.image_url is not empty ? product.image_url ~ '&w=128&h=128&fit=crop' : 'placeholders/product-11.jpg' | global_img_url %}
                             <tr>
                                 <td class="results__table--thumbnail">
-                                    <a href="/productos/{{ product.permalink }}">
+                                    <a href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">
                                         <img src="{{ image_url }}" class="img img-responsive center-block pull-left" alt="{{ product.name }}">
                                     </a>
                                 </td>
                                 <td class="results__table--description">
-                                    <a href="/productos/{{ product.permalink }}">
+                                    <a href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">
                                         {{ product.name }}
                                     </a>
                                 </td>

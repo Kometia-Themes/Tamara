@@ -24,7 +24,7 @@
             <li><a class="navigation__parent-link" href="{{ links.url }}">{{ links.name }}</a></li>
           {% endif %}
         {% endfor %}
-        <li class="main-navbar-affix__cart"><a href="#">
+        <li class="main-navbar-affix__cart"><a href="/carrito">
           <i class="zmdi zmdi-shopping-cart" aria-hidden="true"></i>
           {% if cart.total_items > 0 %}
           <span class="cart-item-count">{{ cart.total_items }}</span>

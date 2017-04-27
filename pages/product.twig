@@ -7,29 +7,29 @@
     <div class="wrapper__main-content">
       <article class="product-single">
         <div class="row">
-        {% if product.images|length > 0 %}
+        {% if product.images | length > 0 %} {# if has more images #}
           <section class="product-media">
             <div id="sp-img-full">
               <figure class="item">
-                <img id="zoom" src="{{ product.image_url ~ '&w=750' }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
+                <img id="zoom" class="full-img-width AAAA" src="{{ product.image_url ~ '&w=1200' }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
               </figure>
             </div>
-            {% if product.images|length > 1 %}
-            <div id="slider-sp-img-thumbs" class="owl-carousel owl-theme fouc">
-            {% for image in product.images %}
-              <figure class="item">
-                <img src="{{ image.url ~ '&w=120&h=120&fit=crop' }}" alt="{{ product.title }} - {{ store.name }}" data-src="{{ image.url ~ '&w=750' }}" itemprop="thumbnail">
-              </figure>
-            {% endfor %}
-            </div>
+            {% if product.images | length > 1 %}
+              <div id="slider-sp-img-thumbs" class="owl-carousel owl-theme fouc">
+              {% for image in product.images %}
+                <figure class="item">
+                  <img class="thumbnail-img-width BBBB" src="{{ image.url ~ '&w=1200' }}" alt="{{ product.title }} - {{ store.name }}" data-src="{{ image.url ~ '&w=1200' }}" itemprop="thumbnail">
+                </figure>
+              {% endfor %}
+              </div>
             {% endif %}
           </section>
         {% else %}
           <section class="product-media">
             <div id="sp-img-full">
-              <img class="img-responsive" src="{{ 'placeholders/product-11.jpg' | global_img_url }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
+              <img class="img-responsive full-img-width CCCC" src="{{ 'placeholders/product-11.jpg' | global_img_url }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
           </section>
-        {% endif %}
+        {% endif %} {# end if has images #}
           <div class="product-info">
             <section class="product-details">
               <h1 class="product-title">{{ product.name }}</h1>
@@ -62,10 +62,12 @@
                 <input type="hidden" name="sku_id" value="{{product.sku.id}}">
                 <div class="row">
                 {% for modifier, options in product.skus_modifiers %}
+                  {% set step = loop.index0 %}
+                  {% set default_option = product.sku.modifiers[step] %}
                   <div class="half">
-                    <select name="{{ loop.index0 }}" id="sp-option-{{ loop.index0 }}" class="selectpicker form-control js-variant-select" title="{{ modifier }}">
+                    <select id="{{ modifier }}" class="selectpicker form-control js-variant-select" title="{{ modifier }}" name="{{ loop.index0 }}">
                     {% for option in options %}
-                      <option value="{{ loop.index0 }}">{{ option }}</option>
+                      <option value="{{ loop.index0 }}" {% if default_option == option %}selected="selected"{% endif %}>{{ option }}</option>
                     {% endfor %}
                     </select>
                   </div>
@@ -114,22 +116,45 @@
 {% endif %}
 
 <script type="text/javascript">
+  var removeMainImgContainerHeight = function() {
+      $('#sp-img-full figure.item').removeAttr("style");
+    }
+  var setMainImgContainerHeight = function() {
+    var mainImgContainerHeight = $('#sp-img-full figure.item').outerHeight();
+    $('#sp-img-full figure.item').css({ 'min-height': mainImgContainerHeight });
+  }
+  setMainImgContainerHeight();
+
 {% if settings.enable_product_image_zoom %}
-
-  $( ".product-single #sp-img-full" ).mouseover(function() {
-    var baseImage = $('#sp-img-full .item');
-    var baseImageUrl = $('#sp-img-full .item img').attr('src');
-    baseImage.find('img').attr('src', baseImageUrl);
-  });
-
   function loadZoom() {
-    $('#zoom').wrap('<span style="display:inline-block"></span>')
+    $('#zoom').wrap('<span style="display:block"></span>')
       .css('display', 'block')
       .parent()
       .zoom();
     }
+    loadZoom();
 {% endif %}
-
+  // Update Social Share Links
+  var title = '{{ product.name | escape }}';
+  var updateShareUrl = function(image_url) {
+    var image_url = image_url || '';
+    var permalink = $(location).attr('href');
+    var social_brands = ["facebook", "twitter", "pinterest", "google"];
+    $.each(social_brands, function (index, value) {
+      if (value == 'facebook') {
+        $('.share-'+value).attr("href", '//www.facebook.com/sharer.php?u='+permalink);
+      }
+      if (value == 'twitter') {
+        $('.share-'+value).attr("href", '//twitter.com/share?text='+title+'&url='+permalink);
+      }
+      if (value == 'pinterest' && image_url.length > 1) {
+        $('.share-'+value).attr("href", '//pinterest.com/pin/create/button/?url='+permalink+'&media='+image_url+'&description='+title);
+      }
+      if (value == 'google') {
+        $('.share-'+value).attr("href", '//plus.google.com/share?url='+permalink);
+      }
+    });
+  }
 {% if product.is_in_stock %}
   var skus = {{ product.skus | json }};
   $('.js-atc-disabled').hide();
@@ -141,6 +166,7 @@
     }
     // get the product variant modifiers from the selects
     var selectedModifiers = [];
+
     $('.js-variant-select').each(function() {
       selectedModifiers.push($(this).find(":selected").text());
     });
@@ -149,20 +175,28 @@
     // check if there's an sku with the selected modifiers
     skus.forEach(function(sku) {
       var modifiers = sku.modifiers;
-      if ($(modifiers).not(selectedModifiers).length === 0 && $(selectedModifiers).not(modifiers).length === 0) {
+      if ($(modifiers).not(selectedModifiers).length === 0 && $(selectedModifiers).not(modifiers).length === 0 ) {
         foundSku = sku;
         return false;
       }
     });
+
+    selectedModifiers = selectedModifiers.length = 0;
     return updateSkuControls(foundSku);
   }
+
   function updateSkuControls(sku) {
+    var newImageMain = sku.image_url;
+    var newurl = sku.permalink;
+{% if product.sku.permalink != 'default' %}
+    history.pushState(null, null, newurl);
+    updateShareUrl(newImageMain);
+    setMainImgContainerHeight();
+{% endif %}
     var enabledAddButton = $('.js-atc');
     var disabledAddButton = $('.js-atc-disabled');
     var comparedPriceElement = $('.js-product-price-compared-amount');
-
     var imageMain = $('#sp-img-full .item');
-    var newImageMain = sku.image_url; // Imag del figure clickeado
     imageMain.find('img').attr('src', newImageMain);
 
     if (sku !== null) {
@@ -199,9 +233,6 @@
   });
 {% endif %}
 $(document).ready(function(){
-  {% if settings.enable_product_image_zoom %}
-  loadZoom();
-  {% endif %}
   var imgCont = $('.product-single #sp-img-full'),
     thumbCont = $('#slider-sp-img-thumbs'),
     owlItem = $('.owl-item');
@@ -220,26 +251,27 @@ $(document).ready(function(){
         }
       }
     }).on('click', '.owl-item .item', function(e) {
-
-      e.preventDefault(); // e es el elemento clickeado
+      e.preventDefault();
       //** Cambiar imagen grande por la del thumb
       var thumbSrc = $(e.target).attr('data-src'); // Imag del figure clickeado
-
       imgCont.find('.product-single #sp-img-full figure img').attr('src', thumbSrc); // Sustituir
 
-      //** Poner current al thumb clickeado
-      // $(e.target).parents('.owl-item').addClass('current').siblings().removeClass('current');
-       // $('html,body').animate({scrollTop: imgCont.offset().top - 50 },250);
-       $(this).addClass('current').unbind('click'); // just add this line
       {% if settings.enable_product_image_zoom %}
-        imgCont.find('#sp-img-full .item img').attr('src', thumbSrc); // Sustituir
+        imgCont.find('#sp-img-full .item img').attr('src', thumbSrc);
         var zoom = $('#zoom');
-        zoom.trigger('zoom.destroy');
-        zoom.attr("src", thumbSrc);
-        loadZoom();
+        if (thumbSrc && $('.zoomImg').attr('src') != thumbSrc) {
+          zoom.trigger('zoom.destroy');
+          zoom.attr("src", thumbSrc);
+          loadZoom();
+        } else {
+          zoom.attr("src", thumbSrc);
+        }
       {% endif %}
     });
+  });
 
+  $(window).on('resize', function () {
+    removeMainImgContainerHeight();
   });
 </script>
 {% endblock js_body %}

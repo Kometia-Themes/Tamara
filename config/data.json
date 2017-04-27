@@ -5,6 +5,7 @@
       "brand_main_color": "#2eb220",
       "body_background_color": "#ffffff",
       "gradient_pages": "gradient-even",
+      "gradient_footer": "gradient-odd",
       "gradient_1_text": "#ffffff",
       "gradient_odd_a": "rgb(41,8,48)",
       "gradient_odd_b": "rgb(82,65,143)",
@@ -179,7 +180,17 @@
       "share_facebook": true,
       "share_twitter": true,
       "share_pinterest": true,
-      "share_google": true
+      "share_google": true,
+      "display_sidebar_collections": true,
+      "display_sidebar_categories": true,
+      "display_sidebar_menu": false,
+      "display_sidebar_menu_name": "",
+      "footer_show_main_menu": true,
+      "footer_main_menu": "footer",
+      "footer_main_title": "Menú",
+      "footer_show_secondary_menu": false,
+      "footer_secondary_menu_title": "",
+      "footer_secondary_menu": ""
     }
   }
 }

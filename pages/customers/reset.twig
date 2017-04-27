@@ -21,6 +21,9 @@
             <label for="password_confirmation">Confirmar contraseña</label>
           <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Vuelve a escribir tu Contraseña nueva" required>
           </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-lg btn-action">Restablecer</button>
+          </div>
           <input type="hidden" name="token" value="{{ token }}">
           <input type="hidden" name="email" value="{{ email }}">
         </form>

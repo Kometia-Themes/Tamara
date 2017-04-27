@@ -5559,6 +5559,9 @@ var Tamara = {
   },
   products: {
     init: function() {
+      //** Localstorage for save display mode
+      var listMode = localStorage.listMode ? localStorage.listMode : localStorage.listMode = 'grid';
+
       //** Poner a los productos la altura del más alto para no romper el layout
       var maxHeight = 0,
           thumbContFw = 'thumb-cont__full-width',
@@ -5579,14 +5582,19 @@ var Tamara = {
           }
         }
       });
+      if (listMode === 'list' ) {
+        $('.product-list .thumbnail-container').addClass('thumb-cont__full-width');
+      }
 
       //** Toggle entre Grid y List
       $('.view-option').click(function() {
         $(this).addClass('active').siblings().removeClass('active');
         if ($('.view-list').hasClass('active')) {
           $('.thumbnail-container').addClass(thumbContFw);
+          localStorage.listMode = 'list';
         } else {
           $('.thumbnail-container').removeClass(thumbContFw);
+          localStorage.listMode = 'grid';
         }
       });
     }
@@ -5659,29 +5667,18 @@ var Tamara = {
           // Altura de Footer + CTA para detener el affix
           offsetBottom = $('footer.content-info').outerHeight(true) + $('#cta__bottom-newsletter').outerHeight(true),
           mq = matchMedia('only screen and (min-width: 768px)');
-
-      if (mq.matches && $('.sidebar').hasClass('sidebar-sticky')) {
-        if ($('body').hasClass('has-featured')) {
-          stickySidebar.affix({
-            offset: {
-              // El 230 para que quede en la posición justa
-              top: stickySidebar.offset().top - 230,
-              bottom: offsetBottom
-            }
+      var toggleLink = $('.category-menu__list .toggle-btn');
+          toggleLink.on('click', function(e) {
+            $(this).parent().next('.category-menu__submenu').slideToggle( "fast" );
+            $(this).children('.zmdi').toggleClass('zmdi-caret-up zmdi-caret-down');
+            e.stopPropagation();
           });
-        } else {
-          stickySidebar.affix({
-            offset: {
-              // El 230 para que quede en la posición justa
-              top: stickySidebar.offset().top - 160,
-              bottom: offsetBottom
-            }
+      var toggleMenuLink = $('.sidebarmenu-menu__list .toggle-btn');
+          toggleMenuLink.on('click', function(e) {
+            $(this).parent().next('.sidebarmenu-menu__submenu').slideToggle( "fast" );
+            $(this).children('.zmdi').toggleClass('zmdi-caret-up zmdi-caret-down');
+            e.stopPropagation();
           });
-        }
-        // Poner manualmente el width que el affix quitó por ser fixed
-        stickySidebar.css('width', stickySidebarWidth);
-      }
-
     }
   }
 };
@@ -5707,6 +5704,4 @@ var UTIL = {
 
 $(document).ready(UTIL.loadEvents);
 $(window).on('resize', UTIL.loadEvents);
-
 })(jQuery); // Fully reference jQuery after this point.
-

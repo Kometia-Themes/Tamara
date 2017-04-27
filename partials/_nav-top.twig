@@ -14,6 +14,7 @@
 
     {% if settings.header_display_search %}
     <form action="/buscar" method="get" class="top-navbar__search navbar-right">
+      <input type="hidden" name="type" value="product"/>
       <div class="form-group">
         <div class="input-group">
           <label class="sr-only" for="headerSearch">Buscar productos</label>

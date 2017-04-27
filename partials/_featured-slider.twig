@@ -17,7 +17,7 @@
 
         {% if settings[slide_image] and settings[slide_image_show] %}
           <div class="{% if settings[slide_dark] %}text-dark {% endif %}slide-container" style="background:url({{ settings[slide_image] }}) center no-repeat; background-size:cover;">
-          {% if settings[slide_overlay] %}
+          {% if settings[slide_overlay] and settings[slide_overlay_show] %}
             <div class="overlay" style="background:{{ settings[slide_overlay] }};"></div>
           {% endif %}
         {% else %}

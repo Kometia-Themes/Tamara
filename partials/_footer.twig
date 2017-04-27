@@ -1,4 +1,5 @@
-<footer class="content-info" role="contentinfo">
+<footer class="content-info {{ settings.gradient_footer }}" role="contentinfo" style="color:
+{% if settings.gradient_footer == 'gradient-odd' %}{{ settings.gradient_1_text }}{% else %}{{ settings.gradient_2_text }}{% endif %}">
   <div class="container">
   {% if settings.footer_use_logo and settings['footer_logo.png'] is not empty %}
     <a class="footer-brand" href="{{ store.permalink }}">
@@ -7,27 +8,44 @@
   {% endif %}
     <div class="footer__row">
       <div class="widget footer-widget fw__main-menu">
+      {% if settings.footer_show_main_menu %}
         <dl>
-          <dt class="title">Menú</dt>
-          {% for links in menus.main %}
-          <dd><a href="{{ links.url }}" title="{{ links.name }}">
-            {{ links.name }}
-            </a></dd>
-          {% endfor %}
-        </dl>
-      </div>
-      
-      <div class="widget footer-widget fw__quick-links">
-        {% if menus.footer | length > 0 %}
-        <dl>
-          <dt class="title">Enlaces rápidos</dt>
-          {% for links in menus.footer %}
-          <dd><a href="{{ links.url }}" title="{{ links.name }}">
-            {{ links.name }}
-            </a></dd>
-          {% endfor %}
-        </dl>
+          <dt class="title">{{ settings.footer_main_title }}</dt>
+          {% if menus[settings.footer_main_menu] in menus %}
+            {% for links in menus[settings.footer_main_menu] %}
+            <dd>
+              <a href="{{ links.url }}" title="{{ links.name }}">
+              {{ links.name }}
+              </a>
+            </dd>
+            {% endfor %}
+          {% else %}
+            {% for links in menus.main %}
+            <dd>
+              <a href="{{ links.url }}" title="{{ links.name }}">
+              {{ links.name }}
+              </a>
+            </dd>
+            {% endfor %}
         {% endif %}
+        </dl>
+      {% endif %}
+      </div>
+      <div class="widget footer-widget fw__quick-links">
+      {% if settings.footer_show_secondary_menu %}
+        <dl>
+          <dt class="title">{{ settings.footer_secondary_menu_title }}</dt>
+          {% if menus[settings.footer_secondary_menu] in menus %}
+            {% for links in menus[settings.footer_secondary_menu] %}
+            <dd>
+              <a href="{{ links.url }}" title="{{ links.name }}">
+              {{ links.name }}
+              </a>
+            </dd>
+            {% endfor %}
+        {% endif %}
+        </dl>
+      {% endif %}
       </div>
       <div class="half-sm">
         <div class="row footer__row-inset">
@@ -60,7 +78,7 @@
               <li><a href="{{ settings.tumblr_link }}" target="_blank" title="Sigue a {{ store.name }} en Tumblr"><i class="zmdi zmdi-tumblr"></i></a></li>
               {% endif %}
               {% if settings.whatsapp_link is not empty %}
-              <li><a href="{{ settings.whatsapp_link }}" target="_blank" title="Lámanos {{ store.name }} en Whatsapp"><i class="zmdi zmdi-whatsapp"></i></a></li>
+              <li><a href="https://api.whatsapp.com/send?phone={{ settings.whatsapp_link }}" title="Lámanos {{ store.name }} en Whatsapp"><i class="zmdi zmdi-whatsapp"></i></a></li>
               {% endif %}
             </ul>
             {% if settings.accept_visa or settings.accept_mastercard or settings.accept_amex

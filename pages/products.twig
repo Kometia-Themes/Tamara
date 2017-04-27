@@ -2,6 +2,9 @@
 {% block body_class %}products has-sidebar{% endblock body_class %}
 
 {% block body %}
+{% if settings.display_sidebar_collections or settings.display_sidebar_categories or settings.display_sidebar_menu %}
+  {% set show_sidebar = true %}
+{% endif %}
 <section class="featured-block {{ settings.gradient_pages }}">
   <div class="container">
     <h1 class="title">{{ page_title }}</h1>
@@ -19,7 +22,7 @@
   <div class="clearfix"></div>
   <br><br class="hidden-xs">
   <div class="row">
-    <div class="wrapper__main-content">
+    <div class="{% if show_sidebar or show_sidebar is defined %}wrapper__main-content{% else %}xs-col-12{% endif %}">
       <section class="product-list prod-grid__4">
         {% for product in products %}
         {% include '_product-item.twig' %}

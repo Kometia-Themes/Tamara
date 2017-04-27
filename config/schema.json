@@ -140,19 +140,39 @@
           ]
         },
         {
-          "header": "Degradado Superior",
+          "header": "Degradado en cabeceras",
           "settings": [
             {
               "type": "select",
               "id": "gradient_pages",
               "label": "Degradado en cabeceras",
-              "default": "gradient-even",
+              "default": "gradient-odd",
               "options": [
                 {
-                  "value": "gradient-even",
+                  "value": "gradient-odd",
                   "label": "Degradado 1"
                 },{
+                  "value": "gradient-even",
+                  "label": "Degradado 2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": "Degradado en footer",
+          "settings": [
+            {
+              "type": "select",
+              "id": "gradient_footer",
+              "label": "Degradado en cabeceras",
+              "default": "gradient-odd",
+              "options": [
+                {
                   "value": "gradient-odd",
+                  "label": "Degradado 1"
+                },{
+                  "value": "gradient-even",
                   "label": "Degradado 2"
                 }
               ]
@@ -627,6 +647,11 @@
                   "group": "Google Web Fonts"
                 },
                 {
+                  "value": "Google+Baloo+Bhaina",
+                  "label": "Baloo Bhaina",
+                  "group": "Google Web Fonts"
+                },
+                {
                   "value": "Google+Cabin",
                   "label": "Cabin",
                   "group": "Google Web Fonts"
@@ -932,6 +957,46 @@
     {
       "name": "Footer",
       "sections": [
+        {
+          "header": "Menú principal",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "footer_show_main_menu",
+              "label": "Mostrar menú en el footer"
+            },
+            {
+              "type": "text",
+              "id": "footer_main_menu",
+              "label": "Identificador del menú"
+            },
+            {
+              "type": "text",
+              "id": "footer_main_title",
+              "label": "Título del menú"
+            }
+          ]
+        },
+        {
+          "header": "Menú secundario",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "footer_show_secondary_menu",
+              "label": "Mostrar menú en el footer"
+            },
+            {
+              "type": "text",
+              "id": "footer_secondary_menu",
+              "label": "Identificador del menú"
+            },
+            {
+              "type": "text",
+              "id": "footer_secondary_menu_title",
+              "label": "Título del menú"
+            }
+          ]
+        },
         {
           "header": "Newsletter",
           "settings": [
@@ -1772,16 +1837,21 @@
       "icon": "product-page",
       "sections": [
         {
-          "type": "checkbox",
-          "id": "products_display_intro_text",
-          "label": "Mostrar introducción en página de productos",
-          "default": true
-        },
-        {
-          "type": "text",
-          "id": "products_intro_text",
-          "label": "Texto de presentación",
-          "default": "Mira la asombrosa variedad de artículos disponibles."
+          "header": "Descripción",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "products_display_intro_text",
+              "label": "Mostrar introducción en página de productos",
+              "default": true
+            },
+            {
+              "type": "text",
+              "id": "products_intro_text",
+              "label": "Texto de presentación",
+              "default": "Mira la asombrosa variedad de artículos disponibles."
+            }
+          ]
         },
         {
           "header": "Ficha",
@@ -1808,6 +1878,51 @@
               "id": "show_sku_code",
               "label": "Mostrar Sku del producto",
               "default": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Páginas sidebar",
+      "icon": "product-page",
+      "sections": [
+        {
+          "header": "Mostrar categorías",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "display_sidebar_categories",
+              "label": "Mostrar listado",
+              "default": true
+            }
+          ]
+        },
+        {
+          "header": "Mostrar colecciones",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "display_sidebar_collections",
+              "label": "Mostrar listado",
+              "default": true
+            }
+          ]
+        },
+        {
+          "header": "Menú personalizado",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "display_sidebar_menu",
+              "label": "Mostrar un menú personalizado",
+              "default": true
+            },
+            {
+              "type": "text",
+              "id": "display_sidebar_menu_name",
+              "label": "Identificador del menú",
+              "default": "Mira la asombrosa variedad de artículos disponibles."
             }
           ]
         }
@@ -1919,7 +2034,7 @@
               "type": "text",
               "id": "whatsapp_link",
               "label": "Whatsapp",
-              "info": "+52 123 456 789"
+              "info": "+5215500000000"
             }
           ]
         },

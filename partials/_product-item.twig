@@ -1,7 +1,7 @@
 <article class="thumbnail-container">
-  <a class="thumbnail" href="/productos/{{ product.permalink }}">
+  <a class="thumbnail" href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">
     <figure class="thumbnail-img">
-      {% set sku_image_url = product.image_url is not empty ? product.image_url ~ '&w=370&h=370&fit=crop' : 'placeholders/product-11.jpg' | global_img_url %}
+      {% set sku_image_url = product.image_url is not empty ? product.image_url ~ '&w=350&h=350&fit=crop' : 'placeholders/product-11.jpg' | global_img_url %}
       <img src="{{ sku_image_url }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
     </figure>
     <div class="caption">

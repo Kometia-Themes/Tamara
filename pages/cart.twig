@@ -23,19 +23,19 @@
         </div>
     </div>
     {% for item in cart.items %}
-      {% set sku_image_url = item.product.image_url is not empty ? item.product.image_url ~ '&w=100&h=100&fit=crop' : 'placeholders/product-11.jpg' | global_img_url %}
+      {% set sku_image_url = item.sku.image_url is not empty ? item.sku.image_url ~ '&w=250&h=250&fit=bounds' : (item.product.image_url is not empty ? item.product.image_url : 'placeholders/product-11.jpg' | global_img_url) %}
       <div class="row cart-item">
         <div class="cart-item-description">
           <div class="media">
             <div class="pull-left cart-item__image-container">
-              <a href="{{item.product.permalink}}" alt="{{item.product.name}}">
+              <a href="/productos/{{ item.product.permalink }}{% if item.sku.permalink != 'default' %}/{{ item.sku.permalink }}{% endif %}" alt="{{item.product.name}}">
                 <img class="media-object" width="120" src="{{ sku_image_url }}">
               </a>
             </div>
             <div class="media-body">
-              <h4 class="media-heading"><a href="/productos/{{ item.product.permalink }}">{{ item.product.name }}</a></h4>
+              <h4 class="media-heading"><a href="/productos/{{ item.product.permalink }}{% if item.sku.permalink != 'default' %}/{{ item.sku.permalink }}{% endif %}">{{ item.product.name }}</a></h4>
               {% for modifier in item.product.modifiers %}
-                <p class="item__variant">{{ modifier }} <span class="item__variant__desc">{{ item.sku.modifiers[loop.index0] }}</span></p>
+                <p class="item__variant">{{ modifier | title }}: <span class="item__variant__desc"><strong>{{ item.sku.modifiers[loop.index0] | title }}</strong></span></p>
               {% endfor %}
             </div>
           </div>
