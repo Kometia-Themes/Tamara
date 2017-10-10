@@ -5,7 +5,6 @@ a.thumbnail:hover,
 a.thumbnail:focus {
   text-decoration: none;
   border-color: transparent;
-  figure,
   img {
     @media (min-width: @grid-float-breakpoint) {
       opacity: .54;
@@ -40,7 +39,7 @@ a.thumbnail:focus {
   }
 }
 .thumbnail .caption h3 {
-  .h5;
+  .h4;
 }
 .thumbnail .caption .btn {
   .btn-xs;
@@ -54,6 +53,19 @@ a.thumbnail.disabled {
     @media (min-width: @grid-float-breakpoint) {
       opacity: 1;
     }
+  }
+}
+.thumbnail-container figure.thumbnail-img {
+  position: relative;
+  .btn.ajaxlink {
+    position: absolute;
+    padding: 6px;
+    top: 50%;
+    left: 20%;
+    right: 20%;
+    text-transform: uppercase;
+    z-index: 99;
+    i.zmdi {}
   }
 }
 .thumbnail-container.thumb-cont__full-width {
@@ -92,7 +104,28 @@ a.thumbnail.disabled {
           .product-title {
             h3 {}
           }
-          .product-price {}
+          .product-price {
+            .regular-price {font-size: 20px;}
+            .compared-price {font-size: 18px;}
+          }
+        }
+      }
+    }
+  }
+}
+.product-list {
+  .thumbnail-container {
+    .thumbnail {
+      .thumbnail-img {
+        img {}
+      }
+      .caption {
+        .product-title {
+          h3 {}
+        }
+        .product-price {
+          .regular-price {font-size: 20px;}
+          .compared-price {font-size: 18px;}
         }
       }
     }

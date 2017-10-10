@@ -48,6 +48,7 @@
   {{ head_content }}
 </head>
 <body class="{% block body_class %}{% endblock body_class %}" role="document">
+{% include '_ajaxcart.twig' %}
 {% include '_header.twig' %}
 <div id="wrapper">
   {% block body %}{% endblock body %}

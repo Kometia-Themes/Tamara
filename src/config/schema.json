@@ -1850,6 +1850,18 @@
               "id": "products_intro_text",
               "label": "Texto de presentación",
               "default": "Mira la asombrosa variedad de artículos disponibles."
+            },
+            {
+              "type": "checkbox",
+              "id": "btn_product_buy_in_list",
+              "label": "Mostrar botón comprar ya",
+              "info": "Si está activa esta opción, el botón se mostrará en el producto dentro de productos, colección y categoría."
+            },
+            {
+              "type": "text",
+              "id": "btn_product_buy_now_text",
+              "label": "Texto del botón comprar ya",
+              "default": "Comprar ya"
             }
           ]
         },

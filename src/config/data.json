@@ -190,7 +190,9 @@
       "footer_main_title": "Menú",
       "footer_show_secondary_menu": false,
       "footer_secondary_menu_title": "",
-      "footer_secondary_menu": ""
+      "footer_secondary_menu": "",
+      "btn_product_buy_in_list": true,
+      "btn_product_buy_now_text": "COMPRAR"
     }
   }
 }

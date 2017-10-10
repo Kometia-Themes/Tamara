@@ -1,6 +1,9 @@
 <article class="thumbnail-container symmetrical">
   <a class="thumbnail" href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">
     <figure class="thumbnail-img">
+      {% if product.sku.permalink == 'default' and settings.btn_product_buy_in_list %}
+        <span data-skuid="{{ product.sku.id }}" class="btn btn-primary btn-sm ajaxlink">{{ settings.btn_product_buy_now_text }} <i class="zmdi zmdi-shopping-cart-add"></i></span>
+      {% endif %}
       {% set sku_image_url = product.image_url is not empty ? product.image_url ~ '&w=350&h=350&fit=crop' : 'placeholders/product-11.jpg' | global_img_url %}
       <img src="{{ sku_image_url }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
     </figure>

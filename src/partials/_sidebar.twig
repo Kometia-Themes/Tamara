@@ -1,10 +1,4 @@
 <aside class="sidebar sidebar-sticky sidebar-main">
-  {% if show_viewer %}
-  <div class="widget sidebar-widget widget__product-view-options">
-    <p><strong>Ver como</strong></p>
-    {% include '_view-options.twig' %}
-  </div>
-  {% endif %}
   {% if settings.display_sidebar_categories and categories | length > 0 %}
   <div class="widget sidebar-widget">
     <ul class="category-menu">
