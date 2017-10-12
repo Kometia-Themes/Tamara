@@ -173,6 +173,8 @@
       "products_display_intro_text": true,
       "products_intro_text": "Mira la asombrosa variedad de artículos disponibles.",
       "enable_product_image_zoom": true,
+      "product_image_zoom_in_text": "Clic para zoom",
+      "product_image_zoom_out_text": "Clic para salir",
       "show_vendor_name": false,
       "show_sku_code": false,
       "enable_share_products": true,

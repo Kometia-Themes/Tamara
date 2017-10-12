@@ -1873,6 +1873,18 @@
               "id": "enable_product_image_zoom",
               "label": "Habilitar zoom en imagen principal",
               "default": true
+            },
+            {
+              "type": "text",
+              "id": "product_image_zoom_in_text",
+              "label": "Texto en etiqueta para zoom",
+              "default": "Clic para zoom"
+            },
+            {
+              "type": "text",
+              "id": "product_image_zoom_out_text",
+              "label": "Texto en etiqueta para salir de zoom",
+              "default": "Clic para salir"
             }
           ]
         },

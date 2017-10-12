@@ -1,7 +1,6 @@
 {% extends 'layout.twig' %}
 {% block body_class %}category products{% endblock body_class %}
 {% block body %}
-<br><br class="hidden-xs">
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
@@ -9,9 +8,12 @@
         <div class="row">
         {% if product.images | length > 0 %} {# if has more images #}
           <section class="product-media">
+          {% if settings.enable_product_image_zoom %}
+            <div class="fireZoomEvent"><span>{{ settings.product_image_zoom_in_text }}</span></div>
+          {% endif %}
             <div id="sp-img-full">
               <figure class="item">
-                <img id="zoom" class="full-img-width AAAA" src="{{ product.image_url ~ '&w=1200' }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
+                <img id="zoom" class="full-img-width" src="{{ product.image_url ~ '&w=1200' }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
               </figure>
             </div>
             {% if product.images | length > 1 %}
@@ -27,7 +29,7 @@
         {% else %}
           <section class="product-media">
             <div id="sp-img-full">
-              <img class="img-responsive full-img-width CCCC" src="{{ 'placeholders/product-11.jpg' | global_img_url }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
+              <img class="img-responsive full-img-width" src="{{ 'placeholders/product-11.jpg' | global_img_url }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
           </section>
         {% endif %} {# end if has images #}
           <div class="product-info">
@@ -46,13 +48,6 @@
                 <span class="compared-price js-product-price-compared-amount">  {{ product.sku.compared_price > product.sku.price ? product.sku.compared_price | money('symbol') }}
                 </span>
               </div>
-              <h5 class="product-summary">{{ product.summary }}</h5>
-              <br class="hidden-xs">
-              {% if settings.enable_share_products %}
-              <div class="product-social-share">
-                {% include '_social-share.twig' %}
-              </div>
-              {% endif %}
             </section>
             <br>
             <section class="product-options">
@@ -60,18 +55,11 @@
                 <input id="js-sku-new" type="hidden" name="sku_id" value="{{ product.sku.id }}">
                 <div class="row">
                 {% set modifiers = product.skus_modifiers %}
-                {% set modifiersQty =  modifiers |length %}
-                {% set columns =  'full-md ' %}
-                {% if modifiersQty == 1 or modifiersQty == 3 %}
-                  {% set columns =  'half ' %}
-                {% elseif modifiersQty is divisible by(2) %}
-                  {% set columns =  'half' %}
-                {% endif %}
-                {% if modifiersQty > 0 %}
+                {% if  modifiers |length > 0 %}
                   {% for modifier, options in modifiers %}
                     {% set step = loop.index0 %}
                     {% set default_option = modifiers[step] %}
-                    <div class="{{ columns }}">
+                    <div class="col-xs-6 col-sm-6 product-selector-option">
                       <select id="{{ modifier }}" class="selectpicker form-control js-variant-select" title="{{ modifier }}" name="{{ loop.index0 }}">
                       {% for option in options %}
                         <option value="{{ loop.index0 }}" {% if default_option == option %}selected="selected"{% endif %}>{{ option }}</option>
@@ -80,38 +68,54 @@
                     </div>
                   {% endfor %}
                 {% endif %}
-                  <div class="{{ columns }}">
-                    <select class="selectpicker form-control js-qty-select" title="Cantidad" name="quantity" id="quantity">
-                      {% for qty in 1..5 %}
-                      <option value="{{ qty }}" {{ qty == item.quantity ? ' selected="selected"' : null }}>{{ qty }}</option>
-                      {% endfor %}
-                    </select>
+                  <div class="col-xs-6 col-sm-6 product-selector-option">
+                    <div class="quantity">
+                      <div class="input-group">
+                        <input id="quantity" type="text" name="quantity" class="form-control input-number" value="1" min="1" max="10">
+                        <span class="input-group-btn left">
+                          <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quantity">
+                          <span class="zmdi zmdi-minus"></span>
+                          </button>
+                        </span>
+                        <span class="input-group-btn right">
+                          <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quantity">
+                          <span class="zmdi zmdi-plus"></span>
+                          </button>
+                        </span>
+                        </div>
+                    </div>
                   </div>
                 {% if product.is_in_stock %}
-                  <div class="{{ columns }}">
-                    <a id="js-add-to-cart" class="btn btn-add-to-cart js-atc js-add-to-cart"><i class="zmdi zmdi-shopping-cart"></i> &nbsp;Añadir a tu carrito</a>
-                    <a type="submit" class="btn-add-to-cart js-atc-disabled" disabled="disabled">
+                  <div class="col-xs-12 product-selector-option">
+                    <a id="js-add-to-cart" class="btn btn-lg btn-add-to-cart js-atc js-add-to-cart"><i class="zmdi zmdi-shopping-cart"></i> &nbsp;Añadir a tu carrito</a>
+                    <a type="submit" class="btn-lg btn-add-to-cart js-atc-disabled" disabled="disabled">
                       No disponible
                     </a>
                   </div>
                 {% else %}
-                  <div class="{{ columns }}">
-                    <button class="btn btn-add-to-cart js-atc-disabled" disabled="disabled">
+                  <div class="col-xs-12 product-selector-option">
+                    <button class="btn-lg btn-add-to-cart js-atc-disabled" disabled="disabled">
                       No disponible
                     </button>
                   </div>
                 {% endif %}
                 </div>
               </form>
+              {% if settings.enable_share_products %}
+              <br>
+              <div class="product-social-share">
+                {% include '_social-share.twig' %}
+              </div>
+              {% endif %}
             </section>
             {% if product.description is not empty %}
             <hr>
-            <p class="product-description">{{ product.description|raw }}</p>
+            <div class="product-description col-xs-12 col-sm-8">
+              {{ product.description|raw }}
+            </div>
             {% endif %}
           </div>
         </div>
-        <br><br>
-        <div class="clearfix"></div>
       </article>
     </div>
   </div>
@@ -135,14 +139,78 @@
   setMainImgContainerHeight();
 
 {% if settings.enable_product_image_zoom %}
-  function loadZoom() {
+  var zoomInText = '{{ settings.product_image_zoom_in_text }}';
+  var zoomOutText = '{{ settings.product_image_zoom_out_text }}';
+  var loadZoom = function() {
     $('#zoom').wrap('<span style="display:block"></span>')
       .css('display', 'block')
       .parent()
-      .zoom();
+      .zoom({
+        on: 'click',
+        touch: false,
+        onZoomIn: function() {
+          $('.fireZoomEvent span').text(zoomOutText);
+        },
+        onZoomOut: function() {
+          $('.fireZoomEvent span').text(zoomInText);
+        }
+      })
     }
-    loadZoom();
+  loadZoom();
 {% endif %}
+  // Quantity input
+  var qty = $("input#quantity");
+  $('.btn-number').click(function(e){
+    e.preventDefault();
+    fieldName = $(this).attr('data-field');
+    type      = $(this).attr('data-type');
+    var input = $("input[name='"+fieldName+"']");
+    var currentVal = parseInt(input.val());
+      if (!isNaN(currentVal)) {
+        if(type == 'minus') {
+          if(currentVal > input.attr('min')) {
+            input.val(currentVal - 1).change();
+          } 
+          if(parseInt(input.val()) == input.attr('min')) {
+            $(this).attr('disabled', true);
+          }
+        } else if(type == 'plus') {
+          if(currentVal < input.attr('max')) {
+              input.val(currentVal + 1).change();
+          }
+          if(parseInt(input.val()) == input.attr('max')) {
+              $(this).attr('disabled', true);
+          }
+        }
+      } else {
+      input.val(0);
+      }
+  });
+  $('.input-number').focusin(function(){
+   $(this).data('oldValue', $(this).val());
+  });
+  $('.input-number').change(function() {
+    initValue = parseInt($(this).val());
+    minValue =  parseInt($(this).attr('min'));
+    maxValue =  parseInt($(this).attr('max'));
+    valueCurrent = parseInt($(this).val());
+    name = $(this).attr('name');
+    if(valueCurrent >= minValue) {
+        $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+        qty.attr('value', valueCurrent);
+    } else {
+        $(this).val($(this).data('oldValue'));
+        qty.attr('value', $(this).data('oldValue'));
+    }
+    if(valueCurrent <= maxValue) {
+        $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled');
+        qty.attr('value', valueCurrent);
+    } else {
+        $(this).val($(this).data('oldValue'));
+        qty.attr('value', $(this).data('oldValue'));
+    }
+  });
+  // End quantity input
   // Update Social Share Links
   var title = '{{ product.name | escape }}';
   var updateShareUrl = function(image_url) {
@@ -197,11 +265,16 @@
   function updateSkuControls(sku) {
     var newImageMain = sku.image_url;
     var newurl = sku.permalink;
-{% if product.sku.permalink != 'default' %}
-    history.pushState(null, null, newurl);
+  {% if product.sku.permalink != 'default' %}
+    var parentPermalink = '{{ product.permalink }}';
+    var newurl = '/productos/';
+    newurl += parentPermalink+'/'+sku.permalink;
+    if(history.pushState) {
+      history.pushState(null, null, newurl);
+    }
     updateShareUrl(newImageMain);
     setMainImgContainerHeight();
-{% endif %}
+  {% endif %}
     var enabledAddButton = $('.js-atc');
     var disabledAddButton = $('.js-atc-disabled');
     var comparedPriceElement = $('.js-product-price-compared-amount');
@@ -243,7 +316,7 @@
 {% endif %}
 $(document).ready(function(){
   $('.selectpicker').selectpicker({
-    style: 'btn-lg'
+    style: 'btn'
   });
   var imgCont = $('.product-single #sp-img-full'),
     thumbCont = $('#slider-sp-img-thumbs'),
