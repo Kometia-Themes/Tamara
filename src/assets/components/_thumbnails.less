@@ -1,4 +1,7 @@
 .thumbnail {
+  margin-bottom: 10px;
+  line-height: 1;
+  padding: 0;
   position: relative;
 }
 a.thumbnail:hover,
@@ -41,6 +44,16 @@ a.thumbnail:focus {
 .thumbnail .caption h3 {
   .h4;
 }
+.thumbnail-container {
+  .caption {
+    .product-title {
+      h3 {
+        font-size: 18px;
+        margin-top: 6px;
+      }
+    }
+  }
+}
 .thumbnail .caption .btn {
   .btn-xs;
   margin-right: 5px;
@@ -64,13 +77,16 @@ a.thumbnail.disabled {
     left: 50%;
     transform: translateX(-50%);
     text-transform: uppercase;
-    z-index: 99;
+    z-index: 20;
     i.zmdi {}
   }
 }
 .thumbnail-container.thumb-cont__full-width {
   .make-xs-column(12);
   .clearfix;
+}
+.thumbnail-container .caption .action-buttons {
+  text-align: center;
 }
 .thumbnail-container.thumb-cont__full-width .thumbnail {
   padding-bottom: @line-height-computed;
@@ -102,7 +118,7 @@ a.thumbnail.disabled {
         }
         .caption {
           .product-title {
-            h3 {}
+            h3 {font-size: 18px;}
           }
           .product-price {
             .regular-price {font-size: 20px;}
@@ -121,7 +137,7 @@ a.thumbnail.disabled {
       }
       .caption {
         .product-title {
-          h3 {}
+          h3 {font-size: 18px;}
         }
         .product-price {
           .regular-price {font-size: 20px;}

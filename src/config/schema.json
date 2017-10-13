@@ -1861,7 +1861,13 @@
               "type": "text",
               "id": "btn_product_buy_now_text",
               "label": "Texto del botón comprar ya",
-              "default": "Comprar ya"
+              "default": "COMPRAR"
+            },
+            {
+              "type": "text",
+              "id": "btn_product_view_now_text",
+              "label": "Texto del botón ver más",
+              "default": "VER"
             }
           ]
         },
@@ -1885,6 +1891,62 @@
               "id": "product_image_zoom_out_text",
               "label": "Texto en etiqueta para salir de zoom",
               "default": "Clic para salir"
+            }
+          ]
+        },
+        {
+          "header": "Filtro de ordenamiento",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "orderby_name",
+              "label": "Ordenar por nombre"
+            },
+            {
+              "type": "text",
+              "id": "orderby_name_ascending_text",
+              "label": "Título del filtro nombre ascendente",
+              "default": "Alfabéticamente A-Z"
+            },
+            {
+              "type": "text",
+              "id": "orderby_name_descending_text",
+              "label": "Título del filtro nombre descendente",
+              "default": "Alfabéticamente Z-A"
+            },
+            {
+              "type": "checkbox",
+              "id": "orderby_created",
+              "label": "Ordenar por creación"
+            },
+            {
+              "type": "text",
+              "id": "orderby_created_ascending_text",
+              "label": "Título del filtro creación ascendente",
+              "default": "Fecha: Nuevos a viejos"
+            },
+            {
+              "type": "text",
+              "id": "orderby_created_descending_text",
+              "label": "Título del filtro creación descendente",
+              "default": "Fecha: Viejos a nuevos"
+            },
+            {
+              "type": "checkbox",
+              "id": "orderby_price",
+              "label": "Ordenar por creación"
+            },
+            {
+              "type": "text",
+              "id": "orderby_price_ascending_text",
+              "label": "Título del filtro precio ascendente",
+              "default": "Precio: Menor a mayor"
+            },
+            {
+              "type": "text",
+              "id": "orderby_price_descending_text",
+              "label": "Título del filtro precio descendente",
+              "default": "Precio: Mayor a menor"
             }
           ]
         },

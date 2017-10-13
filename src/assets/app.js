@@ -5564,7 +5564,9 @@ var Tamara = {
         dropdownMenu();
         alignHeights();
        });
-
+       $(window).load(function() {
+        alignHeights();
+       });
       // AJAX Add to Cart Component
       // Add Product to cart by ajax 
       var root = document.location.hostname;
@@ -5672,22 +5674,19 @@ var Tamara = {
       var addSimpleProductToCarByAjax = function(sku, qty) {
         var productSku = sku;
         var qty = qty == null ? 1 : qty;
-        var totalItems = 0;
         $.post(ajaxConfig.postUrl,
                {'sku_id':productSku,'quantity':qty})
         .success(function(data) {
           var AjaxCart = data.object || {};
-          var totalItems = AjaxCart.total_items;
           buildAjaxCart(AjaxCart, sku, AjaxCart.items, AjaxCart.total_price);
           var extraData = data.extra ? 1 : 0;
           if(extraData){
             displayCartWarning(data.extra[1]);
           }
+        updateCartQty(AjaxCart.total_items);
         showAjaxCart();
         })
-        .done(function(data){
-          updateCartQty(data.object.total_items);
-        });
+        .done(function(data){});
       }
 
       var addProductToCartByAjax = function() {
@@ -5726,9 +5725,33 @@ var Tamara = {
       });
       // End ajax component
 
+      // Create new query url in orderby
+      var getUrlVars = function() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+        function(m,key,value) {
+          vars[key] = value;
+        });
+        console.log(vars);
+        return vars;
+      }
+      $('select.js-select-orderby').val(getUrlVars()["sort_by"]);
 
-
-
+      var getRequestQuery = function(orderBy) {
+        var currentUrl = (window.location.href).split('?')[0];
+        var orderBy = orderBy;
+        if (orderBy === '') {
+          window.location = currentUrl;
+        } else {
+          window.location = currentUrl+'?sort_by='+ orderBy;
+        }
+      }
+      // Get selected value
+      $( "select.js-select-orderby" )
+        .change(function() {
+          var option = $(this).val();
+          getRequestQuery(option);
+        });
     }
   },
   // Home page
@@ -5788,16 +5811,6 @@ var Tamara = {
           thumbCont = $('.thumbnail-container:not(.'+ thumbContFw +')'),
           mq = matchMedia('only screen and (max-width: 767px)'),
           i = 0;
-
-      //** Poner en mobile clearfix cada 2 para no romper el layout
-      // thumbCont.each(function() {
-      //   i = i + 1;
-      //   if (!mq.matches) {
-      //     if (i % 3 === 0) {
-      //       $(this).after('<div class="clearfix"></div>');
-      //     }
-      //   }
-      // });
     }
   },
   post: {

@@ -1,4 +1,7 @@
 <aside class="sidebar sidebar-sticky sidebar-main">
+  <div class="widget sidebar-widget hidden-xs hidden-sm">
+    {% include '_filterbar.twig' %}
+  </div>
   {% if settings.display_sidebar_categories and categories | length > 0 %}
   <div class="widget sidebar-widget">
     <ul class="category-menu">

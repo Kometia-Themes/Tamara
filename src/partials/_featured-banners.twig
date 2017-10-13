@@ -8,10 +8,7 @@
         {% set banner_title      = banner~'_title' %}
         {% set banner_url        = banner~'_url' %}
 
-        <a href="{{ settings[banner_url] }}" class="
-        {% if settings.banner_3 %}one-third-sm 
-        {% elseif settings.banner_2 %}half-sm 
-        {% elseif settings.banner_1 %}full-width {% endif %} thumbnail">
+        <a href="{{ settings[banner_url] }}" class="{% if settings.banner_3 %}one-third-sm {% elseif settings.banner_2 %}half-sm {% elseif settings.banner_1 %}full-width {% endif %}thumbnail">
           <figure>
             {% if settings[banner_image] is not empty %}
               <img src="{{ settings[banner_image] }}" alt="{{ settings[banner_title] }} en {{ store.name }}">

@@ -194,7 +194,17 @@
       "footer_secondary_menu_title": "",
       "footer_secondary_menu": "",
       "btn_product_buy_in_list": true,
-      "btn_product_buy_now_text": "COMPRAR"
+      "btn_product_buy_now_text": "COMPRAR",
+      "btn_product_view_now_text": "VER",
+      "orderby_name": true,
+      "orderby_created": true,
+      "orderby_price": true,
+      "orderby_name_ascending_text": "Alfabéticamente A-Z",
+      "orderby_name_descending_text": "Alfabéticamente Z-A",
+      "orderby_created_ascending_text": "Fecha: Nuevos a viejos",
+      "orderby_created_descending_text": "Fecha: Viejos a nuevos",
+      "orderby_price_ascending_text": "Precio: Menor a mayor",
+      "orderby_price_descending_text": "Precio: Mayor a menor"
     }
   }
 }
