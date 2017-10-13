@@ -34,7 +34,7 @@
       <div class="widget footer-widget fw__quick-links">
       {% if settings.footer_show_secondary_menu %}
         <dl>
-          <dt class="title">{{ settings.footer_secondary_menu_title }}</dt>
+          <dt class="title">{{ settings.footer_secondary_menu_title is not empty ? settings.footer_secondary_menu_title : '&nbsp;' | raw }}</dt>
           {% if menus[settings.footer_secondary_menu] in menus %}
             {% for links in menus[settings.footer_secondary_menu] %}
             <dd>
