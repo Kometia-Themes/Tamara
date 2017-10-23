@@ -14,9 +14,7 @@
     <ul class="nav navbar-nav top-navbar__right">
       <li class="top-navbar__cart"><a href="/carrito">
         <i class="zmdi zmdi-shopping-cart" aria-hidden="true"></i>
-        {% if cart.total_items > 0 %}
-        <span class="cart-item-count">{{ cart.total_items }}</span>
-        {% endif %}
+        <span class="cart-item-count">{% if cart.total_items > 0 %}{{ cart.total_items }}{% endif %}</span>
         </a></li>
     </ul>
     {% if settings.header_display_search %}

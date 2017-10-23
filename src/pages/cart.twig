@@ -105,6 +105,13 @@
 </div>
 {% endblock body %}
 
-{% block body_js %}
+{% block js_body %}
   {{ parent() }}
-{% endblock body_js %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('form').submit(function(){
+        $(this).find(':submit').attr('disabled','disabled');
+      });
+    });
+  </script>
+{% endblock js_body %}

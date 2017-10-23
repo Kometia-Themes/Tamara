@@ -5666,7 +5666,7 @@ var Tamara = {
                   ajaxCartProductCaptionVariant.text(getProductVariants(data, sku));
                   ajaxCartProductPrice.text(value.quantity + ' x ' +  formatMoney(value.price));
                   ajaxCartResumeSubtotal.text('Total ' + formatMoney(total));
-                  ajaxCartResumeItems.text('Hay ' + quantityPluralize(Object.keys(data).length) + ' en tu carrito.');
+                  ajaxCartResumeItems.text('Hay ' + quantityPluralize(obj.total_items) + ' en tu carrito.');
               }
           })
       }
@@ -5732,7 +5732,6 @@ var Tamara = {
         function(m,key,value) {
           vars[key] = value;
         });
-        console.log(vars);
         return vars;
       }
       $('select.js-select-orderby').val(getUrlVars()["sort_by"]);
