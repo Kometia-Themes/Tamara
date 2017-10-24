@@ -5837,18 +5837,11 @@ var Tamara = {
           stickySidebarHeight = stickySidebar.height(),
           stickySidebarWidth = stickySidebar.width(),
           windowHeight = $(window).height(),
-          // Altura de Footer + CTA para detener el affix
           offsetBottom = $('footer.content-info').outerHeight(true) + $('#cta__bottom-newsletter').outerHeight(true),
           mq = matchMedia('only screen and (min-width: 768px)');
-      var toggleLink = $('.category-menu__list .toggle-btn');
+      var toggleLink = $('.toggle-btn');
           toggleLink.on('click', function(e) {
-            $(this).parent().next('.category-menu__submenu').show();
-            $(this).children('.zmdi').toggleClass('zmdi-caret-up zmdi-caret-down');
-            e.stopPropagation();
-          });
-      var toggleMenuLink = $('.sidebarmenu-menu__list .toggle-btn');
-          toggleMenuLink.on('click', function(e) {
-            $(this).parent().next('.sidebarmenu-menu__submenu').slideToggle( "slow" );
+            $(this).parent().next('ul').toggle();
             $(this).children('.zmdi').toggleClass('zmdi-caret-up zmdi-caret-down');
             e.stopPropagation();
           });
