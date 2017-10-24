@@ -110,7 +110,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $('form').submit(function(){
-        $(this).find(':submit').attr('disabled','disabled');
+        $(this).find(':submit').prop('disabled', true|false);
       });
     });
   </script>
