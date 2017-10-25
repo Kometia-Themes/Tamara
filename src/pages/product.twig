@@ -8,10 +8,10 @@
         <div class="row">
         {% if product.images | length > 0 %} {# if has more images #}
           <section class="product-media">
-          {% if settings.enable_product_image_zoom %}
-            <div class="fireZoomEvent"><span>{{ settings.product_image_zoom_in_text }}</span></div>
-          {% endif %}
             <div id="sp-img-full">
+            {% if settings.enable_product_image_zoom %}
+              <div class="fireZoomEvent"><span>{{ settings.product_image_zoom_in_text }}</span></div>
+            {% endif %}
               <figure class="item">
                 <img id="zoom" class="full-img-width" src="{{ product.image_url ~ '&w=1200' }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
               </figure>
@@ -29,6 +29,9 @@
         {% else %}
           <section class="product-media">
             <div id="sp-img-full">
+            {% if settings.enable_product_image_zoom %}
+              <div class="fireZoomEvent"><span>{{ settings.product_image_zoom_in_text }}</span></div>
+            {% endif %}
               <img class="img-responsive full-img-width" src="{{ 'placeholders/product-11.jpg' | global_img_url }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
           </section>
         {% endif %} {# end if has images #}
