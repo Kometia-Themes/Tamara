@@ -176,7 +176,8 @@ footer.content-info a {
   }
   #main-navbar .dropdown-menu > li > a:hover,
   #main-navbar .dropdown-menu > li > a:focus {
-    color: {{ settings.main_navbar_text_color_hover }};
+    color: {{ settings.main_navbar_text_color_hover | contrast_color}};
+    background-color: {{ settings.main_navbar_text_color_hover }};
   }
 }
 

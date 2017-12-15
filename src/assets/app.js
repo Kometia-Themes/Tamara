@@ -5534,12 +5534,15 @@ var Tamara = {
       }
 
       var dropdownMenu = function() {
-        $('.navigation__link').click(function(e){
-          $(this).next('.dropdown-menu').toggleClass('active');
-          $(this).find('.zmdi').toggleClass('zmdi-caret-down zmdi-caret-right');
-          $(this).parents().siblings().find('.dropdown-menu').removeClass('active');
-          $(this).parents().siblings().find('.zmdi').removeClass('zmdi-caret-down').addClass('zmdi-caret-right');
+        $(document).on('click', '.navigation__link', function (e) {
           e.stopPropagation();
+          var _this = this;
+          console.log(_this);
+          $(_this).next('.dropdown-menu').toggleClass('active');
+          $(_this).find('.zmdi').toggleClass('zmdi-caret-down zmdi-caret-right');
+          $(_this).parents().siblings().find('.dropdown-menu').removeClass('active');
+          $(_this).parents().siblings().find('.zmdi').removeClass('zmdi-caret-down').addClass('zmdi-caret-right');
+
           e.preventDefault();
         });
       }
@@ -5562,7 +5565,6 @@ var Tamara = {
        });
 
        $(window).resize(function(){
-        dropdownMenu();
         alignHeights();
        });
        $(window).load(function() {
