@@ -5539,10 +5539,7 @@ var Tamara = {
           var _this = this;
           console.log(_this);
           $(_this).next('.dropdown-menu').toggleClass('active');
-          $(_this).find('.zmdi').toggleClass('zmdi-caret-down zmdi-caret-right');
           $(_this).parents().siblings().find('.dropdown-menu').removeClass('active');
-          $(_this).parents().siblings().find('.zmdi').removeClass('zmdi-caret-down').addClass('zmdi-caret-right');
-
           e.preventDefault();
         });
       }
@@ -5550,19 +5547,20 @@ var Tamara = {
       alignHeights();
 
       if ($(document).width() >= 768) {
-        $('.navigation__link .dropdown-menu').on('mouseleave', function(e) {
+        $('#main-navbar .navigation__link .dropdown-menu').on('mouseleave', function(e) {
           $(this).parent().find('.dropdown-menu').removeClass('active');
           e.stopPropagation();
           e.preventDefault();
         });
-        $('.navigation__link + .dropdown-menu').mouseleave(function() {
+        $('#main-navbar .navigation__link + .dropdown-menu').mouseleave(function() {
          $(this).removeClass('active');
         });
       }
 
        $(document).click(function() {
-         $('.navigation__link + .dropdown-menu' ).removeClass('active');
+         $('#main-navbar .navigation__link + .dropdown-menu' ).removeClass('active');
        });
+
 
        $(window).resize(function(){
         alignHeights();
