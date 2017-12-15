@@ -165,6 +165,7 @@
       padding: 0;
     }
   }
+
   .dropdown {
     margin: 0;
     > .dropdown-menu {
@@ -172,6 +173,7 @@
       @media(min-width:768px) {
         top: 0;
         left: 100%;
+        min-width: 180px;
       }
     }
   }
@@ -184,17 +186,27 @@
      // margin-top: -23px;
       padding: 0;
       border-radius: 0;
+      min-width: 180px;
     }
   }
 }
+#main-navbar .navbar-nav li .dropdown-menu.active {
+  display: block;
+  @media(min-width:768px) {
+    display: table;
+  }
+}
+
 .navigation {
   .navigation__link {position:relative; padding-left: 15px; padding-right: 15px;}
   .dropdown {
     .drop-icon {
       padding-left: 2em;
-      right: 1em;
+      right: 20px;
       position: absolute;
-      .zmdi {}
+      .zmdi {
+        font-size: 16px;
+      }
       .zmdi.zmdi-plus {}
       .zmdi.zmdi-minus {}
     }

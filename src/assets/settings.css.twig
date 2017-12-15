@@ -17,17 +17,18 @@ a:active, a:focus { outline: none;}
 :focus { outline: none !important;}
 ::-moz-focus-inner { border: 0 !important;}
 
-.btn, .btn-default, .btn-primary {
+.btn, .btn-default, .btn-primary, a.btn, a.btn-default, a.btn-primary {
   color: {{ settings.btn_text_color }};
   background-color: {{ settings.btn_bg_color }};
   border-color: {{ settings.btn_bg_color }};
 }
-.btn:hover, .btn:focus, .btn-default:hover, .btn-default:focus, .btn-primary:hover, .btn-primary:focus  {
+.btn:hover, .btn:focus, .btn-default:hover, .btn-default:focus, .btn-primary:hover, .btn-primary:focus,
+a.btn:hover, a.btn:focus, a.btn-default:hover, a.btn-default:focus, a.btn-primary:hover, a.btn-primary:focus {
   color: {{ settings.btn_text_color_hover }};
   background-color: {{ settings.btn_bg_color_hover }};
   border-color: {{ settings.btn_bg_color_hover }};
 }
-.btn.btn-primary.btn-outline {
+.btn.btn-primary.btn-outline, a.btn.btn-primary.btn-outline {
   color: {{ settings.body_font_color | lighten_color }};
   position: relative;
   background-color: transparent;
@@ -39,7 +40,8 @@ a:active, a:focus { outline: none;}
   margin-right: 2px;
   margin-left: 2px;
 }
-.btn.btn-primary.btn-outline:hover, .btn.btn-primary.btn-outline:focus, .btn.btn-primary.btn-outline:hover, .btn.btn-primary.btn-outline:focus  {
+.btn.btn-primary.btn-outline:hover, .btn.btn-primary.btn-outline:focus, .btn.btn-primary.btn-outline:hover, .btn.btn-primary.btn-outline:focus,
+a.btn.btn-primary.btn-outline:hover, a.btn.btn-primary.btn-outline:focus, a.btn.btn-primary.btn-outline:hover, a.btn.btn-primary.btn-outline:focus {
   color: {{ settings.btn_text_color_hover }};
   background-color: {{ settings.btn_bg_color_hover }};
   border-color: {{ settings.btn_bg_color_hover }};

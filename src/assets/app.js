@@ -3723,7 +3723,7 @@ window.matchMedia || (window.matchMedia = function() {
           that.$button
             .addClass('bs-invalid')
             .focus();
-          
+
           that.$element.on({
             'focus.bs.select': function () {
               that.$button.focus();
@@ -3740,7 +3740,7 @@ window.matchMedia || (window.matchMedia = function() {
               that.$element.off('rendered.bs.select');
             }
           });
-          
+
         });
       }
 
@@ -4377,12 +4377,12 @@ window.matchMedia || (window.matchMedia = function() {
     },
 
     tabIndex: function () {
-      if (this.$element.data('tabindex') !== this.$element.attr('tabindex') && 
+      if (this.$element.data('tabindex') !== this.$element.attr('tabindex') &&
         (this.$element.attr('tabindex') !== -98 && this.$element.attr('tabindex') !== '-98')) {
         this.$element.data('tabindex', this.$element.attr('tabindex'));
         this.$button.attr('tabindex', this.$element.data('tabindex'));
       }
-      
+
       this.$element.attr('tabindex', -98);
     },
 
@@ -4708,7 +4708,7 @@ window.matchMedia || (window.matchMedia = function() {
 
     toggle: function (e) {
       e = e || window.event;
-      
+
       if (e) e.stopPropagation();
 
       this.$button.trigger('click');
@@ -5473,7 +5473,7 @@ var Tamara = {
   common: {
     init: function() {
       var win = $(window);
-      // Format Money 
+      // Format Money
       var formatMoney = function(price) {
         var formatPrice = price /= 100;
         formatPrice = formatPrice.toFixed(2);
@@ -5535,9 +5535,10 @@ var Tamara = {
 
       var dropdownMenu = function() {
         $('.navigation__link').click(function(e){
-          $(this).next('.dropdown-menu').toggle();
-          $(this).parent().siblings().find('.dropdown-menu').stop(true,false,true).css('display', 'none');
-          $(this).siblings().children('.dropdown-menu').stop(true,false,true).css('display', 'none');
+          $(this).next('.dropdown-menu').toggleClass('active');
+          $(this).find('.zmdi').toggleClass('zmdi-caret-down zmdi-caret-right');
+          $(this).parents().siblings().find('.dropdown-menu').removeClass('active');
+          $(this).parents().siblings().find('.zmdi').removeClass('zmdi-caret-down').addClass('zmdi-caret-right');
           e.stopPropagation();
           e.preventDefault();
         });
@@ -5547,17 +5548,17 @@ var Tamara = {
 
       if ($(document).width() >= 768) {
         $('.navigation__link .dropdown-menu').on('mouseleave', function(e) {
-          $(this).parent().find('.dropdown-menu').stop(true,false,true).css('display', 'none');
+          $(this).parent().find('.dropdown-menu').removeClass('active');
           e.stopPropagation();
           e.preventDefault();
         });
         $('.navigation__link + .dropdown-menu').mouseleave(function() {
-         $(this).hide();
+         $(this).removeClass('active');
         });
       }
 
        $(document).click(function() {
-         $('.navigation__link + .dropdown-menu' ).css({"display": "none"});
+         $('.navigation__link + .dropdown-menu' ).removeClass('active');
        });
 
        $(window).resize(function(){
@@ -5568,7 +5569,7 @@ var Tamara = {
         alignHeights();
        });
       // AJAX Add to Cart Component
-      // Add Product to cart by ajax 
+      // Add Product to cart by ajax
       var root = document.location.hostname;
       var getAjaxStoteUrl = function(type) {
         return root === 'store1.shoperti.app' ? 'http://'+ root + '/' + type : 'https://'+ root + '/' + type;
@@ -5728,7 +5729,7 @@ var Tamara = {
       // Create new query url in orderby
       var getUrlVars = function() {
         var vars = {};
-        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
         function(m,key,value) {
           vars[key] = value;
         });
