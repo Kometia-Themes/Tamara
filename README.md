@@ -24,7 +24,7 @@ Estas tareas toman el código fuente del 'src' (source), lo procesa y empaqueta 
 
 Para compilar el tema debes tener Node. Para saber si cuentas con él, ve a tu terminal y escribe <code>node -v</code> y podrás ver algo así <code>v6.9.1</code> si ya lo tienes instalado. En caso contrario, ve al sitio de [Node] (https://nodejs.org/download/) y sigue las intrucciones.
 
-1. Navegua hasta la raíz de este proyecto descargado.
+1. Navega hasta la raíz de este proyecto descargado.
 2. Ejecuta `npm install` para NPM o `yarn install` si usas Yarn.
 
 Npm/Yarn examinará [package.json] (package.json) e instalará automáticamente las dependencias locales necesarias.
@@ -40,19 +40,19 @@ $ npm dev
 $ npm build
 ```
 
-```npm dev``` servirá para publicar tus archivos html, estilos y scripts en la carpeta **public** y así construir tu sitio sin funcionalidades de Twig. Incluye un servidor http para ver el sitio usando la ruta http://localhost:9000
+```npm dev``` sirve para publicar tus archivos html, estilos y scripts en la carpeta **public** y así construir tu sitio sin funcionalidades de Twig. Incluye un servidor http para ver el sitio usando la ruta http://localhost:9000
 
-```npm build``` generará una carpeta 'theme' dentro de 'dist' que te servirá para probar tu plantilla en ambiente local. Algunos archivos ahora tendrán la extensión ```.twig```.
+```npm build``` genera una carpeta 'theme' dentro de 'dist' que te servirá para probar tu plantilla en ambiente local. Algunos archivos ahora tendrán la extensión ```.twig```.
 
 Estas tareas toman el código fuente del tema y lo empaquetan en un zip para ser instalado.
 
 ### Implementación del tema
 
 Instala un tema básico, puede ser Simplex, por ejemplo, y copia el contenido de cada archivo que hay al descomprimir el archivo theme.zip que está dentro de 'dist'.
-Crea los 'partials' que no existan y que necesites, al igual en las páginas nuevas, layouts, estilos y scripts. 
+Crea los 'partials' que no existan y que necesites, al igual en las páginas nuevas, layouts, estilos y scripts.
 
 ### Tareas de Webpack
-Cada ves que corras alguno de los comandos desde tu terminal, Webpack realizará varias acciones, cómo compilar tus estilos CSS, SASS, LESS, Javascript o empaquetar los archivos.
+Cada vez que corras alguno de los comandos desde tu terminal, Webpack realizará varias acciones, cómo compilar tus estilos CSS, SASS, LESS, Javascript o empaquetar los archivos.
 Si quiere saber más sobre ve [Webpack 2](https://webpack.js.org/).
 
 Para crear las páginas, estilos y scripts sin empaquetarse ejecuta: <code>npm dev</code> o <code>yarn dev</code> y Webpack estará en estado 'watch' esperando cambios para compilar y actualizar las vistas, scripts o estilos.
