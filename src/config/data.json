@@ -208,7 +208,7 @@
       "enabled_gift_option": false,
       "gift_message": "Esto es un regalo. Incluir el siguiente mensaje (150 caracteres máximo).",
       "gift_title_message": "Mensaje del regalo:",
-      "gift_btn_message": "Agregar mensaje",
+      "gift_btn_message": "Guardar",
       "enabled_customer_note_option": true,
       "customer_title_note": "Agrega alguna nota o comentario al vendedor:",
       "customer_btn_note_text": "Agregar nota"
