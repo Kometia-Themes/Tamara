@@ -4,7 +4,7 @@
 > **Para más detalles sobre el desarrollo del tema, lee nuestra [Documentación del tema] (https://github.com/Shoperti-Themes/Tamara)**.
 
 ## Obteniendo este tema
-1. <a href="https://github.com/Shoperti-Themes/Tamara/archive/master.zip"> Descargar </a> la última versión de la rama master.
+1. [Descargar] (https://github.com/Shoperti-Themes/Tamara/archive/master.zip) la última versión de la rama master.
 2. También puedes clonar el repositorio con git: <code>git clone git@github.com:Shoperti-Themes/Tamara.git</code>
 
 ![alt text](https://raw.githubusercontent.com/Shoperti-Themes/Tamara/master/screenshot.png "Screeshot")
@@ -22,7 +22,7 @@ Estas tareas toman el código fuente del 'src' (source), lo procesa y empaqueta 
 
 ### Instalando Node
 
-Para compilar el tema debes tener Node. Para saber si cuentas con él, ve a tu terminal y escribe <code>node -v</code> y podrás ver algo así <code>v6.9.1</code> si ya lo tienes instalado. En caso contrario, ve al sitio de [Node] (https://nodejs.org/download/) y sigue las intrucciones.
+Para compilar el tema debes tener Node. Para saber si cuentas con él, ve a tu terminal y escribe `node -v` y podrás ver algo así `v6.9.1` si ya lo tienes instalado. En caso contrario, ve al sitio de [Node] (https://nodejs.org/download/) y sigue las intrucciones.
 
 1. Navega hasta la raíz de este proyecto descargado.
 2. Ejecuta `npm install` para NPM o `yarn install` si usas Yarn.
