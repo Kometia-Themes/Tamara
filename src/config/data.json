@@ -204,7 +204,14 @@
       "orderby_created_ascending_text": "Fecha: Nuevos a viejos",
       "orderby_created_descending_text": "Fecha: Viejos a nuevos",
       "orderby_price_ascending_text": "Precio: Menor a mayor",
-      "orderby_price_descending_text": "Precio: Mayor a menor"
+      "orderby_price_descending_text": "Precio: Mayor a menor",
+      "enabled_gift_option": false,
+      "gift_message": "Esto es un regalo. Incluir el siguiente mensaje (150 caracteres máximo).",
+      "gift_title_message": "Mensaje del regalo:",
+      "gift_btn_message": "Agregar mensaje",
+      "enabled_customer_note_option": true,
+      "customer_title_note": "Agrega alguna nota o comentario al vendedor:",
+      "customer_btn_note_text": "Agregar nota"
     }
   }
 }

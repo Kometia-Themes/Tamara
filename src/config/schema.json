@@ -2015,6 +2015,64 @@
       ]
     },
     {
+      "name": "Carrito",
+      "icon": "cart-page",
+      "sections": [
+        {
+          "header": "Es regalo",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "enabled_gift_option",
+              "label": "Mostrar opciones para regalo.",
+              "default": false
+            },
+            {
+              "type": "text",
+              "id": "gift_title_message",
+              "label": "Título",
+              "default": "Esto es un regalo. Incluir el siguiente mensaje (150 caracteres máximo)."
+            },
+            {
+              "type": "text",
+              "id": "gift_message",
+              "label": "Descripción",
+              "default": "Esto es un regalo. Incluir el siguiente mensaje (150 caracteres máximo)."
+            },
+            {
+              "type": "text",
+              "id": "gift_btn_message",
+              "label": "Texto del botón",
+              "default": "Agregar mensaje"
+            }
+          ]
+        },
+        {
+          "header": "Nota del cliente",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "enabled_customer_note_option",
+              "label": "Mostrar campo nota del cliente.",
+              "default": true
+            },
+            {
+              "type": "text",
+              "id": "customer_title_note",
+              "label": "Título",
+              "default": "Agrega alguna nota o comentario al vendedor:"
+            },
+            {
+              "type": "text",
+              "id": "customer_btn_note_text",
+              "label": "Texto del botón",
+              "default": "Agregar nota"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Contacto",
       "icon": "contact-page",
       "sections": [

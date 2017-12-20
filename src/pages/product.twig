@@ -61,7 +61,7 @@
                 {% if  modifiers |length > 0 %}
                   {% for modifier, options in modifiers %}
                     {% set step = loop.index0 %}
-                    {% set default_option = modifiers[step] %}
+                    {% set default_option = options[step] %}
                     <div class="col-xs-6 col-sm-6 product-selector-option">
                       <select id="{{ modifier }}" class="selectpicker form-control js-variant-select" title="{{ modifier }}" name="{{ loop.index0 }}">
                       {% for option in options %}
@@ -173,7 +173,7 @@
         if(type == 'minus') {
           if(currentVal > input.attr('min')) {
             input.val(currentVal - 1).change();
-          } 
+          }
           if(parseInt(input.val()) == input.attr('min')) {
             $(this).attr('disabled', true);
           }
@@ -267,6 +267,8 @@
 
   function updateSkuControls(sku) {
     var newImageMain = sku.image_url;
+    console.log(sku, newImageMain);
+
     var newurl = sku.permalink;
   {% if product.sku.permalink != 'default' %}
     var parentPermalink = '{{ product.permalink }}';

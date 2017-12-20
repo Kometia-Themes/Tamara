@@ -5533,17 +5533,6 @@ var Tamara = {
         $('#top-navbar').css({ position: 'relative' });
       }
 
-      var dropdownMenu = function() {
-        $(document).on('click', '.navigation__link', function (e) {
-          e.stopPropagation();
-          var _this = this;
-          console.log(_this);
-          $(_this).next('.dropdown-menu').toggleClass('active');
-          $(_this).parents().siblings().find('.dropdown-menu').removeClass('active');
-          e.preventDefault();
-        });
-      }
-      dropdownMenu();
       alignHeights();
 
       if ($(document).width() >= 768) {
@@ -5876,3 +5865,17 @@ $(document.body).css({'cursor':'default'});
 $('body a').css({'pointer-events':'auto'})}).ready(UTIL.loadEvents);
 $(window).on('resize', UTIL.loadEvents);
 })(jQuery); // Fully reference jQuery after this point.
+
+$(function() {
+  var dropdownMenu = function() {
+    $(document).on('click mouseover', '.navigation .dropdown > .navigation__link', function (e) {
+      e.stopPropagation();
+      var _this = this;
+      console.log(_this);
+      $(_this).next('.dropdown-menu').toggleClass('active');
+      $(_this).parents().siblings().find('.dropdown-menu').removeClass('active');
+      e.preventDefault();
+    });
+  }
+  dropdownMenu();
+});

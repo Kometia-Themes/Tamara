@@ -48,13 +48,12 @@
                         <div class="form-group">
                             <input type="hidden" name="_method" value="patch">
                             <input type="hidden" name="id" value="{{ item.id }}">
-                            <select class="cart__resume-table__product-quantity selectpicker form-control" name="quantity">
+                            <select class="cart__resume-table__product-quantity selectpicker form-control updateQty" name="quantity">
                                 {% for qty in 1..5 %}
                                     <option value="{{ qty }}"{{ qty == item.quantity ? ' selected="selected"' : null }}>{{ qty }}</option>
                                 {% endfor %}
                             </select>
                         </div>
-                        <button class="item__refresh" type="submit"><span class="zmdi zmdi-refresh"></span></button>
                     </form>
                 </div>
             </div>
@@ -77,23 +76,55 @@
     <div class="clearfix"></div>
     <p>&nbsp;</p>
     <div class="row">
-      <div class="one-third-sm col-sm-offset-8 one-fourth-md col-md-offset-8">
-        <div class="cart__payment__info">
-
-
-          <div class="row">
-              <div class="col-xs-5">
-                <p class="cart__payment__heading"><strong>Total</strong></p>
-              </div>
-              <div class="col-xs-7">
-                  <p class="cart__payment__cont text-right">{{ cart.total_price | money('symbol', 'code') }}</p>
-              </div>
+      <div class="col-xs-12 col-sm-6 col-sm-push-6 cart__payment">
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="cart__payment__heading"><strong>Total</strong></p>
+            <p class="cart__payment__total">{{ cart.total_price | money('symbol', 'code') }}</p>
           </div>
-
+          <div class="col-xs-12">
+            <a href="/checkout" class="btn btn-primary btn-lg"> <i class="zmdi zmdi-shopping-cart"></i>&nbsp;&nbsp;Compra Ahora</a>
+          </div>
         </div>
-        <a href="/checkout" class="btn btn-primary btn-lg"> <i class="zmdi zmdi-shopping-cart"></i>&nbsp;&nbsp;Compra Ahora</a>
       </div>
+
+      <div class="col-xs-12 col-sm-6 col-sm-pull-6 cartxtras">
+        <div class="row">
+          <form action="/carrito" method="post">
+            <div class="col-xs-12 cartgift">
+              {% if settings.enabled_gift_option %}
+                <div class="cartgift__form">
+                  <div class="checkbox">
+                    <label><input class="cartgift--checkbox" type="checkbox" name="is_gift" value="1" {{ cart.is_gift ? "checked='checked'" : '' }}>{{ settings.gift_message}}</label>
+                  </div>
+                  <div class="cartgift__form--content">
+                    <div class="form-group">
+                      <label class="sr-only" for="gift_message">{{ settings.gift_title_message }}</label>
+                      <textarea type="text" class="form-control" name="gift_message" value="{{ cart.gift_message }}" maxlength="150">{{ cart.gift_message }}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary cartgift__btn">{{ settings.gift_btn_message }}</button>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+            <div class="col-xs-12 cartnote">
+              {% if settings.enabled_customer_note_option %}
+              <p>{{ settings.customer_title_note }}</p>
+                <div class="cartnote__form">
+                  <div class="form-group">
+                    <label class="sr-only" for="note">{{ settings.customer_title_note }}</label>
+                    <textarea class="form-control cartnote__note" type="textarea" name="note" value="{{ cart.customer_note }}" maxlength="500">{{ cart.customer_note }}</textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary cartnote__btn">{{ settings.customer_btn_note_text }}</button>
+                </div>
+              {% endif %}
+            </div>
+          </form>
+        </div>
+      </div>
+
     </div>
+
   {% else %}
     <div class="row">
       <div class="full-width emptycart text-center">
@@ -108,10 +139,32 @@
 {% block js_body %}
   {{ parent() }}
   <script type="text/javascript">
-    $(document).ready(function(){
-      $('form').submit(function(){
-        $(this).find(':submit').prop('disabled', true);
-      });
+  $(function () {
+    $('.updateQty').change(function() {
+      this.form.submit();
     });
+    $('form').submit(function(){
+      $(this).find(':submit').prop('disabled', true);
+    });
+
+    var enableGiftOption = function() {
+      var el = $('.cartgift--checkbox');
+      if(el.is(':checked')) {
+        $('.cartgift__form--content').show();
+      }
+    }
+    enableGiftOption();
+
+    $('.cartgift--checkbox').change(function () {
+      var _this = this;
+      if ($(_this).is(':checked')) {
+        $('.cartgift__form--content').show();
+      } else {
+        $('.cartgift__form--content').hide();
+      }
+      this.form.submit();
+    });
+
+  });
   </script>
 {% endblock js_body %}
