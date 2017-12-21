@@ -5871,7 +5871,6 @@ $(function() {
     $(document).on('click mouseover', '.navigation .dropdown > .navigation__link', function (e) {
       e.stopPropagation();
       var _this = this;
-      console.log(_this);
       $(_this).next('.dropdown-menu').toggleClass('active');
       $(_this).parents().siblings().find('.dropdown-menu').removeClass('active');
       e.preventDefault();
