@@ -2035,12 +2035,6 @@
             },
             {
               "type": "text",
-              "id": "gift_message",
-              "label": "Descripción",
-              "default": "Esto es un regalo. Incluir el siguiente mensaje (150 caracteres máximo)."
-            },
-            {
-              "type": "text",
               "id": "gift_btn_message",
               "label": "Texto del botón",
               "default": "Agregar mensaje"

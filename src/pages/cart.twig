@@ -95,7 +95,7 @@
               {% if settings.enabled_gift_option %}
                 <div class="cartgift__form">
                   <div class="checkbox">
-                    <label><input class="cartgift--checkbox" type="checkbox" name="is_gift" value="1" {{ cart.is_gift ? "checked='checked'" : '' }}>{{ settings.gift_message}}</label>
+                    <label><input class="cartgift--checkbox" type="checkbox" name="is_gift" value="1" {{ cart.is_gift ? "checked='checked'" : '' }}>{{ settings.gift_title_message }}</label>
                   </div>
                   <div class="cartgift__form--content">
                     <div class="form-group">

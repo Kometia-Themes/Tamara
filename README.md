@@ -5,7 +5,7 @@
 
 ## Obteniendo este tema
 1. [Descargar] (https://github.com/Shoperti-Themes/Tamara/archive/master.zip) la última versión de la rama master.
-2. También puedes clonar el repositorio con git: <code>git clone git@github.com:Shoperti-Themes/Tamara.git</code>
+2. También puedes clonar el repositorio con git: `git clone git@github.com:Shoperti-Themes/Tamara.git`
 
 ![alt text](https://raw.githubusercontent.com/Shoperti-Themes/Tamara/master/screenshot.png "Screeshot")
 
@@ -55,9 +55,9 @@ Crea los 'partials' que no existan y que necesites, al igual en las páginas nue
 Cada vez que corras alguno de los comandos desde tu terminal, Webpack realizará varias acciones, cómo compilar tus estilos CSS, SASS, LESS, Javascript o empaquetar los archivos.
 Si quiere saber más sobre ve [Webpack 2](https://webpack.js.org/).
 
-Para crear las páginas, estilos y scripts sin empaquetarse ejecuta: <code>npm dev</code> o <code>yarn dev</code> y Webpack estará en estado 'watch' esperando cambios para compilar y actualizar las vistas, scripts o estilos.
+Para crear las páginas, estilos y scripts sin empaquetarse ejecuta: `npm dev` o `yarn dev` y Webpack estará en estado 'watch' esperando cambios para compilar y actualizar las vistas, scripts o estilos.
 
-Para crear un empaquetado final para distribuir ejecuta: <code>npm build</code> o <code>yarn build </code>
+Para crear un empaquetado final para distribuir ejecuta: `npm build` o `yarn build `
 Todo el contenido de la carpeta 'dist' se eliminará para colocar los nuevos archivos.
 
 #### Estructura de los estilos
