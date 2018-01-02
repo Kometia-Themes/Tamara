@@ -5868,7 +5868,7 @@ $(window).on('resize', UTIL.loadEvents);
 
 $(function() {
   var dropdownMenu = function() {
-    $(document).on('click mouseover', '.navigation .dropdown > .navigation__link', function (e) {
+    $(document).on('click', '.navigation .dropdown > .navigation__link', function (e) {
       e.stopPropagation();
       var _this = this;
       $(_this).next('.dropdown-menu').toggleClass('active');
