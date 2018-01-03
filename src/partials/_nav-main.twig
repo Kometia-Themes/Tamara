@@ -1,0 +1,35 @@
+<div class="nav-wrapper">
+<nav id="main-navbar" class="navbar" data-spy="affix" data-offset-top="44" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {% if settings.use_logo and settings['logo.png'] is not empty %}
+      <a class="navbar-brand" href="/"><img src="{{ settings['logo.png'] }}&h=95" alt="{{ store.name }}"></a>
+      {% else %}
+      <a class="navbar-brand logo-text" href="/">{{ store.name }}</a>
+      {% endif %}
+    </div>
+
+    <div id="main-navbar-collapse" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right navigation">
+        {% for links in menus.main %}
+          {% if links.children | length > 0 %}
+            {% include '_nav-item.twig' %}
+          {% else %}
+            <li><a class="navigation__parent-link" href="{{ links.url }}">{{ links.name }}</a></li>
+          {% endif %}
+        {% endfor %}
+        <li class="main-navbar-affix__cart"><a href="/carrito">
+          <i class="zmdi zmdi-shopping-cart" aria-hidden="true"></i>
+          <span class="cart-item-count">{% if cart.total_items > 0 %}{{ cart.total_items }}{% endif %}</span>
+          </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
