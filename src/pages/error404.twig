@@ -1,0 +1,70 @@
+{% extends 'layout.twig' %}
+{% set page_title = 'Página no encontrada' %}
+{% block body_class %}cart has-featured{% endblock body_class %}
+
+{% block body %}
+<section class="featured-block {{ settings.gradient_pages }}">
+  <div class="container">
+    <h1 class="title">¡Ups! Lo sentimos.</h1>
+    <p>No pudimos encontrar lo que estabas buscando, te ofrecemos una disculpa.</p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <p>No pudimos encontrar lo que estabas buscando, te ofrecemos una disculpa. Si no encontraste lo que buscabas, puedes hacer lo siguiente:</p>
+    <ul>
+      <li><a href="/productos">Pica aquí para seguir comprando</a>.</li>
+      <li>
+        Usa la forma a continuación para buscarlo.
+        <br><br>
+        <div class="container-fluid">
+          <form class="form-horizontal error-page-search">
+            <div class="form-group">
+              <div class="input-group">
+                <label class="sr-only" for="errorPageSearchBox">Buscar productos</label>
+                <div class="input-group-addon"><i class="zmdi zmdi-search"></i></div>
+                <input type="text" class="form-control" id="errorPageSearchBox" placeholder="Introduce tu búsqueda">
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+      <li>Checa alguna de estas increíbles colecciones y productos.</li>
+    </ul>
+  </div>
+</section>
+{% if settings.banner_1 == true or settings.banner_2 == true or settings.banner_3 == true %}
+<section class="featured-banners-1">
+  <div class="container">
+    {% for i in 1..3 %}
+    {% set banner = 'banner_'~i %}
+    {% if settings[banner] %}
+    {% set banner_image = banner~'_image' %}
+    {% set banner_title = banner~'_title' %}
+    {% set banner_url = banner~'_url' %}
+    <a href="{{ settings[banner_url] }}" class="{% if settings.banner_3 %}one-third-sm {% elseif settings.banner_2 %}half-sm {% elseif settings.banner_1 %}full-width {% endif %} thumbnail">
+      <figure>
+        <img src="{{ settings[banner_image] ~ '&w=550&h=275&fit=crop' }}" alt="{{ settings[banner_title] }} en {{ store.name }}">
+        <figcaption><span>{{ settings[banner_title] }}</span></figcaption>
+      </figure>
+    </a>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% if settings.featured_collection_trending is not empty and collections[settings.featured_collection_trending] is defined %}
+{% set featured_collection = collections[settings.featured_collection_trending] %}
+<section class="featured-products prod-grid__4-ext">
+  <div class="container">
+    <h2 class="text-center">Productos Trending</h2>
+    <hr class="hr-small">
+    <div class="row">
+      {% for product in featured_collection.products %}
+      {% include '_product-item.twig' %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endblock body %}

@@ -1,0 +1,8 @@
+{% if collection is defined %}
+  {% if collection.permalink == current.permalink %}
+  <li class="collection-menu__list collection-menu--active">
+    <a class="collection-menu__link" href="/colecciones/{{ collection.permalink }}" title="{{ collection.title }}">{{ collection.title }}</a></li>
+  {% else %}
+  <li class="collection-menu__list"><a class="collection-menu__link" href="/colecciones/{{ collection.permalink }}" title="{{ collection.title }}">{{ collection.title }}</a></li>
+  {% endif %}
+{% endif %}
