@@ -1,0 +1,20 @@
+<article class="thumbnail-container">
+  <a class="thumbnail" href="/blogs/{{ blog.permalink }}/posts/{{ post.permalink }}" title="{{ post.title }} - {{ store.name }}">
+    <figure class="thumbnail-img">
+      {% if post.image_url is not empty %}
+      <img src="{{ post.image_url ~ '&w=370&h=370&fit=crop' }}" alt="{{ post.title }} - {{ store.name }}" itemprop="thumbnail">
+      {% else %}
+      <img src="{{ 'placeholders/product-11.jpg' | global_img_url }}" class="img-responsive post-card__thumb-image" alt="{{ post.name }}" itemprop="thumbnail">
+      {% endif %}
+    </figure>
+    <div class="caption">
+      <div class="post-title"><h3>{{ post.title }}</h3></div>
+      <p class="post-summary">
+        {{ post.summary|length > 50 ? post.summary|slice(0, 50) ~ '...' : post.summary }}
+      </p>
+      <ul class="post-meta">
+      <li>{{ post.published_at | date }}</li>
+      </ul>
+    </div>
+  </a>
+</article>
