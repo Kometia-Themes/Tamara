@@ -42,7 +42,6 @@ module.exports = {
       { from: './src/layouts', to: 'layouts' },
       { from: './src/pages', to: 'pages' },
       { from: './src/partials', to: 'partials' },
-      { from: './src/screenshots', to: 'screenshots' },
       { from: './src/assets/app.js', to: 'assets/app.js.twig' },
       { from: 'screenshot.png', to: 'screenshot.png' },
       { from: 'README.md', to: 'README.md' },
@@ -67,8 +66,8 @@ module.exports = {
     new ZipPlugin({
       filename: 'theme.zip',
       pathPrefix: 'theme/1.1.0',
-      include: [/\.twig$/, /\.md$/, /\.jpg$/, /\.jpge$/, /\.png$/, /\.ico$/, /\.json$/, '.gitignore', '.editorconfig'],
-      exclude: [/\.html$/, /\.css$/, /\.js$/, /\.php$/],
+      include: [/\.twig$/, /\.md$/, /\.jpg$/, /\.jpge$/, /\.png$/, /\.ico$/, /\.json$/],
+      exclude: [/\.html$/, /\.css$/, /\.js$/, /\.php$/, '.gitignore', '.editorconfig'],
       fileOptions: {
         mtime: new Date(),
         mode: 0o100664,

@@ -5,7 +5,7 @@
     <div class="container">
       <h2 class="text-center">{{ settings.feature_latest_products_title }}</h2>
       <hr class="hr-small">
-      <div class="row">
+      <div class="row symmetrical-container">
       {% for product in latest_collection.products %}
         {% include '_product-item.twig' %}
       {% endfor %}
@@ -21,8 +21,7 @@
       <div class="placeholder-helper text-center">
         <div class="col-xs-12 placeholder-info">
           <p class="lead">Esta sección mostrarán los productos de la colección.</p>
-          <p class="text-center"><a href="/admin/collections" class="btn btn-success">Gestionar colecciones</a>
-      <a href="/admin/themes" class="btn btn-success">Ir a sección de temas</a></p>
+          <p class="text-center"><a href="/admin/collections" class="btn btn-success">Gestionar colecciones</a> <a href="/admin/themes" class="btn btn-success">Ir a sección de temas</a></p>
         </div>
       </div>
       </div>
