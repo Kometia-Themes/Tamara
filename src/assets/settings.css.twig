@@ -29,16 +29,17 @@ a.btn:hover, a.btn:focus, a.btn-default:hover, a.btn-default:focus, a.btn-primar
   border-color: {{ settings.btn_bg_color_hover }};
 }
 .btn.btn-primary.btn-outline, a.btn.btn-primary.btn-outline {
-  color: {{ settings.body_font_color | lighten_color }};
-  position: relative;
-  background-color: transparent;
+  border: 1px solid {{ settings.body_font_color }};
+  background-color: {{ settings.body_background_color }};
+  box-sizing: border-box;
+  color: {{ settings.body_font_color }};
+  display: inline-block;
   font-weight: bold;
+  line-height: normal;
+  margin: 4px;
   padding-left: 1.2em;
   padding-right: 1.2em;
-  border-color: {{ settings.body_font_color | lighten_color }};
-  margin-bottom: 4px;
-  margin-right: 2px;
-  margin-left: 2px;
+  position: relative;
 }
 .btn.btn-primary.btn-outline:hover, .btn.btn-primary.btn-outline:focus, .btn.btn-primary.btn-outline:hover, .btn.btn-primary.btn-outline:focus,
 a.btn.btn-primary.btn-outline:hover, a.btn.btn-primary.btn-outline:focus, a.btn.btn-primary.btn-outline:hover, a.btn.btn-primary.btn-outline:focus {
@@ -251,4 +252,12 @@ footer.content-info a {
 
 .ajaxcart {
   border-top: 4px solid {{ settings.brand_main_color }};
+}
+
+.collection-menu__link, .category-menu__link {
+  color: {{ settings.body_font_color }}
+}
+
+.collection-menu__link:hover, .collection-menu__link:focus, .category-menu__link:hover, .category-menu__link:focus {
+  color: {{ settings.main_link_color_hover }}
 }
