@@ -1,8 +1,14 @@
+{% if product.image_url is not empty %}
+  {% set sku_image_url = product.image_url ~ '&w=350&h=350&fit=crop' %}
+{% else %}
+  {% set randomNumber = random(15) %}
+  {% set randomImage = randomNumber|replace({0:1}) %}
+  {% set sku_image_url = ('placeholders/product-'~randomImage~'.jpg') | global_img_url %}
+{% endif %}
 <article class="thumbnail-container symmetrical">
   <a class="thumbnail" href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">
     <figure class="thumbnail-img">
-      {% set sku_image_url = product.image_url is not empty ? product.image_url ~ '&w=350&h=350&fit=crop' : 'placeholders/product-11.jpg' | global_img_url %}
-      <img src="{{ sku_image_url }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail">
+      <a href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}"><img src="{{ sku_image_url }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail"></a>
     </figure>
   </a>
     <div class="caption">
@@ -10,9 +16,10 @@
       {% if product.sku.permalink == 'default' and settings.btn_product_buy_in_list %}
         <a data-skuid="{{ product.sku.id }}" class="btn btn-sm btn-primary btn-outline ajaxlink">{{ settings.btn_product_buy_now_text }}</a>
       {% endif %}
-        <a class="btn btn-sm btn-primary btn-outline" href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">{{ settings.btn_product_view_now_text }}</a>
       </div>
-      <div class="product-title"><h3>{{ product.name }}</h3></div>
+      <div class="product-title">
+        <h3><a href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">{{ product.name }}</a></h3>
+      </div>
       <div class="product-price">
         <span class="regular-price">{{ product.price | money('symbol') }}</span>
         {% if product.compared_price is defined and product.sku.compared_price > product.price %}

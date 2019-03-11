@@ -26,7 +26,7 @@
         {% endfor %}
         <li class="main-navbar-affix__cart"><a href="/carrito">
           <i class="zmdi zmdi-shopping-cart" aria-hidden="true"></i>
-          <span class="cart-item-count">{% if cart.total_items > 0 %}{{ cart.total_items }}{% endif %}</span>
+          <span class="cart-item-count{% if cart.total_items > 0 %} active{% endif %}">{% if cart.total_items > 0 %}{{ cart.total_items }}{% endif %}</span>
           </a></li>
       </ul>
     </div>

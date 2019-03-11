@@ -4,13 +4,20 @@
   padding: 0;
   position: relative;
 }
+a.thumbnail {
+  img {
+    @media (min-width: @grid-float-breakpoint) {
+      opacity: .95;
+    }
+  }
+}
 a.thumbnail:hover,
 a.thumbnail:focus {
   text-decoration: none;
   border-color: transparent;
   img {
     @media (min-width: @grid-float-breakpoint) {
-      opacity: .54;
+      opacity: 1;
     }
   }
 }
@@ -49,7 +56,8 @@ a.thumbnail:focus {
     .product-title {
       h3 {
         font-size: 18px;
-        margin-top: 6px;
+        line-height: 1.4;
+        margin: 0 0 4px;
       }
     }
   }
@@ -86,6 +94,7 @@ a.thumbnail.disabled {
   .clearfix;
 }
 .thumbnail-container .caption .action-buttons {
+  margin-bottom: 10px;
   text-align: center;
 }
 .thumbnail-container.thumb-cont__full-width .thumbnail {
@@ -114,15 +123,16 @@ a.thumbnail.disabled {
           @media (min-width: @screen-sm-min) { height: 147.5px; }
           @media (min-width: @screen-md-min) { height: 202.5px; }
           @media (min-width: @screen-lg-min) { height: 252.5px; }
-          img {}
         }
         .caption {
           .product-title {
             h3 {font-size: 18px;}
           }
           .product-price {
-            .regular-price {font-size: 20px;}
-            .compared-price {font-size: 18px;}
+            .regular-price,
+            .compared-price {
+              font-size: 18px;
+            }
           }
         }
       }
@@ -132,16 +142,15 @@ a.thumbnail.disabled {
 .product-list {
   .thumbnail-container {
     .thumbnail {
-      .thumbnail-img {
-        img {}
-      }
       .caption {
         .product-title {
           h3 {font-size: 18px;}
         }
         .product-price {
-          .regular-price {font-size: 20px;}
-          .compared-price {font-size: 18px;}
+          .regular-price,
+          .compared-price {
+            font-size: 18px;
+          }
         }
       }
     }

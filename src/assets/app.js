@@ -5857,12 +5857,7 @@ var UTIL = {
     });
   }
 };
-$(document).ajaxStart(function(){
-$(document.body).css({'cursor':'wait'});
-$('body a').css({'pointer-events':'none'})})
-.ajaxStop(function(){
-$(document.body).css({'cursor':'default'});
-$('body a').css({'pointer-events':'auto'})}).ready(UTIL.loadEvents);
+$(document).ready(UTIL.loadEvents);
 $(window).on('resize', UTIL.loadEvents);
 })(jQuery); // Fully reference jQuery after this point.
 
