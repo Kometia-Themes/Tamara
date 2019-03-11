@@ -5,7 +5,6 @@
   {% else %}
   <li class="category-menu__list"><a class="category-menu__link" href="/categorias/{{ category.permalink }}" title="{{ category.title }}">{{ category.title }}</a>{% if category.children | length > 0 %}<span class="toggle-btn"><i class="zmdi zmdi-hc-lg zmdi-caret-down"></i></span>{% endif %}</li>
   {% endif %}
-
   <ul class="category-menu__submenu">
   {% for sub_category in category.children %}
     {% include '_category_tree_item.twig' with {
