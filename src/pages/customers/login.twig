@@ -1,0 +1,35 @@
+{% extends 'layout.twig' %}
+{% block body_class %}account signin has-featured{% endblock body_class %}
+
+{% block body %}
+<section class="featured-block {{ settings.gradient_pages }}">
+  <div class="container">
+    <h1 class="title">Iniciar sesión</h1>
+  </div>
+</section>
+<br class="hidden-xs"><br class="hidden-xs">
+<section class="page-content">
+  <div class="container">
+    <div class="row page">
+        <div class="col-sm-offset-3 col-sm-6">
+            <form action="/cuenta/login" method="POST" role="form">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                <div class="form-group">
+                  <label class="control-label" for="name">Correo electrónico</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label class="control-label" for="name">Contraseña</label>
+                  <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary btn-block" type="submit" name="submit" id="submit" value="&nbsp; Iniciar sesión &nbsp;">
+                </div>
+            </form>
+            <p class="text-center">¿Aún no tienes una cuenta? <a href="/cuenta/registro" alt="Registrarse en {{ store.name }}">Crea una aquí</a>.</p>
+            <p class="text-center">¿Ya tienes cuenta? <a href="/cuenta/recuperar" alt="Registrarse en {{ store.name }}">Recupérala</a>.</p>
+        </div>
+    </div>
+  </div>
+</section>
+{% endblock body %}

@@ -1,0 +1,11 @@
+<div class="container">
+  <ul class="breadcrumb">
+      <li><a href="/">{{ store.name }}</a></li>
+      {% if parent is not empty and url is not empty %}
+      <li><a href="/{{ url }}">{{ parent }}</a></li>
+      {% elseif parent is not empty and url is empty %}
+      <li>{{ parent }}</li>
+      {% endif %}
+      <li class="active">{{ current }}</li>
+  </ul>
+</div>

@@ -1,0 +1,14 @@
+{% if menu.children | length > 0 %}
+  <li class="sidebarmenu-menu__list"><a class="sidebarmenu-menu__link" href="{{ menu.url }}" title="{{ menu.name }}">{{ menu.name }}</a>{% if menu.children | length > 0 %}<span class="toggle-btn"><i class="zmdi zmdi-hc-lg zmdi-caret-down"></i></span>{% endif %}</li>
+  <ul class="sidebarmenu-menu__submenu">
+  {% for submenu in menu.children %}
+    {% include '_sidebarmenu_tree_item.twig' with {
+      'menu' : submenu,
+      'currentIndex' : loop.index,
+      'isLast'       : loop.last
+    } only %}
+  {% endfor %}
+  </ul>
+{% else %}
+  <li class="sidebarmenu-menu__list"><a class="sidebarmenu-menu__link" href="{{ menu.url }}" title="{{ menu.name }}">{{ menu.name }}</a>{% if menu.children | length > 0 %}<span class="toggle-btn"><i class="zmdi zmdi-hc-lg zmdi-caret-down"></i></span>{% endif %}</li>
+{% endif %}

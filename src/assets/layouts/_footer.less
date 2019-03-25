@@ -1,0 +1,114 @@
+#cta__bottom-newsletter {
+  margin-top: @jumbotron-padding;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  .text-center;
+  .cta {
+    margin-bottom: 0;
+  }
+  .cta h3 {
+    margin-top: 0;
+  }
+}
+
+.cta-bottom-form {
+  .text-center;
+  input[type="text"] {
+    @media (min-width: @grid-float-breakpoint) {
+      width: 320px;
+    }
+  }
+  button[type="submit"] {
+    @media (max-width: @grid-float-breakpoint-max) {
+      .btn-block;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .cta-bottom-form .form-inline .form-group {
+    vertical-align: top;
+  }
+}
+footer.content-info {
+  padding-top: @jumbotron-padding;
+  padding-bottom: @jumbotron-padding;
+}
+footer.content-info a {
+  color: darken(#fff, 15%);
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+}
+footer.content-info .active a {
+  color: #fff;
+  font-weight: bold;
+}
+.footer-brand {
+  display: block;
+  img {
+    margin: 0 auto;
+    height: 45px;
+    margin-bottom: @line-height-computed * 2;
+    @media (min-width: @grid-float-breakpoint) {
+      height: 95px;
+    }
+  }
+}
+footer.content-info .footer__row {
+  .make-row;
+  .footer-widget {
+    margin-bottom: @line-height-computed;
+    .make-xs-column(6);
+    .make-sm-column(3);
+  }
+}
+footer.content-info .footer__row-inset {
+  .make-row;
+  .footer-widget {
+    margin-bottom: @line-height-computed;
+    .make-xs-column(6);
+  }
+  > .footer-widget:first-child {
+    .make-sm-column(8);
+  }
+  > .footer-widget:last-child {
+    .make-sm-column(4);
+  }
+}
+footer.content-info .footer-widget dt {
+  .h4;
+  color: #fff;
+}
+footer.content-info .footer-widget dd a {
+  display: block;
+  padding: 10px 0;
+  @media (min-width: @grid-float-breakpoint) {
+    display: inline-block;
+  }
+  &:hover,
+  &:focus {
+    padding-left: 10px;
+  }
+}
+.fw__store-social {
+  margin-bottom: 2em;
+  .list-inline;
+  i {
+    font-size: @font-size-h4;
+    margin-right: 10px;
+  }
+}
+footer.content-info .footer-copyright {
+  color: #fff;
+  .text-center;
+  a {
+    color: #fff;
+    font-weight: bold;
+  }
+}
+footer.content-info .footer-widget .title {
+  .h4;
+  color: white;
+}

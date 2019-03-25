@@ -1,0 +1,37 @@
+{% if settings.featured_blog | length > 0 and blogs[settings.featured_blog] is defined and blogs[settings.featured_blog].posts | length > 0 %}
+{% set blog = blogs[settings.featured_blog] %}
+<section class="featured-posts-home">
+  <div class="container">
+    <h2 class="text-center">{{ settings.featured_blog_title }}</h2>
+    <hr class="hr-small">
+    <div class="row">
+      {% if settings.featured_posts_limit is empty or settings.featured_posts_limit == 0 %}
+        {% for post in blog.posts %}
+          {% include '_post-item.twig' %}
+        {% endfor %}
+      {% else %}
+        {% for post in blog.posts | slice(0,settings.featured_posts_limit) %}
+          {% include '_post-item.twig' %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="featured-posts-home content-placeholder">
+  <div class="container">
+    <h2 class="text-center">{{ settings.featured_blog_title }}</h2>
+    <hr class="hr-small">
+    <div class="row">
+    <div class="placeholder-helper text-center">
+      <div class="col-xs-12 placeholder-info">
+        <p class="lead">Aquí aparecerán los post cuando los crees y actives.</p>
+        <p><a href="/admin/blogs" class="btn btn-success">Administrar Blogs</a>
+        <a href="/admin/themes" class="btn btn-success">Ir a sección de temas</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+

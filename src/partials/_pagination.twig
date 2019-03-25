@@ -1,0 +1,23 @@
+<div class="text-center">
+{% if pagination.last > 1 %}
+  <ul class="pagination">
+    {% if pagination.current <= 1 %}
+    <li class="page-item disabled"><a class="page-link"><i class="zmdi zmdi-chevron-left"></i></a></li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="{{ pagination.previous_link }}"><i class="zmdi zmdi-chevron-left"></i></a></li>
+    {% endif %}
+    {% for index, link in pagination.links %}
+      {% if index == pagination.current %}
+      <li class="page-item active"><a class="page-link">{{ index }}</a></li>
+      {% else %}
+      <li class="page-item"><a class="page-link" href="{{ link }}">{{ index }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if pagination.current == pagination.last %}
+    <li class="page-item disabled"><a class="page-link">&raquo;</a></li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="{{ pagination.next_link }}">&raquo;</a></li>
+    {% endif %}
+  </ul>
+{% endif %}
+</div>

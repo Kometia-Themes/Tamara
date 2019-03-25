@@ -1,0 +1,42 @@
+{% extends 'layout.twig' %}
+{% set page_title = 'Registro' %}
+{% block body_class %}account signup has-featured{% endblock body_class %}
+
+{% block body %}
+<section class="featured-block {{ settings.gradient_pages }}">
+  <div class="container">
+    <h1 class="title">Crear una cuenta</h1>
+  </div>
+</section>
+<br class="hidden-xs"><br class="hidden-xs">
+<section class="page-content">
+  <div class="container">
+    <div class="row page">
+      <div class="col-sm-offset-3 col-sm-6">
+        <form action="/cuenta/registro" method="POST" role="form" class="login-form">
+          <div class="form-group">
+            <label class="control-label" for="first_name">Nombre</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" data-validation-error-msg="Escriba su nombre" placeholder="Nombre" required>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="last_name">Apellidos</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" data-validation-error-msg="Escriba su apellido" placeholder="Apellido" required>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="email">Dirección de email</label>
+            <input type="email" class="form-control" id="email" name="email" data-validation-error-msg="Ingrese un correo válido" placeholder="Dirección de email" required>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="password">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password" data-validation-error-msg="Escriba su contraseña" placeholder="Contraseña" required>
+          </div>
+          <p>&nbsp;</p>
+          <div class="form-group">
+            <input class="btn btn-primary btn-block" type="submit" name="submit" id="submit" value="&nbsp; Crear mi cuenta &nbsp;">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock body %}
