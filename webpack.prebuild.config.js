@@ -5,8 +5,6 @@ var path = require('path');
 var WebpackShellPlugin = require('webpack-shell-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var webpackUglifyJsPlugin = require('webpack-uglify-js-plugin');
 
 module.exports = {
   entry: {
@@ -23,7 +21,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_module/,
         query: {
-          presets: ['es2015']
+          presets: ['babel-preset-env']
         }
       },
       {
@@ -60,7 +58,7 @@ module.exports = {
       { from: './src/assets/', to: 'assets' }
     ], {
       ignore: [
-        // Doesn't copy any files with a scss extension    
+        // Doesn't copy any files with a scss extension
         '*.scss',
         '.DS_Store',
         'base/*',

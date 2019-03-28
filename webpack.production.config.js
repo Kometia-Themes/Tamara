@@ -1,10 +1,8 @@
 'use strict';
 
-var webpack = require('webpack');
 var path = require('path');
 var WebpackShellPlugin = require('webpack-shell-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var StringReplacerPlugin = require('webpack-string-replacer-plugin');
 var ZipPlugin = require('zip-webpack-plugin');
 
