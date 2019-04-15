@@ -174,7 +174,9 @@ footer.content-info a {
 #main-navbar .navbar-toggle {
   border-color: transparent;
 }
-
+#main-navbar .navbar-toggle .icon-bar {
+  background-color: {{ settings.main_navbar_text_color }};
+}
 #main-navbar .navbar-toggle:hover,
 #main-navbar .navbar-toggle:focus {
   background-color: transparent;
@@ -188,6 +190,7 @@ footer.content-info a {
 #main-navbar .dropdown-menu > li > a:hover,
 #main-navbar .dropdown-menu > li > a:focus {
   color: {{ settings.main_navbar_text_color_hover }};
+  background-color: transparent;
 }
 @media(min-width: 768px) {
   #main-navbar .dropdown-menu > li > a {
