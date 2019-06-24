@@ -22,7 +22,11 @@
 {% else %}
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{ page_title | escape }}" />
-  {% if settings.use_logo %}
+  {% if settings.ogimage is not empty %}
+    <meta property="og:image" content="{{ settings.ogimage | replace({ 'https://': 'http://' }) }}" />
+    <meta property="og:image:secure_url" content="https:{{ settings.ogimage | replace({ 'http://': 'https://' }) }}" />
+  {% endif %}
+  {% if settings.use_logo and settings.ogimage is empty %}
     <meta property="og:image" content="{{ settings['logo.png'] | replace({ 'https://': 'http://' }) }}" />
     <meta property="og:image:secure_url" content="https:{{ settings['logo.png'] | replace({ 'http://': 'https://' }) }}" />
   {% endif %}

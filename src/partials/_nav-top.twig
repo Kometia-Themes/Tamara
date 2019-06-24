@@ -1,4 +1,15 @@
 <nav id="top-navbar">
+{% if settings.topbanner %}
+  <div class="minitop-banner">
+    <p class="minitop-banner__text">
+    {% if settings.topbanner_link is not empty %}
+      <a href="{{ settings.topbanner_link }}" class="minitop-banner__link">{{ settings.topbanner_text}}</a>
+    {% else %}
+    {{ settings.topbanner_text }}
+    {% endif %}
+    </p>
+  </div>
+{% endif %}
   <div class="container">
     <ul class="nav navbar-nav top-navbar__left">
     {% if store.customer_accounts_enabled_or_optional and settings.header_display_my_account %}
