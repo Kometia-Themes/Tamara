@@ -163,8 +163,9 @@
 
     var imageMain = $('#sp-img-full .item');
     var newImageMain = sku.image_url; // Imag del figure clickeado
-    imageMain.find('img').attr('src', newImageMain);
-
+    if (newImageMain !== null) {
+      imageMain.find('img').attr('src', newImageMain);
+    }
     if (sku !== null) {
       if (sku.stock_policy !== 'none' && sku.in_stock < 1) {
         sku = null;
