@@ -909,6 +909,46 @@
               "id": "logo.png",
               "label": "Seleccionar imagen para Logo",
               "info": "Ancho máximo recomendado 200px"
+            },
+            {
+              "type": "image",
+              "id": "ogimage",
+              "label": "Seleccionar imagen Open Graph Image - og:image",
+              "info": "Ancho y alto recomendado 630 x 630 pixels"
+            }
+          ]
+        },
+        {
+          "header": "Banner superior",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "topbanner",
+              "label": "Activar banner superior"
+            },
+            {
+              "type": "text",
+              "id": "topbanner_text",
+              "label": "Texto",
+              "info": "Suscríbete a nuestro newsletter"
+            },
+            {
+              "type": "text",
+              "id": "topbanner_link",
+              "label": "Enlace",
+              "info": "Liga de destino"
+            },
+            {
+              "type": "color",
+              "id": "topbanner_text_color",
+              "label": "Color de texto",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "topbanner_bg_color",
+              "label": "Color de fondo",
+              "default": "#000000"
             }
           ]
         },

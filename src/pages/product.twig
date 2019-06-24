@@ -284,7 +284,9 @@
     var disabledAddButton = $('.js-atc-disabled');
     var comparedPriceElement = $('.js-product-price-compared-amount');
     var imageMain = $('#sp-img-full .item');
-    imageMain.find('img').attr('src', newImageMain);
+    if (newImageMain !== null) {
+      imageMain.find('img').attr('src', newImageMain);
+    }
 
     if (sku !== null) {
       if (sku.stock_policy !== 'none' && sku.in_stock < 1) {

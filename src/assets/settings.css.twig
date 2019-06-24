@@ -208,7 +208,24 @@ footer.content-info a {
     border-color: #eeeeee;
   }
 }
-
+.minitop-banner {
+  background-color: {{ settings.topbanner_bg_color }};
+}
+.minitop-banner .minitop-banner__link {
+    color: {{ settings.topbanner_text_color }};
+}
+.minitop-banner .minitop-banner__link:hover,
+.minitop-banner .minitop-banner__link:focus  {
+    color: {{ settings.topbanner_text_color }};
+}
+.minitop-banner .minitop-banner__text {
+    color: {{ settings.topbanner_text_color }};
+}
+{% if settings.topbanner and (settings.topbanner_text is not empty or settings.topbanner_link is not empty) %}
+body {
+  padding-top: 34px;
+}
+{% endif %}
 
 /* * * * * * * */
 /* Slides BTN  */

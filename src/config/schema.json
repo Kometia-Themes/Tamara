@@ -140,41 +140,19 @@
           ]
         },
         {
-          "header": "Degradado en cabeceras",
+          "header": "Degradado Superior",
           "settings": [
             {
               "type": "select",
               "id": "gradient_pages",
-              "label": "Headers de páginas",
-              "default": "gradient-odd",
-              "info": "Productos, categorías y colecciones",
+              "label": "Degradado en cabeceras",
+              "default": "gradient-even",
               "options": [
-                {
-                  "value": "gradient-odd",
-                  "label": "Degradado 1"
-                },
                 {
                   "value": "gradient-even",
-                  "label": "Degradado 2"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "header": "Degradado en footer",
-          "settings": [
-            {
-              "type": "select",
-              "id": "gradient_footer",
-              "label": "Degradado en cabeceras",
-              "default": "gradient-odd",
-              "options": [
-                {
-                  "value": "gradient-odd",
                   "label": "Degradado 1"
                 },{
-                  "value": "gradient-even",
+                  "value": "gradient-odd",
                   "label": "Degradado 2"
                 }
               ]
@@ -649,11 +627,6 @@
                   "group": "Google Web Fonts"
                 },
                 {
-                  "value": "Google+Baloo+Bhaina",
-                  "label": "Baloo Bhaina",
-                  "group": "Google Web Fonts"
-                },
-                {
                   "value": "Google+Cabin",
                   "label": "Cabin",
                   "group": "Google Web Fonts"
@@ -936,6 +909,46 @@
               "id": "logo.png",
               "label": "Seleccionar imagen para Logo",
               "info": "Ancho máximo recomendado 200px"
+            },
+            {
+              "type": "image",
+              "id": "ogimage",
+              "label": "Seleccionar imagen Open Graph Image - og:image",
+              "info": "Ancho y alto recomendado 630 x 630 pixels"
+            }
+          ]
+        },
+        {
+          "header": "Banner superior",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "topbanner",
+              "label": "Activar banner superior"
+            },
+            {
+              "type": "text",
+              "id": "topbanner_text",
+              "label": "Texto",
+              "info": "Suscríbete a nuestro newsletter"
+            },
+            {
+              "type": "text",
+              "id": "topbanner_link",
+              "label": "Enlace",
+              "info": "Liga de destino"
+            },
+            {
+              "type": "color",
+              "id": "topbanner_text_color",
+              "label": "Color de texto",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "topbanner_bg_color",
+              "label": "Color de fondo",
+              "default": "#000000"
             }
           ]
         },
@@ -959,46 +972,6 @@
     {
       "name": "Footer",
       "sections": [
-        {
-          "header": "Menú principal",
-          "settings": [
-            {
-              "type": "checkbox",
-              "id": "footer_show_main_menu",
-              "label": "Mostrar menú en el footer"
-            },
-            {
-              "type": "text",
-              "id": "footer_main_menu",
-              "label": "Identificador del menú"
-            },
-            {
-              "type": "text",
-              "id": "footer_main_title",
-              "label": "Título del menú"
-            }
-          ]
-        },
-        {
-          "header": "Menú secundario",
-          "settings": [
-            {
-              "type": "checkbox",
-              "id": "footer_show_secondary_menu",
-              "label": "Mostrar menú en el footer"
-            },
-            {
-              "type": "text",
-              "id": "footer_secondary_menu",
-              "label": "Identificador del menú"
-            },
-            {
-              "type": "text",
-              "id": "footer_secondary_menu_title",
-              "label": "Título del menú"
-            }
-          ]
-        },
         {
           "header": "Newsletter",
           "settings": [
@@ -1839,33 +1812,16 @@
       "icon": "product-page",
       "sections": [
         {
-          "header": "Descripción",
-          "settings": [
-            {
-              "type": "checkbox",
-              "id": "products_display_intro_text",
-              "label": "Mostrar introducción en página de productos",
-              "default": true
-            },
-            {
-              "type": "text",
-              "id": "products_intro_text",
-              "label": "Texto de presentación",
-              "default": "Mira la asombrosa variedad de artículos disponibles."
-            },
-            {
-              "type": "checkbox",
-              "id": "btn_product_buy_in_list",
-              "label": "Mostrar botón comprar ya",
-              "info": "Si está activa esta opción, el botón se mostrará en el producto dentro de productos, colección y categoría."
-            },
-            {
-              "type": "text",
-              "id": "btn_product_buy_now_text",
-              "label": "Texto del botón comprar ya",
-              "default": "COMPRAR"
-            }
-          ]
+          "type": "checkbox",
+          "id": "products_display_intro_text",
+          "label": "Mostrar introducción en página de productos",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "products_intro_text",
+          "label": "Texto de presentación",
+          "default": "Mira la asombrosa variedad de artículos disponibles."
         },
         {
           "header": "Ficha",
@@ -1875,74 +1831,6 @@
               "id": "enable_product_image_zoom",
               "label": "Habilitar zoom en imagen principal",
               "default": true
-            },
-            {
-              "type": "text",
-              "id": "product_image_zoom_in_text",
-              "label": "Texto en etiqueta para zoom",
-              "default": "Clic para zoom"
-            },
-            {
-              "type": "text",
-              "id": "product_image_zoom_out_text",
-              "label": "Texto en etiqueta para salir de zoom",
-              "default": "Clic para salir"
-            }
-          ]
-        },
-        {
-          "header": "Filtro de ordenamiento",
-          "settings": [
-            {
-              "type": "checkbox",
-              "id": "orderby_name",
-              "label": "Ordenar por nombre"
-            },
-            {
-              "type": "text",
-              "id": "orderby_name_ascending_text",
-              "label": "Título del filtro nombre ascendente",
-              "default": "Alfabéticamente A-Z"
-            },
-            {
-              "type": "text",
-              "id": "orderby_name_descending_text",
-              "label": "Título del filtro nombre descendente",
-              "default": "Alfabéticamente Z-A"
-            },
-            {
-              "type": "checkbox",
-              "id": "orderby_created",
-              "label": "Ordenar por creación"
-            },
-            {
-              "type": "text",
-              "id": "orderby_created_ascending_text",
-              "label": "Título del filtro creación ascendente",
-              "default": "Fecha: Nuevos a viejos"
-            },
-            {
-              "type": "text",
-              "id": "orderby_created_descending_text",
-              "label": "Título del filtro creación descendente",
-              "default": "Fecha: Viejos a nuevos"
-            },
-            {
-              "type": "checkbox",
-              "id": "orderby_price",
-              "label": "Ordenar por creación"
-            },
-            {
-              "type": "text",
-              "id": "orderby_price_ascending_text",
-              "label": "Título del filtro precio ascendente",
-              "default": "Precio: Menor a mayor"
-            },
-            {
-              "type": "text",
-              "id": "orderby_price_descending_text",
-              "label": "Título del filtro precio descendente",
-              "default": "Precio: Mayor a menor"
             }
           ]
         },
@@ -1960,103 +1848,6 @@
               "id": "show_sku_code",
               "label": "Mostrar Sku del producto",
               "default": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Páginas sidebar",
-      "icon": "product-page",
-      "sections": [
-        {
-          "header": "Mostrar categorías",
-          "settings": [
-            {
-              "type": "checkbox",
-              "id": "display_sidebar_categories",
-              "label": "Mostrar listado",
-              "default": true
-            }
-          ]
-        },
-        {
-          "header": "Mostrar colecciones",
-          "settings": [
-            {
-              "type": "checkbox",
-              "id": "display_sidebar_collections",
-              "label": "Mostrar listado",
-              "default": true
-            }
-          ]
-        },
-        {
-          "header": "Menú personalizado",
-          "settings": [
-            {
-              "type": "checkbox",
-              "id": "display_sidebar_menu",
-              "label": "Mostrar un menú personalizado",
-              "default": true
-            },
-            {
-              "type": "text",
-              "id": "display_sidebar_menu_name",
-              "label": "Identificador del menú",
-              "default": "Mira la asombrosa variedad de artículos disponibles."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Carrito",
-      "icon": "cart-page",
-      "sections": [
-        {
-          "header": "Es regalo",
-          "settings": [
-            {
-              "type": "checkbox",
-              "id": "enabled_gift_option",
-              "label": "Mostrar opciones para regalo.",
-              "default": false
-            },
-            {
-              "type": "text",
-              "id": "gift_title_message",
-              "label": "Título",
-              "default": "Esto es un regalo. Incluir el siguiente mensaje (150 caracteres máximo)."
-            },
-            {
-              "type": "text",
-              "id": "gift_btn_message",
-              "label": "Texto del botón",
-              "default": "Agregar mensaje"
-            }
-          ]
-        },
-        {
-          "header": "Nota del cliente",
-          "settings": [
-            {
-              "type": "checkbox",
-              "id": "enabled_customer_note_option",
-              "label": "Mostrar campo nota del cliente.",
-              "default": true
-            },
-            {
-              "type": "text",
-              "id": "customer_title_note",
-              "label": "Título",
-              "default": "Agrega alguna nota o comentario al vendedor:"
-            },
-            {
-              "type": "text",
-              "id": "customer_btn_note_text",
-              "label": "Texto del botón",
-              "default": "Agregar nota"
             }
           ]
         }
@@ -2120,13 +1911,13 @@
               "type": "text",
               "id": "facebook_link",
               "label": "Facebook",
-              "info": "https://www.facebook.com/kometiaHQ"
+              "info": "https://www.facebook.com/KometiaHQ"
             },
             {
               "type": "text",
               "id": "twitter_link",
               "label": "Twitter",
-              "info": "https://twitter.com/kometiaHQ"
+              "info": "https://twitter.com/KometiaHQ"
             },
             {
               "type": "text",
@@ -2168,7 +1959,7 @@
               "type": "text",
               "id": "whatsapp_link",
               "label": "Whatsapp",
-              "info": "+5215500000000"
+              "info": "+52 123 456 789"
             }
           ]
         },

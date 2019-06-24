@@ -1,4 +1,14 @@
 <nav id="top-navbar">
+{% if settings.topbanner %}
+  <div class="topbanner" style="background-color: {{ settings.topbanner_bg_color }}; width: 100%;">
+    <p class="topbanner__text" style="color: {{ settings.topbanner_text_color }}; margin: 0;">{% if settings.topbanner_link is not empty %}
+      <a class="topbanner__link" href="{{ settings.topbanner_link }}" style="color: {{ settings.topbanner_text_color }};">{{ settings.topbanner_text }}</a>
+      {% else %}
+      {{ settings.topbanner_text }}
+      {% endif %}
+    </p>
+  </div>
+{% endif %}
   <div class="container">
     <ul class="nav navbar-nav top-navbar__left">
     {% if store.customer_accounts_enabled_or_optional and settings.header_display_my_account %}
