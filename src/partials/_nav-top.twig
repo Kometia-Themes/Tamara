@@ -2,7 +2,7 @@
 {% if settings.topbanner %}
   <div class="minitop-banner">
     <p class="minitop-banner__text">
-    {% if settings.topbanner_link is not empty %}
+    {% if settings.topbanner_link is not empty and settings.topbanner_text is not empty %}
       <a href="{{ settings.topbanner_link }}" class="minitop-banner__link">{{ settings.topbanner_text}}</a>
     {% else %}
     {{ settings.topbanner_text }}

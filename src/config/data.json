@@ -61,7 +61,7 @@
       "logo.png": "",
       "ogimage": "",
       "topbanner": false,
-      "topbanner_link": "",
+      "topbanner_link": "#",
       "topbanner_text": "",
       "topbanner_text_color": "#ffffff",
       "topbanner_bg_color": "#000000",
