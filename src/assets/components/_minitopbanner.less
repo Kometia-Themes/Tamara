@@ -1,14 +1,29 @@
 .minitop-banner {
   display: block;
-  max-height: 34px;
+  height: auto;
   width: 100%;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   &__link {
     display: block;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 3px;
+    @media(max-width: 767px) {
+      font-size: 15px;
+      letter-spacing: 0;
+    }
     text-align: center;
     padding: 0;
   }
   &__text {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
     margin: 0;
-    padding: 6px 0;
+    padding: 4px 0 6px;
   }
 }

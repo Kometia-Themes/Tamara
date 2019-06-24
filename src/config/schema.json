@@ -18,7 +18,6 @@
               "type": "color",
               "id": "brand_main_color",
               "label": "Color destacado",
-              "default": "#2eb220",
               "info": "Usualmente es el color principal de la marca."
             },
             {
@@ -35,8 +34,7 @@
             {
               "type": "color",
               "id": "topnav_bg_color",
-              "label": "Fondo",
-              "default": "#F4F4F4"
+              "label": "Fondo"
             },
             {
               "type": "color",
@@ -86,21 +84,21 @@
             },
             {
               "type": "color",
-              "id": "gradient_odd_a",
+              "id": "gradient_even_a",
               "label": "Primer color",
               "default": "rgb(41,8,48)",
               "info": "Si quieres un color sólido usa el mismo color del degradado final."
             },
             {
               "type": "color",
-              "id": "gradient_odd_b",
+              "id": "gradient_even_b",
               "label": "Segundo color",
               "default": "rgb(82,65,143)",
               "info": "Si quieres un color sólido usa el mismo color del degradado final."
             },
             {
               "type": "color",
-              "id": "gradient_odd_c",
+              "id": "gradient_even_c",
               "label": "Tercer color",
               "default": "rgb(114,183,227)",
               "info": "Si quieres un color sólido usa el mismo color del degradado final."
@@ -118,21 +116,21 @@
             },
             {
               "type": "color",
-              "id": "gradient_even_a",
+              "id": "gradient_odd_a",
               "label": "Primer color",
               "default": "#134499",
               "info": "Si quieres un color sólido usa el mismo color del degradado final."
             },
             {
               "type": "color",
-              "id": "gradient_even_b",
+              "id": "gradient_odd_b",
               "label": "Segundo color",
               "default": "#2EB220",
               "info": "Si quieres un color sólido usa el mismo color del degradado final."
             },
             {
               "type": "color",
-              "id": "gradient_even_c",
+              "id": "gradient_odd_c",
               "label": "Tercer color",
               "default": "#CBF232",
               "info": "Si quieres un color sólido usa el mismo color del degradado final."
@@ -145,13 +143,34 @@
             {
               "type": "select",
               "id": "gradient_pages",
-              "label": "Degradado en cabeceras",
-              "default": "gradient-even",
+              "label": "Headers de páginas",
+              "info": "Productos, categorías y colecciones",
               "options": [
                 {
                   "value": "gradient-even",
                   "label": "Degradado 1"
-                },{
+                },
+                {
+                  "value": "gradient-odd",
+                  "label": "Degradado 2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": "Degradado en footer",
+          "settings": [
+            {
+              "type": "select",
+              "id": "gradient_footer",
+              "label": "Pie de página",
+              "options": [
+                {
+                  "value": "gradient-even",
+                  "label": "Degradado 1"
+                },
+                {
                   "value": "gradient-odd",
                   "label": "Degradado 2"
                 }
@@ -214,122 +233,6 @@
               "id": "btn_bg_color_hover",
               "label": "Fondo con mouse encima",
               "default": "#78C12F"
-            }
-          ]
-        },
-        {
-          "header": "Slider 1",
-          "settings": [
-            {
-              "type": "color",
-              "id": "btn_slide_1_text",
-              "label": "Texto botón",
-              "default": "#ffffff"
-            },
-            {
-              "type": "color",
-              "id": "btn_slide_1_bg",
-              "label": "Fondo botón",
-              "default": "#2eb220"
-            },
-            {
-              "type": "color",
-              "id": "btn_slide_1_text_over",
-              "label": "Texto botón con mouse encima",
-              "default": "#78c12f"
-            },
-            {
-              "type": "color",
-              "id": "btn_slide_1_bg_over",
-              "label": "Fondo botón con mouse encima",
-              "default": "#ffffff"
-            }
-          ]
-        },
-        {
-          "header": "Slider 2",
-          "settings": [
-            {
-              "type": "color",
-              "id": "btn_slide_2_text",
-              "label": "Texto botón",
-              "default": "#ffffff"
-            },
-            {
-              "type": "color",
-              "id": "btn_slide_2_bg",
-              "label": "Fondo botón",
-              "default": "#2eb220"
-            },
-            {
-              "type": "color",
-              "id": "btn_slide_2_text_over",
-              "label": "Texto botón con mouse encima",
-              "default": "#78c12f"
-            },
-            {
-              "type": "color",
-              "id": "btn_slide_2_bg_over",
-              "label": "Fondo botón con mouse encima",
-              "default": "#ffffff"
-            }
-          ]
-        },
-        {
-          "header": "Slider 3",
-          "settings": [
-            {
-              "type": "color",
-              "id": "btn_slide_3_text",
-              "label": "Texto botón",
-              "default": "#ffffff"
-            },
-            {
-              "type": "color",
-              "id": "btn_slide_3_bg",
-              "label": "Fondo botón",
-              "default": "#2eb220"
-            },
-            {
-              "type": "color",
-              "id": "btn_slide_3_text_over",
-              "label": "Texto botón con mouse encima",
-              "default": "#78c12f"
-            },
-            {
-              "type": "color",
-              "id": "btn_slide_3_bg_over",
-              "label": "Fondo botón con mouse encima",
-              "default": "#ffffff"
-            }
-          ]
-        },
-        {
-          "header": "Slider 4",
-          "settings": [
-            {
-              "type": "color",
-              "id": "btn_slide_4_text",
-              "label": "Texto botón",
-              "default": "#ffffff"
-            },
-            {
-              "type": "color",
-              "id": "btn_slide_4_bg",
-              "label": "Fondo botón",
-              "default": "#2eb220"
-            },
-            {
-              "type": "color",
-              "id": "btn_slide_4_text_over",
-              "label": "Texto botón con mouse encima",
-              "default": "#78c12f"
-            },
-            {
-              "type": "color",
-              "id": "btn_slide_4_bg_over",
-              "label": "Fondo botón con mouse encima",
-              "default": "#ffffff"
             }
           ]
         },
@@ -462,6 +365,11 @@
                   "group": "Google Web Fonts"
                 },
                 {
+                  "value": "Google+Roboto",
+                  "label": "Roboto",
+                  "group": "Google Web Fonts"
+                },
+                {
                   "value": "Google+Roboto+Slab",
                   "label": "Roboto Slab",
                   "group": "Google Web Fonts"
@@ -531,7 +439,8 @@
                   "label": "Monaco/Lucida Console",
                   "group": "Monospace"
                 }
-              ]
+              ],
+              "info": "Verifica los valores aceptados de la fuente en https://fonts.google.com/"
             },
             {
               "type": "select",
@@ -603,7 +512,8 @@
                   "value": "900",
                   "label": "ExtraBold 900"
                 }
-              ]
+              ],
+              "info": "Verifica los valores aceptados de la fuente en https://fonts.google.com/"
             }
           ]
         },
@@ -712,6 +622,11 @@
                   "group": "Google Web Fonts"
                 },
                 {
+                  "value": "Google+Roboto+Condensed",
+                  "label": "Roboto Condensed",
+                  "group": "Google Web Fonts"
+                },
+                {
                   "value": "Google+Roboto+Slab",
                   "label": "Roboto Slab",
                   "group": "Google Web Fonts"
@@ -781,7 +696,8 @@
                   "label": "Monaco/Lucida Console",
                   "group": "Monospace"
                 }
-              ]
+              ],
+              "info": "Verifica los valores aceptados de la fuente en https://fonts.google.com/"
             },
             {
               "type": "select",
@@ -861,7 +777,8 @@
                   "value": "900",
                   "label": "ExtraBold 900"
                 }
-              ]
+              ],
+              "info": "Verifica los valores aceptados de la fuente en https://fonts.google.com/"
             }
           ]
         }
@@ -908,7 +825,61 @@
               "type": "image",
               "id": "logo.png",
               "label": "Seleccionar imagen para Logo",
-              "info": "Ancho máximo recomendado 200px"
+              "info": "Ancho máximo recomendado 300px"
+            },
+            {
+              "type": "image",
+              "id": "mobilelogo.png",
+              "label": "Seleccionar imagen para Logo en móviles",
+              "info": "Ancho máximo recomendado 220px"
+            },
+            {
+              "type": "image",
+              "id": "ogimage",
+              "label": "Seleccionar imagen Open Graph Image - og:image",
+              "info": "Ancho y alto recomendado 630 x 630 pixels"
+            }
+          ]
+        },
+        {
+          "header": "Banner superior",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "topbanner",
+              "label": "Activar banner superior"
+            },
+            {
+              "type": "text",
+              "id": "topbanner_text",
+              "label": "Texto",
+              "info": "Suscríbete a nuestro newsletter"
+            },
+            {
+              "type": "text",
+              "id": "topbanner_link",
+              "label": "Enlace",
+              "info": "Liga de destino"
+            },
+            {
+              "type": "color",
+              "id": "topbanner_text_color",
+              "label": "Color de texto"
+            },
+            {
+              "type": "color",
+              "id": "topbanner_bg_color",
+              "label": "Color de fondo"
+            }
+          ]
+        },
+        {
+          "header": "Elementos",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "header_display_search",
+              "label": "Mostrar buscador"
             },
             {
               "type": "image",
@@ -1010,6 +981,41 @@
           ]
         },
         {
+          "header": "Menús",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "footer_show_main_menu",
+              "label": "Mostrar principal"
+            },
+            {
+              "type": "text",
+              "id": "footer_main_menu",
+              "label": "Identificador"
+            },
+            {
+              "type": "text",
+              "id": "footer_main_title",
+              "label": "Título menú principal"
+            },
+            {
+              "type": "checkbox",
+              "id": "footer_show_secondary_menu",
+              "label": "Mostrar secundario"
+            },
+            {
+              "type": "text",
+              "id": "footer_secondary_menu",
+              "label": "Identificador"
+            },
+            {
+              "type": "text",
+              "id": "footer_secondary_menu_title",
+              "label": "Título menú secundario"
+            }
+          ]
+        },
+        {
           "header": "Íconos de métodos de pago",
           "settings": [
             {
@@ -1061,8 +1067,7 @@
               "type": "textarea",
               "id": "footer_contact_data",
               "label": "Información de contacto",
-              "default": "Calle Principal #10\n+52 1 123 456 7890",
-              "info": "Calle Principal #10"
+              "default": "Domicilio o información"
             }
           ]
         }
@@ -1359,15 +1364,23 @@
             },
             {
               "type": "image",
-              "id": "slide_1_image",
-              "label": "Imagen de fondo",
-              "max-width": 1180,
-              "info": "1180px de ancho recomendado"
+              "id": "slide_1_image_desktop",
+              "label": "Imagen desktop",
+              "max-width": 1280,
+              "info": "1280px de ancho por 600px de alto recomendado"
+            },
+            {
+              "type": "image",
+              "id": "slide_1_image_mobile",
+              "label": "Imagen mobile",
+              "max-width": 800,
+              "info": "620px de ancho por 700px de alto recomendado"
             },
             {
               "type": "checkbox",
               "id": "slide_1_image_show",
-              "label": "Mostrar imagen de fondo"
+              "label": "Activar imagenes",
+              "info": "Para ver las imágenes debes activarlas."
             },
             {
               "type": "text",
@@ -1375,9 +1388,21 @@
               "label": "Título"
             },
             {
+              "type": "color",
+              "id": "slide_1_title_color",
+              "label": "Color del título",
+              "info": "Por defecto toma los colores del degradado impar"
+            },
+            {
               "type": "textarea",
               "id": "slide_1_desc",
               "label": "Contenido"
+            },
+            {
+              "type": "color",
+              "id": "slide_1_text_color",
+              "label": "Color contenido",
+              "info": "Por defecto toma los colores del degradado impar"
             },
             {
               "type": "checkbox",
@@ -1395,15 +1420,38 @@
               "label": "Enlace del botón"
             },
             {
+              "type": "color",
+              "id": "btn_slide_1_text",
+              "label": "Color texto botón",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_1_bg",
+              "label": "Color de fondo botón",
+              "default": "#2eb220"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_1_text_over",
+              "label": "Color texto botón con mouse encima",
+              "default": "#78c12f"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_1_bg_over",
+              "label": "Color fondo botón con mouse encima",
+              "default": "#ffffff"
+            },
+            {
               "type": "checkbox",
               "id": "slide_1_dark",
-              "label": "Texto color negro"
+              "label": "Todo el texto en negro"
             },
             {
               "type": "color",
               "id": "slide_1_overlay",
-              "label": "Color de capa",
-              "default": ""
+              "label": "Color de capa"
             },
             {
               "type": "checkbox",
@@ -1422,15 +1470,23 @@
             },
             {
               "type": "image",
-              "id": "slide_2_image",
+              "id": "slide_2_image_desktop",
               "label": "Imagen de fondo",
-              "max-width": 1180,
-              "info": "1180px de ancho recomendado"
+              "max-width": 1280,
+              "info": "1280px de ancho por 600px de alto recomendado"
+            },
+            {
+              "type": "image",
+              "id": "slide_2_image_mobile",
+              "label": "Imagen mobile",
+              "max-width": 800,
+              "info": "620px de ancho por 700px de alto recomendado"
             },
             {
               "type": "checkbox",
               "id": "slide_2_image_show",
-              "label": "Mostrar imagen de fondo"
+              "label": "Activar imagenes",
+              "info": "Para ver las imágenes debes activarlas."
             },
             {
               "type": "text",
@@ -1438,9 +1494,21 @@
               "label": "Título"
             },
             {
+              "type": "color",
+              "id": "slide_2_title_color",
+              "label": "Color del título",
+              "info": "Por defecto toma los colores del degradado par"
+            },
+            {
               "type": "textarea",
               "id": "slide_2_desc",
               "label": "Contenido"
+            },
+            {
+              "type": "color",
+              "id": "slide_2_text_color",
+              "label": "Color contenido",
+              "info": "Por defecto toma los colores del degradado par"
             },
             {
               "type": "checkbox",
@@ -1458,6 +1526,30 @@
               "label": "Enlace del botón"
             },
             {
+              "type": "color",
+              "id": "btn_slide_2_text",
+              "label": "Color texto botón",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_2_bg",
+              "label": "Color de fondo botón",
+              "default": "#2eb220"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_2_text_over",
+              "label": "Color texto botón con mouse encima",
+              "default": "#78c12f"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_2_bg_over",
+              "label": "Color fondo botón con mouse encima",
+              "default": "#ffffff"
+            },
+            {
               "type": "checkbox",
               "id": "slide_2_dark",
               "label": "Texto color negro"
@@ -1465,8 +1557,7 @@
             {
               "type": "color",
               "id": "slide_2_overlay",
-              "label": "Color de capa",
-              "default": ""
+              "label": "Color de capa"
             },
             {
               "type": "checkbox",
@@ -1485,15 +1576,23 @@
             },
             {
               "type": "image",
-              "id": "slide_3_image",
+              "id": "slide_3_image_desktop",
               "label": "Imagen de fondo",
-              "max-width": 1180,
-              "info": "1180px de ancho recomendado"
+              "max-width": 1280,
+              "info": "1280px de ancho por 600px de alto recomendado"
+            },
+            {
+              "type": "image",
+              "id": "slide_3_image_mobile",
+              "label": "Imagen mobile",
+              "max-width": 800,
+              "info": "620px de ancho por 700px de alto recomendado"
             },
             {
               "type": "checkbox",
               "id": "slide_3_image_show",
-              "label": "Mostrar imagen de fondo"
+              "label": "Activar imagenes",
+              "info": "Para ver las imágenes debes activarlas."
             },
             {
               "type": "text",
@@ -1501,9 +1600,21 @@
               "label": "Título"
             },
             {
+              "type": "color",
+              "id": "slide_3_title_color",
+              "label": "Color del título",
+              "info": "Por defecto toma los colores del degradado impar"
+            },
+            {
               "type": "textarea",
               "id": "slide_3_desc",
               "label": "Contenido"
+            },
+            {
+              "type": "color",
+              "id": "slide_3_text_color",
+              "label": "Color contenido",
+              "info": "Por defecto toma los colores del degradado impar"
             },
             {
               "type": "checkbox",
@@ -1521,6 +1632,30 @@
               "label": "Enlace del botón"
             },
             {
+              "type": "color",
+              "id": "btn_slide_3_text",
+              "label": "Color texto botón",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_3_bg",
+              "label": "Color de fondo botón",
+              "default": "#2eb220"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_3_text_over",
+              "label": "Color texto botón con mouse encima",
+              "default": "#78c12f"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_3_bg_over",
+              "label": "Color fondo botón con mouse encima",
+              "default": "#ffffff"
+            },
+            {
               "type": "checkbox",
               "id": "slide_3_dark",
               "label": "Texto color negro"
@@ -1528,8 +1663,7 @@
             {
               "type": "color",
               "id": "slide_3_overlay",
-              "label": "Color de capa",
-              "default": ""
+              "label": "Color de capa"
             },
             {
               "type": "checkbox",
@@ -1548,15 +1682,23 @@
             },
             {
               "type": "image",
-              "id": "slide_4_image",
+              "id": "slide_4_image_desktop",
               "label": "Imagen de fondo",
-              "max-width": 1180,
-              "info": "1180px de ancho recomendado"
+              "max-width": 1280,
+              "info": "1280px de ancho por 600px de alto recomendado"
+            },
+            {
+              "type": "image",
+              "id": "slide_4_image_mobile",
+              "label": "Imagen mobile",
+              "max-width": 800,
+              "info": "620px de ancho por 700px de alto recomendado"
             },
             {
               "type": "checkbox",
               "id": "slide_4_image_show",
-              "label": "Mostrar imagen de fondo"
+              "label": "Activar imagenes",
+              "info": "Para ver las imágenes debes activarlas."
             },
             {
               "type": "text",
@@ -1564,9 +1706,21 @@
               "label": "Título"
             },
             {
+              "type": "color",
+              "id": "slide_4_title_color",
+              "label": "Color del título",
+              "info": "Por defecto toma los colores del degradado par"
+            },
+            {
               "type": "textarea",
               "id": "slide_4_desc",
               "label": "Contenido"
+            },
+            {
+              "type": "color",
+              "id": "slide_4_text_color",
+              "label": "Color contenido",
+              "info": "Por defecto toma los colores del degradado par"
             },
             {
               "type": "checkbox",
@@ -1584,6 +1738,30 @@
               "label": "Enlace del botón"
             },
             {
+              "type": "color",
+              "id": "btn_slide_4_text",
+              "label": "Color texto botón",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_4_bg",
+              "label": "Color de fondo botón",
+              "default": "#2eb220"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_4_text_over",
+              "label": "Color texto botón con mouse encima",
+              "default": "#78c12f"
+            },
+            {
+              "type": "color",
+              "id": "btn_slide_4_bg_over",
+              "label": "Color fondo botón con mouse encima",
+              "default": "#ffffff"
+            },
+            {
               "type": "checkbox",
               "id": "slide_4_dark",
               "label": "Texto color negro"
@@ -1591,8 +1769,7 @@
             {
               "type": "color",
               "id": "slide_4_overlay",
-              "label": "Color de capa",
-              "default": ""
+              "label": "Color de capa"
             },
             {
               "type": "checkbox",
@@ -1715,14 +1892,13 @@
               "type": "select",
               "id": "featured_space_1_bg",
               "label": "Degradado de fondo",
-              "default": "gradient-even",
               "options": [
                 {
-                  "value": "gradient-odd",
+                  "value": "gradient-even",
                   "label": "Degradado 1"
                 },
                 {
-                  "value": "gradient-even",
+                  "value": "gradient-odd",
                   "label": "Degradado 2"
                 }
               ]
@@ -1814,14 +1990,12 @@
         {
           "type": "checkbox",
           "id": "products_display_intro_text",
-          "label": "Mostrar introducción en página de productos",
-          "default": true
+          "label": "Mostrar introducción en página de productos"
         },
         {
           "type": "text",
           "id": "products_intro_text",
-          "label": "Texto de presentación",
-          "default": "Mira la asombrosa variedad de artículos disponibles."
+          "label": "Texto de presentación"
         },
         {
           "header": "Ficha",
@@ -1830,7 +2004,37 @@
               "type": "checkbox",
               "id": "enable_product_image_zoom",
               "label": "Habilitar zoom en imagen principal",
-              "default": true
+              "default": false
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_product_excerpt",
+              "label": "Mostrar extracto"
+            }
+          ]
+        },
+        {
+          "header": "Formato de las minuaturas",
+          "settings": [
+            {
+              "type": "select",
+              "id": "thumbnails_size",
+              "label": "Medida de las minuaturas",
+              "info": "Listados en productos, categorías y colecciones",
+              "options": [
+                {
+                  "value": "square",
+                  "label": "Cuadrado"
+                },
+                {
+                  "value": "portrait",
+                  "label": "Vertical"
+                },
+                {
+                  "value": "landscape",
+                  "label": "Horizontal"
+                }
+              ]
             }
           ]
         },
@@ -1848,6 +2052,110 @@
               "id": "show_sku_code",
               "label": "Mostrar Sku del producto",
               "default": false
+            }
+          ]
+        },
+        {
+          "header": "Botón compra rápida",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "btn_product_buy_in_list",
+              "label": "Activar botón"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Páginas sidebar",
+      "icon": "product-page",
+      "sections": [
+        {
+          "header": "Mostrar categorías",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "display_sidebar_categories",
+              "label": "Mostrar listado"
+            }
+          ]
+        },
+        {
+          "header": "Mostrar colecciones",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "display_sidebar_collections",
+              "label": "Mostrar listado"
+            }
+          ]
+        },
+        {
+          "header": "Menú personalizado",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "display_sidebar_menu",
+              "label": "Mostrar un menú personalizado"
+            },
+            {
+              "type": "text",
+              "id": "display_sidebar_menu_name",
+              "label": "Identificador del menú",
+              "default": "Mira la asombrosa variedad de artículos disponibles."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Carrito",
+      "icon": "cart-page",
+      "sections": [
+        {
+          "header": "Es regalo",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "enabled_gift_option",
+              "label": "Mostrar opciones para regalo.",
+              "default": false
+            },
+            {
+              "type": "text",
+              "id": "gift_title_message",
+              "label": "Título",
+              "default": "Esto es un regalo. Incluir el siguiente mensaje (150 caracteres máximo)."
+            },
+            {
+              "type": "text",
+              "id": "gift_btn_message",
+              "label": "Texto del botón",
+              "default": "Agregar mensaje"
+            }
+          ]
+        },
+        {
+          "header": "Nota del cliente",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "enabled_customer_note_option",
+              "label": "Mostrar campo nota del cliente.",
+              "default": true
+            },
+            {
+              "type": "text",
+              "id": "customer_title_note",
+              "label": "Título",
+              "default": "Agrega alguna nota o comentario al vendedor:"
+            },
+            {
+              "type": "text",
+              "id": "customer_btn_note_text",
+              "label": "Texto del botón",
+              "default": "Agregar nota"
             }
           ]
         }
@@ -1927,12 +2235,6 @@
             },
             {
               "type": "text",
-              "id": "google_link",
-              "label": "Google+",
-              "info": "https://plus.google.com/+kometia"
-            },
-            {
-              "type": "text",
               "id": "youtube_link",
               "label": "Youtube",
               "info": "https://www.youtube.com/user/kometia"
@@ -1959,7 +2261,7 @@
               "type": "text",
               "id": "whatsapp_link",
               "label": "Whatsapp",
-              "info": "+52 123 456 789"
+              "info": "+52000 000 000"
             }
           ]
         },
@@ -1990,11 +2292,6 @@
               "type": "checkbox",
               "id": "share_pinterest",
               "label": "Hacer pin en Pinterest"
-            },
-            {
-              "type": "checkbox",
-              "id": "share_google",
-              "label": "+1 en Google Plus"
             }
           ]
         }

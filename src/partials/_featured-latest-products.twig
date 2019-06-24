@@ -1,11 +1,10 @@
-
 {% if settings.featured_collection_latest is not empty and collections[settings.featured_collection_latest] is defined and collections[settings.featured_collection_latest].products | length > 0  %}
 {% set latest_collection = collections[settings.featured_collection_latest] %}
 <section class="latest-products prod-grid__3">
   <div class="container">
     <h2 class="text-center">{{ settings.feature_latest_products_title }}</h2>
     <hr class="hr-small">
-    <div class="row symmetrical-container">
+    <div class="row symmetrical-container products">
     {% for product in latest_collection.products %}
       {% include '_product-item.twig' %}
     {% endfor %}

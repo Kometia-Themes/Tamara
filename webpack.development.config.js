@@ -61,6 +61,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: './src/images/', to: 'images' },
+      { from: './src/assets/app.js', to: 'assets' },
       { from: './src/assets/*.css', to: 'assets' },
       { from: './src/assets/settings.css.twig', to: 'assets' }
     ], {

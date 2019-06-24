@@ -2,7 +2,11 @@
 {% block body_class %}cart has-featured{% endblock body_class %}
 
 {% block body %}
-<section class="featured-block {{ settings.gradient_pages }}">
+{% set maxQuantity = 10 %}
+{% if cart.total_items > maxQuantity %}
+  {% set maxQuantity = cart.total_items %}
+{% endif %}
+<section class="featured-block">
   <div class="container">
     <h1 class="title">Carrito de compras</h1>
   </div>
@@ -49,7 +53,7 @@
                             <input type="hidden" name="_method" value="patch">
                             <input type="hidden" name="id" value="{{ item.id }}">
                             <select class="cart__resume-table__product-quantity selectpicker form-control updateQty" name="quantity">
-                                {% for qty in 1..5 %}
+                                {% for qty in 1..maxQuantity %}
                                     <option value="{{ qty }}"{{ qty == item.quantity ? ' selected="selected"' : null }}>{{ qty }}</option>
                                 {% endfor %}
                             </select>

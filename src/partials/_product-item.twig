@@ -1,25 +1,31 @@
+{% set thumbnail_format = '&w=400&h=400&fit=crop' %}
+{% if settings.thumbnails_size == 'portrait' %}
+{% set thumbnail_format = '&w=340&h=450&fit=crop' %}
+{% endif %}
+{% if settings.thumbnails_size == 'landscape' %}
+{% set thumbnail_format = '&w=450&h=340&fit=crop' %}
+{% endif %}
+
 {% if product.image_url is not empty %}
-  {% set sku_image_url = product.image_url ~ '&w=350&h=350&fit=crop' %}
+  {% set sku_image_url = product.image_url %}
 {% else %}
   {% set randomNumber = random(15) %}
   {% set randomImage = randomNumber|replace({0:1}) %}
   {% set sku_image_url = ('placeholders/product-'~randomImage~'.jpg') | global_img_url %}
 {% endif %}
 <article class="thumbnail-container symmetrical">
-  <a class="thumbnail" href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">
-    <figure class="thumbnail-img">
-      <a href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}"><img src="{{ sku_image_url }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail"></a>
+    <figure class="thumbnail">
+      <a class="thumbnail__link" href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">
+        {% if product.sku.permalink == 'default' and settings.btn_product_buy_in_list %}
+        <button data-skuid="{{ product.sku.id }}" class="btn btn-sm btn-primary btn-outline btn-shortlink ajaxlink"><i class="zmdi zmdi-shopping-cart zmdi-hc-2x" aria-hidden="true"></i></button>
+        {% endif %}
+      <img class="thumbnail__img" src="{{ sku_image_url }}{{ thumbnail_format }}" alt="{{ product.title }} - {{ store.name }}" itemprop="thumbnail"></a>
     </figure>
-  </a>
     <div class="caption">
-      <div class="action-buttons">
-      {% if product.sku.permalink == 'default' and settings.btn_product_buy_in_list %}
-        <a data-skuid="{{ product.sku.id }}" class="btn btn-sm btn-primary btn-outline ajaxlink">{{ settings.btn_product_buy_now_text }}</a>
+      <h3 class="product-title"><a class="product-title__link" href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">{{ product.name }}</a></h3>
+      {% if settings.enable_product_excerpt %}
+      <p class="product-excerpt">{{ product.excerpt}}</p>
       {% endif %}
-      </div>
-      <div class="product-title">
-        <h3><a href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">{{ product.name }}</a></h3>
-      </div>
       <div class="product-price">
         <span class="regular-price">{{ product.price | money('symbol') }}</span>
         {% if product.compared_price is defined and product.sku.compared_price > product.price %}

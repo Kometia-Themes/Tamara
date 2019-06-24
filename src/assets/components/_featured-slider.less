@@ -1,0 +1,174 @@
+//** Estilos del sliders del featured-slider
+.featured-slider {
+  .owl-stage-outer {
+    .owl-stage {
+      display: flex;
+      .owl-item {
+        min-height: 360px;
+        @media(max-width: 767px) {
+          min-height: 400px;
+        }
+        @media(min-width: 992px) {
+          min-height: 460px;
+        }
+        @media(min-width: 1200px) {
+          min-height: 540px;
+        }
+        .slide {
+          height: 100%;
+          position: relative;
+          width: 100%;
+          .overlay {
+            bottom: 0;
+            left: 0;
+            opacity: .3;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+          }
+          &__image {
+            width: 100%;
+            height: auto;
+          }
+          &--desktop {
+            @media(max-width: 767px) {
+              display: none;
+            }
+          }
+          &--mobile {
+            @media(min-width: 768px) {
+              display: none;
+            }
+          }
+          &.text-dark {
+            h2.h1, p {
+              color: #000;
+            }
+          }
+        }
+        .slider-content {
+          .jumbotron;
+          .size(100%, auto);
+          .container-fluid;
+          padding: 0;
+          background: transparent;
+          bottom: 0;
+          left: 0;
+          margin-bottom: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          z-index: 99;
+          h2.h1 {
+            font-size: 1.2em;
+            @media(max-width: 767px) {
+              font-size: 2em;
+            }
+            @media(max-width: 620px) {
+              font-size: 1.8em;
+            }
+            @media(min-width: 768px) {
+              font-size: 2.2em;
+            }
+            @media(min-width: 992px) {
+              font-size: 2.8em;
+            }
+            @media(min-width: 1200px) {
+              font-size: 3.2em;
+            }
+          }
+          .text-center;
+          .outer {
+            display: table;
+            height: 100%;
+            width: 100%;
+          }
+          .inner {
+            display: table-cell;
+            vertical-align: bottom;
+            padding: 0 .5em 2.5em;
+            @media(max-width: 767px) {
+              padding: 0 .4em 1.8em;
+            }
+          }
+          .btn-slide-full {
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+          }
+        }
+      }
+      .owl-item,
+      .owl-item .slider-content {
+        .transition(all .2s @transition-bezier-1);
+
+        &.active {
+          .transition(all .2s @transition-bezier-1);
+        }
+      }
+    }
+  }
+  //** Estilo de flechas de nav en slider
+  .owl-theme {
+    .owl-nav {
+      position: absolute;
+      top: 50%;
+      margin-top: -19px;
+      width: 100%;
+    }
+    .owl-nav [class*=owl-] {
+      position: absolute;
+      padding-left: 10px;
+      padding-right: 10px;
+      background: rgba(255,255,255,.1);
+      .transition(all .2s @transition-bezier-1);
+
+      &.owl-prev { left: 0; }
+      &.owl-next { right: 0; }
+
+      &.disabled { visibility: hidden; }
+
+      &:hover,
+      &:focus {
+        background: rgba(255,255,255,.54);
+      }
+    }
+    .owl-dots {
+      position: absolute;
+      bottom: 40px;
+      z-index: 10;
+      width: 100%;
+      .owl-dot {
+        span {
+          border: 1px solid @gray-lighter;
+          background: none;
+          cursor: pointer;
+          .transition(all .2s @transition-bezier-1);
+
+          &:hover,
+          &:focus {
+            background: rgba(255, 255, 255, 0.54);
+            border-color: rgba(255, 255, 255, 0.54);
+          }
+        }
+        &.active span {
+          background: #fff;
+          border-color: #fff;
+        }
+        @media(max-width: 680px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .owl-stage::before,
+  .owl-stage::after,
+  .owl-stage-outer::before,
+  .owl-stage-outer::after {
+    content: '';
+  }
+}

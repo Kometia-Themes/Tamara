@@ -4,48 +4,49 @@
   {% for i in 1..4 %}
     {% set slide = 'slide_'~i %}
     {% if settings[slide] %}
-      {% set slide_image        = slide~'_image' %}
-      {% set slide_title        = slide~'_title' %}
-      {% set slide_desc         = slide~'_desc' %}
-      {% set slide_dark         = slide~'_dark' %}
-      {% set slide_overlay      = slide~'_overlay' %}
-      {% set slide_overlay_show = slide~'_overlay_show' %}
-      {% set slide_image_show   = slide~'_image_show' %}
-      {% set slide_btn_show     = slide~'_btn_show' %}
-      {% set slide_btn_text     = slide~'_btn_text' %}
-      {% set slide_link         = slide~'_link' %}
-
-      {% if settings[slide_image] and settings[slide_image_show] %}
-        <div class="{% if settings[slide_dark] %}text-dark {% endif %}slide-container" style="background:url({{ settings[slide_image] }}) center no-repeat; background-size:cover;">
+      {% set slide_image_desktop = slide~'_image_desktop' %}
+      {% set slide_image_mobile  = slide~'_image_mobile' %}
+      {% set slide_title         = slide~'_title' %}
+      {% set slide_desc          = slide~'_desc' %}
+      {% set slide_dark          = slide~'_dark' %}
+      {% set slide_overlay       = slide~'_overlay' %}
+      {% set slide_overlay_show  = slide~'_overlay_show' %}
+      {% set slide_image_show    = slide~'_image_show' %}
+      {% set slide_btn_show      = slide~'_btn_show' %}
+      {% set slide_btn_text      = slide~'_btn_text' %}
+      {% set slide_link          = slide~'_link' %}
+      <div class="slide {{ slide }}{% if settings[slide_dark] %} text-dark{% endif %}{% if i is odd %} gradient-odd{% elseif i is even %} gradient-even{% endif %}">
         {% if settings[slide_overlay] and settings[slide_overlay_show] %}
           <div class="overlay" style="background:{{ settings[slide_overlay] }};"></div>
         {% endif %}
-      {% else %}
-        {% if settings[slide_overlay] and settings[slide_overlay_show] %}
-        <div class="{% if settings[slide_dark] %}text-dark {% endif %}slide-container" style="background:{{ settings[slide_overlay] }};">
-        {% elseif i is odd %}
-        <div class="slide-container gradient-odd {% if settings[slide_dark] %}text-dark {% endif %}">
-        {% elseif i is even %}
-        <div class="slide-container gradient-even {% if settings[slide_dark] %}text-dark {% endif %}">
-        {% endif %}
-      {% endif %}
-      {% if settings[slide_title] or settings[slide_desc] %}
-        <div class="slider-content">
-          <h2 class="h1">{{ settings[slide_title] }}</h2>
-          <p>{{ settings[slide_desc] }}</p>
-          {% if settings[slide_link] and settings[slide_btn_show] %}
-            <a class="btn btn-default btn-slide-{{ i }}" target="_blank" href="{{settings[slide_link]}}" alt="{{settings[slide_title]}}">{{ settings[slide_btn_text] }}</a>
+          <div class="slider-content">
+            <div class="outer">
+                <div class="inner">
+                {% if settings[slide_title] or settings[slide_desc] %}
+                  <h2 class="h1">{{ settings[slide_title] }}</h2>
+                  <p>{{ settings[slide_desc] }}</p>
+                  {% if settings[slide_link] and settings[slide_btn_show] %}
+                  <a class="btn btn-default btn-slide-{{ i }}" target="_blank" href="{{settings[slide_link]}}" alt="{{settings[slide_title]}}">{{ settings[slide_btn_text] }}</a>
+                  {% endif %}
+                {% else %}
+                  {% if settings[slide_link] and settings[slide_btn_show] %}
+                  <a class="btn-slide-full" target="_blank" href="{{settings[slide_link]}}" alt="{{settings[slide_title]}}"></a>
+                  {% endif %}
+                {% endif %}
+                </div>
+            </div>
+          </div>
+        {% if settings[slide_image_desktop] is not empty and settings[slide_image_show] %}
+        <img class="slide__image slide--desktop" src="{{ settings[slide_image_desktop] }}&w=1280&h=600&fit=crop" alt="{{ settings[slide_title] }}">
+          {% if settings[slide_image_mobile] is not empty %}
+          <img class="slide__image slide--mobile" src="{{ settings[slide_image_mobile] }}&w=620&h=700&fit=crop" alt="{{ settings[slide_title] }}">
+          {% else %}
+          <img class="slide__image slide--mobile" src="{{ settings[slide_image_desktop] }}&w=620&h=380&fit=crop" alt="{{ settings[slide_title] }}">
           {% endif %}
-        </div>
-      {% else %}
-        {% if settings[slide_link] and settings[slide_btn_show] %}
-        <a class="btn-slide-full" target="_blank" href="{{settings[slide_link]}}" alt="{{settings[slide_title]}}"></a>
         {% endif %}
-      {% endif %}
     </div>
     {% endif %}
   {% endfor %}
-  </div>
-</section>
-<div class="clearfix"></div>
+  </div> <!--  #featured-slider-home -->
+</section> <!--  .featured-home -->
 {% endif %}
