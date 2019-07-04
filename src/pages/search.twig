@@ -4,7 +4,7 @@
 <div class="container search-page">
     {% if not performed %}
         <div class="row results">
-            <div class="col-12 col-sm-6 col-sm-offset-3 mb-4">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 mb-4">
                 <form method="get">
                     <input type="hidden" name="type" value="product"/>
                     <div class="form-group">
@@ -21,7 +21,7 @@
     {% else %}
         <div class="row results">
             <h1 class="title results__title text-center">Resultados de la búsqueda para: "{{ search }}"</h1>
-            <div class="col-12">
+            <div class="col-xs-12">
                 <h4 class="text-uppercase">Productos</h4>
                 {% if results.products | length == 0 %}
                     <div class="text-center">
