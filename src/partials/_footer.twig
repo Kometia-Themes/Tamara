@@ -59,9 +59,6 @@
               {% if settings.facebook_link is not empty %}
               <li><a href="{{ settings.facebook_link }}" target="_blank" title="Sigue a {{ store.name }} en Facebook"><i class="zmdi zmdi-facebook"></i></a></li>
               {% endif %}
-              {% if settings.google_link is not empty %}
-              <li><a href="{{ settings.google_link }}" target="_blank" title="Sigue a {{ store.name }} en Google+"><i class="zmdi zmdi-google-plus"></i></a></li>
-              {% endif %}
               {% if settings.youtube_link is not empty %}
               <li><a href="{{ settings.youtube_link }}" target="_blank" title="Sigue a {{ store.name }} en YouTube"><i class="zmdi zmdi-youtube-play"></i></a></li>
               {% endif %}
@@ -78,7 +75,7 @@
               <li><a href="{{ settings.tumblr_link }}" target="_blank" title="Sigue a {{ store.name }} en Tumblr"><i class="zmdi zmdi-tumblr"></i></a></li>
               {% endif %}
               {% if settings.whatsapp_link is not empty %}
-              <li><a href="https://api.whatsapp.com/send?phone={{ settings.whatsapp_link }}" title="Lámanos {{ store.name }} en Whatsapp"><i class="zmdi zmdi-whatsapp"></i></a></li>
+              <li><a href="https://wa.me/{{ settings.whatsapp_link|replace({' ':'', '-':''}) }}" title="Lámanos {{ store.name }} en Whatsapp"><i class="zmdi zmdi-whatsapp"></i></a></li>
               {% endif %}
             </ul>
             {% if settings.accept_visa or settings.accept_mastercard or settings.accept_amex

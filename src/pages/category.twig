@@ -5,7 +5,7 @@
 {% if settings.display_sidebar_collections or settings.display_sidebar_categories or settings.display_sidebar_menu %}
   {% set show_sidebar = true %}
 {% endif %}
-<section class="featured-block {{ settings.gradient_pages }}">
+<section class="featured-block">
   <div class="container">
     <h1 class="title">{{ category.title }}</h1>
     {% if category.summary is defined %}

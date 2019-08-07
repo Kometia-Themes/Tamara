@@ -1,13 +1,13 @@
 # Kometia Tamara Theme 1.1.0
 > Este es el tema instalado en [Tamara] (https://tamara-theme.kometia.com/) y puede servirte de inspiración. Úsalo como base para crear uno nuevo, realizar ajustes pequeños o modificaciones. Sin duda, puede ser el punto de partida para aprender a construir tus propios temas desde cero.
 >
-> **Para más detalles sobre el desarrollo del tema, lee nuestra [Documentación del tema] (https://github.com/Shoperti-Themes/Tamara)**.
+> **Para más detalles sobre el desarrollo del tema, lee nuestra [Documentación del tema] (https://github.com/Kometia-Themes/Tamara)**.
 
 ## Obteniendo este tema
-1. [Descargar] (https://github.com/Shoperti-Themes/Tamara/archive/master.zip) la última versión de la rama master.
-2. También puedes clonar el repositorio con git: `git clone git@github.com:Shoperti-Themes/Tamara.git`
+1. [Descargar] (https://github.com/Kometia-Themes/Tamara/archive/master.zip) la última versión de la rama master.
+2. También puedes clonar el repositorio con git: `git clone git@github.com:Kometia-Themes/Tamara.git`
 
-![alt text](https://raw.githubusercontent.com/Shoperti-Themes/Tamara/master/screenshot.png "Screeshot")
+![alt text](https://raw.githubusercontent.com/Kometia-Themes/Tamara/master/screenshot.png "Screeshot")
 
 ## Implementación manual
 La opción más sencilla, si no deseas realizar cambios en el tema, es cargar el archivo [theme.zip] (dist/theme.zip) encontrado dentro de la carpeta 'dist' del archivo theme.zip descargado.

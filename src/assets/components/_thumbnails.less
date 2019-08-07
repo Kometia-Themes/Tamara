@@ -1,6 +1,7 @@
 .thumbnail {
-  margin-bottom: 10px;
+  border: 1px solid transparent;
   line-height: 1;
+  margin-bottom: 10px;
   padding: 0;
   position: relative;
 }
@@ -14,7 +15,7 @@ a.thumbnail {
 a.thumbnail:hover,
 a.thumbnail:focus {
   text-decoration: none;
-  border-color: transparent;
+  border-color: #cccccc;
   img {
     @media (min-width: @grid-float-breakpoint) {
       opacity: 1;
@@ -53,6 +54,7 @@ a.thumbnail:focus {
 }
 .thumbnail-container {
   .caption {
+    text-align: center;
     .product-title {
       h3 {
         font-size: 18px;
@@ -60,11 +62,17 @@ a.thumbnail:focus {
         margin: 0 0 4px;
       }
     }
+    .product-price {
+      margin: 0 0 12px;
+    }
+    .product-buy {
+      margin: 0 0 12px;
+    }
   }
 }
 .thumbnail .caption .btn {
   .btn-xs;
-  margin-right: 5px;
+  margin: 0 4px;
 }
 a.thumbnail.disabled {
   cursor: not-allowed;
@@ -86,7 +94,6 @@ a.thumbnail.disabled {
     transform: translateX(-50%);
     text-transform: uppercase;
     z-index: 20;
-    i.zmdi {}
   }
 }
 .thumbnail-container.thumb-cont__full-width {
@@ -129,6 +136,7 @@ a.thumbnail.disabled {
             h3 {font-size: 18px;}
           }
           .product-price {
+            margin: 0 0 20px;
             .regular-price,
             .compared-price {
               font-size: 18px;
@@ -139,18 +147,106 @@ a.thumbnail.disabled {
     }
   }
 }
-.product-list {
+
+.products {
   .thumbnail-container {
     .thumbnail {
-      .caption {
-        .product-title {
-          h3 {font-size: 18px;}
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      line-height: 1;
+      margin: 0 0 1em;
+      padding: 0;
+      position: relative;
+      &__link {
+        display: block;
+        position: relative;
+      }
+      &__img {
+        background: transparent;
+        border: none;
+        display: block;
+        height: auto;
+        max-height: 600px;
+        width: 100%;
+      }
+      &::before {
+        background: rgba(255,255,255,.2);
+        content: '';
+        cursor: pointer;
+        opacity: 0;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9;
+      }
+      &:hover::before {
+        opacity: 1;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+      }
+      &:hover .btn-shortlink {
+        opacity: 1;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+      }
+      .btn-shortlink {
+        color: #f4f4f4;
+        background: #9a9ca0;
+        border:none;
+        border-radius: 0;
+        display: inline-block;
+        margin: 0;
+        opacity: 0;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        z-index: 99;
+        -webkit-transition: all .65s ease-in-out;
+        -moz-transition: all .65s ease-in-out;
+        -o-transition: all .65s ease-in-out;
+        transition: all .65s ease-in-out;
+      }
+    }
+    .caption {
+      text-align: left;
+      .product-title {
+        display: block;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0 0 .5em;
+        &__link {
+          display: block;
         }
-        .product-price {
-          .regular-price,
-          .compared-price {
-            font-size: 18px;
-          }
+        .disabled {
+          pointer-events: none;
+        }
+      }
+      .product-excerpt {
+        color: @gray-light;
+        font-size: 14px;
+        margin: 0 0 4px;
+      }
+      .product-price {
+        margin: 0;
+        .regular-price,
+        .compared-price {
+          font-size: 16px;
+          font-weight: bold;
+          margin: 0;
+          padding: 0 4px 0 0;
         }
       }
     }
