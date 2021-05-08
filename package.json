@@ -52,7 +52,7 @@
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
     "livereload": "^0.6.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "match-media": "^0.2.0",
     "modernizr": "^3.5.0",
     "node-sass": "^4.5.0",
